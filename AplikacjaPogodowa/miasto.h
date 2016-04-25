@@ -7,7 +7,7 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 #include <QEventLoop>
-#include <QDomDocument>
+#include <QTemporaryFile>
 //#include <QDebug>
 
 class miasto : public QObject
@@ -28,7 +28,7 @@ private:
     QEventLoop _Loop;
     QNetworkRequest _Request;
     QString _Adres = "https://api.forecast.io/forecast/e0d597789a2dbf7ffbd658e2832b71df/";
-    QDomElement _XmlDokument;
+    QTemporaryFile _temp_XML;
 };
 
 #endif // MIASTO_H
