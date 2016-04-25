@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network xml
 
 TARGET = AplikacjaPogodowa
 TEMPLATE = app
@@ -15,10 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     kanwa.cpp \
-    oknozzakladkami.cpp
+    oknozzakladkami.cpp \
+    miasto.cpp \
+    mapa.cpp \
+    zakladka.cpp
 
 HEADERS  += mainwindow.h \
     kanwa.h \
-    oknozzakladkami.h
+    oknozzakladkami.h \
+    miasto.h \
+    mapa.h \
+    zakladka.h
 
 FORMS    += mainwindow.ui

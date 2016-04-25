@@ -2,6 +2,7 @@
 #define KANWA_H
 
 #include "oknozzakladkami.h"
+#include "mapa.h"
 #include <QWidget>
 #include <QPushButton>
 #include <QResizeEvent>
@@ -20,6 +21,7 @@ public slots:
 private:
     OknoZZakladkami *_wOkZak;
     QPushButton *_wPrzyciskZamknij;
+    Mapa *_wMapa;
 };
 
 #endif // KANWA_H
