@@ -6,14 +6,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    Kanwa *wOknoKw = new Kanwa(this);
+    _wOknoZZ = new OknoZZakladkami(this);
     setStatusBar(new QStatusBar());
-    setCentralWidget(wOknoKw);
+    setCentralWidget(_wOknoZZ);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    _wOknoZZ -> setGeometry(0,0,event->size().width(),
+                           event->size().height());
+
 }
 
 bool MainWindow::CzyMoznaZamknac()

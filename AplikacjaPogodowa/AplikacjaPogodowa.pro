@@ -14,17 +14,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    kanwa.cpp \
-    oknozzakladkami.cpp \
     miasto.cpp \
     mapa.cpp \
-    zakladka.cpp
+    oknozzakladkami.cpp
 
 HEADERS  += mainwindow.h \
-    kanwa.h \
-    oknozzakladkami.h \
     miasto.h \
     mapa.h \
-    zakladka.h
+    oknozzakladkami.h
 
 FORMS    += mainwindow.ui
+
+DISTFILES +=

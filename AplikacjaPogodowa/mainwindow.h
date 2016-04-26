@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "kanwa.h"
+#include "oknozzakladkami.h"
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QCloseEvent>
@@ -18,11 +18,13 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    virtual void closeEvent( QCloseEvent *event);
+    virtual void resizeEvent(QResizeEvent *event);
+    virtual void closeEvent(QCloseEvent *event);
     bool CzyMoznaZamknac();
 
 private:
     Ui::MainWindow *ui;
+    OknoZZakladkami *_wOknoZZ;
 };
 
 #endif // MAINWINDOW_H

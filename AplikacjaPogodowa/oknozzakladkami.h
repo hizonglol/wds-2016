@@ -1,24 +1,23 @@
 #ifndef OKNOZZAKLADKAMI_H
 #define OKNOZZAKLADKAMI_H
 
-#include "zakladka.h"
+#include "mapa.h"
 #include <QTabWidget>
-#include <QString>
-#include <QVector>
+#include <QPushButton>
+#include <QResizeEvent>
+
 
 class OknoZZakladkami : public QTabWidget
 {
     Q_OBJECT
 public:
-    explicit OknoZZakladkami(QWidget *parent = 0);
-    void addTab(QTabWidget *tabWidget, QString title);
-    Zakladka* getLastTab();
+    explicit OknoZZakladkami(QWidget *parent = nullptr);
 signals:
 
 public slots:
 
 private:
-    QVector<Zakladka*> _vwZakladki;
+    QPushButton *_wPrzyciskZamknij;
 };
 
 #endif // OKNOZZAKLADKAMI_H

@@ -9,7 +9,7 @@ class Mapa : public QWidget
 {
     Q_OBJECT
 public:
-    explicit Mapa(QWidget *parent = 0);
+    explicit Mapa(QWidget *parent = nullptr);
 
 signals:
 

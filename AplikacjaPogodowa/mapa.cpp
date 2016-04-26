@@ -7,7 +7,6 @@ Mapa::Mapa(QWidget *parent) : QWidget(parent)
     if(!_PlikMapy.isNull())
     {
         _wMapa->setPixmap(_PlikMapy);
-        _wMapa->show();
     }
     else
         qDebug() << "Cannot find picture...";

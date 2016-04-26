@@ -2,17 +2,8 @@
 
 OknoZZakladkami::OknoZZakladkami(QWidget *parent) : QTabWidget(parent)
 {
-
-}
-
-void OknoZZakladkami::addTab(QTabWidget *tabWidget, QString title)
-{
-    Zakladka *wZakladka = new Zakladka();
-    tabWidget -> addTab(wZakladka, title);
-    _vwZakladki.push_back(wZakladka);
-}
-
-Zakladka* OknoZZakladkami::getLastTab()
-{
-    return _vwZakladki.last();
+    Mapa *wMapa = new Mapa(this);
+    this -> insertTab(0,wMapa, tr("Mapa"));
+    //wMapa -> setGeometry(0,0,50,50);
+    wMapa -> show();
 }
