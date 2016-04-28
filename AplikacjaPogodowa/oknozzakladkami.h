@@ -2,6 +2,7 @@
 #define OKNOZZAKLADKAMI_H
 
 #include "mapa.h"
+#include "miasto.h"
 #include <QTabWidget>
 #include <QPushButton>
 #include <QResizeEvent>

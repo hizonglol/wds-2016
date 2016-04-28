@@ -7,28 +7,38 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 #include <QEventLoop>
-#include <QTemporaryFile>
-//#include <QDebug>
+#include <QJsonDocument>
+//#include <QSslConfiguration>
+#include <QJsonObject>
+#include <QJsonArray>
 
-class miasto : public QObject
+class Miasto : public QObject
 {
     Q_OBJECT
 public:
-    explicit miasto(QObject *parent = nullptr);
-    miasto(QObject *parent = nullptr, QString nazwa = nullptr);
+    Miasto();
+    Miasto(QString nazwa = nullptr);
+    QJsonValue teraz_dane(QString klucz);
+    QJsonValue dwa_dni_podsum();
+    QJsonValue godzin_dane(int godzina, QString klucz);
+    QJsonValue tydzien_podsum();
+    QJsonValue dzien_dane(int dzien, QString klucz);
 
 signals:
 
 public slots:
 
 private:
-    QString _Nazwa;
-    QNetworkAccessManager _Manager;
-    QNetworkReply *_wReply;
-    QEventLoop _Loop;
-    QNetworkRequest _Request;
-    QString _Adres = "https://api.forecast.io/forecast/e0d597789a2dbf7ffbd658e2832b71df/";
-    QTemporaryFile _temp_XML;
+    QString *_wKoordynaty;
+    QString _AdrSerwInt = "https://api.forecast.io/forecast/e0d597789a2dbf7ffbd658e2832b71df/";
+    //QSslCertificate _Cert;
+    QNetworkRequest *_wZadanie;
+    QNetworkAccessManager _Menadzer;
+    QNetworkReply *_wOdpowiedz;
+    QString *_wStrOdpowiedz;
+    QEventLoop _Petla;
+    QJsonDocument _JsonOdpowiedz;
+    QJsonObject *_wJsonObj;
 };
 
 #endif // MIASTO_H
