@@ -14,7 +14,20 @@ Miasto::Miasto()
 
     _Petla.exec();
 
-
+    if (_wOdpowiedz->error() == QNetworkReply::NoError) {
+        _wStrOdpowiedz = new QString((QString)_wOdpowiedz->readAll());
+        _wJsonOdpowiedz = new QJsonDocument;
+        (*_wJsonOdpowiedz) = QJsonDocument::fromJson(_wStrOdpowiedz->toUtf8());
+        _wJsonObj = new QJsonObject(_wJsonOdpowiedz->object());
+        delete _wJsonOdpowiedz;
+        delete _wStrOdpowiedz;
+    }
+    else {
+        qDebug() << "Blad przy pobieraniu danych z internetu...\n" <<_wOdpowiedz->errorString();
+    }
+    delete _wKoordynaty;
+    delete _wZadanie;
+    delete _wOdpowiedz;
 }
 
 
@@ -39,8 +52,10 @@ Miasto::Miasto(QString nazwa)
 
     if (_wOdpowiedz->error() == QNetworkReply::NoError) {
         _wStrOdpowiedz = new QString((QString)_wOdpowiedz->readAll());
-        _JsonOdpowiedz = QJsonDocument::fromJson(_wStrOdpowiedz->toUtf8());
-        _wJsonObj = new QJsonObject(_JsonOdpowiedz.object());
+        _wJsonOdpowiedz = new QJsonDocument;
+        (*_wJsonOdpowiedz) = QJsonDocument::fromJson(_wStrOdpowiedz->toUtf8());
+        _wJsonObj = new QJsonObject(_wJsonOdpowiedz->object());
+        delete _wJsonOdpowiedz;
         delete _wStrOdpowiedz;
     }
     else {

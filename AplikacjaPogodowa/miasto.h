@@ -37,7 +37,7 @@ private:
     QNetworkReply *_wOdpowiedz;
     QString *_wStrOdpowiedz;
     QEventLoop _Petla;
-    QJsonDocument _JsonOdpowiedz;
+    QJsonDocument *_wJsonOdpowiedz;
     QJsonObject *_wJsonObj;
 };
 
