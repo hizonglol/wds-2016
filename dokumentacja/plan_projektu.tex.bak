@@ -6,7 +6,6 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{geometry}
-\usepackage{verbatim}
 
 \title{Wizualizacja danych sensorycznych - projekt}
 \date{}
@@ -35,22 +34,17 @@ W programie będzie również druga zakładka, w której użytkownik będzie mó
 Ma być też możliwość dodania nowych zakładek za pomocą zakładki +. Wtedy jej konfiguracja będzie przebiegać tak samo jak dla drugiej zakładki. Schemat jej zawartości będzie taki sam jak w przypadku drugiej zakładki. Dodatkowe zakładki będą umożliwiać skasowanie się.
 
 \item Źródła pogodowe:
-Dane pogodowe są pobierane z serwisu developer.forecast.io. Serwis ten pozwala na 1000 darmowych zapytań dziennie ale przy tym udostępniając bardzo dużo danych pogodowych. Dane z tego serwisu pochodzą z: USA NOAA’s NEXRAD system, UK Met Office’s NIMROD system, The USA NOAA’s LAMP system, UK Met Office’s Datapoint API, Norwegian Meteorological Institute’s meteorological forecast API, USA NOAA’s Global Forecast System, USA NOAA’s Integrated Surface Database, USA NOAA’s Public Alert system, UK Met Office’s Severe Weather Warning system, Environment Canada’s Canadian Meteorological Center ensemble model, US Navy’s Fleet Numerical Meteorology and Oceanography Ensemble Forecast System, USA NOAA and Environment Canada’s North American Ensemble Forecast System, USA NOAA’s North American Mesoscale Model, USA NOAA’s Rapid Refresh Model, Norwegian Meteorological Institute’s GRIB file forecast for Central Europe, Norwegian Meteorological Institute’s GRIB file forecast for Northern Europe, Worldwide METAR weather reports, USA NOAA/NCEP’s Short-Range Ensemble Forecast, USA NOAA/NCEP’s Real-Time Mesoscale Analysis model, USA NOAA/ESRL’s Meteorological Assimilation Data Ingest System.
+Dane pogodowe są pobierane z serwisu developer.forecast.io. Serwis ten pozwala na 1000 darmowych zapytań dziennie ale przy tym udostępniając bardzo dużo danych pogodowych. Dane z tego serwisu pochodzą z: USA NOAA’s NEXRAD system, UK Met Office’s NIMROD system, The USA NOAA’s LAMP system, UK Met Office’s Datapoint API, Norwegian Meteorological Institute’s meteorological forecast API, USA NOAA’s Global Forecast System, USA NOAA’s Integrated Surface Database, USA NOAA’s Public Alert system, UK Met Office’s Severe Weather Warning system, Environment Canada’s Canadian Meteorological Center ensemble model, US Navy’s Fleet Numerical Meteorology and Oceanography Ensemble Forecast System, USA NOAA and Environment Canada’s North American Ensemble Forecast System, USA NOAA’s North American Mesoscale Model, USA NOAA’s Rapid Refresh Model, Norwegian Meteorological Institute’s GRIB file forecast for Central Europe, Norwegian Meteorological Institute’s GRIB file forecast for Northern Europe, Worldwide METAR weather reports, USA NOAA/NCEP’s Short-Range Ensemble Forecast, USA NOAA/NCEP’s Real-Time Mesoscale Analysis model, USA NOAA/ESRL’s Meteorological Assimilation Data Ingest System. Dane ze wszystkich powyżej wymienionych serwisów są następnie uśredniane i przesyłane do użytkownika na zapytanie wysłane do developer.forecast.io. Serwis ten korzysta z bezpiecznego połączenia szyfrowanego protokołem SSLv2
 
-Dane ze wszystkich powyżej wymienionych serwisów są następnie uśredniane i przesyłane do użytkownika na zapytanie wysłane do developer.forecast.io. Serwis ten korzysta z bezpiecznego połączenia szyfrowanego protokołem SSLv2.
-
-
-\item Zrealizowane funkcjonalności:
+Zrealizowane funkcjonalności:
 \begin{itemize}
-\item Widżet Mapa z mapą Japonii jako tło;
-\item Obiekt Miasto pobierający i przechowujący dane pogodowe.
+\item Stworzenie widżetu Mapa z mapą Japonii jako tłem
+\item Stworzenie obiektu Miasto pobierającego i przechowującego dane pogodowe
 \end{itemize}
 
-\item Funkcjonalności do zrealizowania:
+Funkcjonalności do zrealizowania:
 \begin{itemize}
-\item Chmurki umieszczone na mapie wyświetlające ikonę pogody oraz temperaturę;
-\item Zakładka przechowująca obiekt klasy Miasto i wyświetlająca wykresy;
-\item Belka z ustawieniami dająca możliwość ustawienia okresu odświeżania danych.
+\item Zakładka przechowująca obiekt klasy Miasto i wyświetlająca wykresy
 \end{itemize}
 
 \item Opis zaimplementowanych funkcjonalności:
@@ -74,7 +68,6 @@ Docelowo ma się tworzyć z dwiema zakładkami: mapą oraz zakładką miasta, kt
 
 \end{itemize}
 
-\pagebreak
 \item Opis funkcjonalności do implementacji:
 \begin{itemize}
 \item Widżet ZakladkaMiasta
@@ -95,31 +88,10 @@ Widżet ten będzie wyświetlać aktualną temperaturę, ciśnienie i wilgotnoś
 \item[6 maja - w trakcie] | dodanie dwóch kolejnych funkcjonalności: zakładki z obiektem Miasto oraz wyszukiwanie koordynatów miasta na podstawie podanej nazwy.
 \end{description}
 
-\pagebreak
 \item Diagram przepływu sterowania:\\
 \begin{figure}[H]
 \includegraphics[width=15cm]{przeplyw.eps}
 \end{figure}
-
-\pagebreak
-\item Diagram klas:\\
-\begin{figure}[H]
-\includegraphics[width=14cm]{diagram_klas.eps}
-\end{figure}
-
-\begin{comment}
-\pagebreak
-\item Layout zakładki mapa:\\
-\begin{figure}
-\includegraphics[bb=0 0 600 400]{proponowany_layout_mapa.png}
-\end{figure}
-
-\pagebreak
-\item Layout zakładki miasto:\\
-\begin{figure}
-\includegraphics[bb=0 0 600 400]{proponowany_layout_miasto.png}
-\end{figure}
-\end{comment}
 
 \item Zarządzanie projektem:
 \begin{itemize}
