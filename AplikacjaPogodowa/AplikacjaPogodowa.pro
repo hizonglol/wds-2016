@@ -16,12 +16,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     miasto.cpp \
     mapa.cpp \
-    oknozzakladkami.cpp
+    oknozzakladkami.cpp \
+    zakladkamiasta.cpp
 
 HEADERS  += mainwindow.h \
     miasto.h \
     mapa.h \
-    oknozzakladkami.h
+    oknozzakladkami.h \
+    zakladkamiasta.h
 
 FORMS    += mainwindow.ui
 

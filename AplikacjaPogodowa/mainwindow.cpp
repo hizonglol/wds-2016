@@ -16,6 +16,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
     _wOknoZZ -> setGeometry(0,0,event->size().width(),

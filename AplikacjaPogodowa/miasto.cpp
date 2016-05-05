@@ -15,7 +15,7 @@ Miasto::Miasto()
     _Petla.exec();
 
     if (_wOdpowiedz->error() == QNetworkReply::NoError) {
-        _wStrOdpowiedz = new QString((QString)_wOdpowiedz->readAll());
+        _wStrOdpowiedz = new QString(_wOdpowiedz->readAll());
         _wJsonOdpowiedz = new QJsonDocument;
         (*_wJsonOdpowiedz) = QJsonDocument::fromJson(_wStrOdpowiedz->toUtf8());
         _wJsonObj = new QJsonObject(_wJsonOdpowiedz->object());
@@ -51,7 +51,7 @@ Miasto::Miasto(QString nazwa)
     _Petla.exec();
 
     if (_wOdpowiedz->error() == QNetworkReply::NoError) {
-        _wStrOdpowiedz = new QString((QString)_wOdpowiedz->readAll());
+        _wStrOdpowiedz = new QString(_wOdpowiedz->readAll());
         _wJsonOdpowiedz = new QJsonDocument;
         (*_wJsonOdpowiedz) = QJsonDocument::fromJson(_wStrOdpowiedz->toUtf8());
         _wJsonObj = new QJsonObject(_wJsonOdpowiedz->object());
@@ -101,6 +101,7 @@ QJsonValue Miasto::tydzien_podsum(){
     qDebug() << dane["summary"] << '\n';
     return dane["summary"];
 }
+
 
 QJsonValue Miasto::dzien_dane(int dzien, QString klucz){
     if(dzien<0 || dzien>7) {

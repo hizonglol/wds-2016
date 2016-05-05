@@ -17,7 +17,7 @@ class Miasto : public QObject
     Q_OBJECT
 public:
     Miasto();
-    Miasto(QString nazwa = nullptr);
+    Miasto(QString nazwa);
     QJsonValue teraz_dane(QString klucz);
     QJsonValue dwa_dni_podsum();
     QJsonValue godzin_dane(int godzina, QString klucz);
