@@ -3,9 +3,10 @@
 
 #include <QWidget>
 #include <QGridLayout>
-
 #include <QLabel>
 #include <QLCDNumber>
+//#include <QtDataVisualization/q3dbars.h>
+
 #include "miasto.h"
 
 class ZakladkaMiasta : public QWidget
@@ -20,13 +21,19 @@ signals:
 public slots:
 
 private:
+    //dane
     Miasto *_wMiasto;
+    //grid
     QGridLayout *_wWyglad;
-
+    //pierwszy rzad grida
     QLabel *_wIkZach;
     QLCDNumber *_wTemper;
     QLCDNumber *_wPrawdop;
     QLabel *_wTekOpis;
+    //drugi rzad grida
+    //Q3DBars *_wZachDzien;
+    //trzeci rzad grida
+    //Q3DBars *_wZachTydz;
 };
 
 #endif // ZAKLADKAMIASTA_H
