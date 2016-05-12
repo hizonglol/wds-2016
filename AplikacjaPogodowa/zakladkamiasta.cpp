@@ -14,10 +14,10 @@ ZakladkaMiasta::ZakladkaMiasta(QString nazwa, QWidget *parent) : QWidget(parent)
     _wMiasto = new Miasto(nazwa);
     _wWyglad = new QGridLayout(this);
 
-    _wIkZach = new QLabel();
-    _wTemper = new QLCDNumber();
-    _wPrawdop = new QLCDNumber();
-    _wTekOpis = new QLabel();
+    _wIkZach = new QLabel(this);
+    _wTemper = new QLCDNumber(this);
+    _wPrawdop = new QLCDNumber(this);
+    _wTekOpis = new QLabel(this);
     //_wZachDzien = new Q3DBars();
     //_wZachTydz = new Q3DBars();
 
@@ -30,7 +30,7 @@ ZakladkaMiasta::ZakladkaMiasta(QString nazwa, QWidget *parent) : QWidget(parent)
     _wWyglad -> addWidget(_wIkZach, 0, 0);
     _wWyglad -> addWidget(_wTemper, 0, 1);
     _wWyglad -> addWidget(_wPrawdop, 0, 2);
-    _wWyglad -> addWidget(_wTekOpis, 0, 3, 4, 2);
+    _wWyglad -> addWidget(_wTekOpis, 0, 3, 1, 2);
 
     //rzad drugi
     //_wWyglad -> addWidget(_wZachDzien, 1, 0);

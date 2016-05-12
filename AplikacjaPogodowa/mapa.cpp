@@ -1,13 +1,14 @@
 #include "mapa.h"
 
-Mapa::Mapa(QWidget *parent) : QWidget(parent)
+Mapa::Mapa(QWidget *parent) : QLabel(parent)
 {
-    QLabel *_wMapa = new QLabel;
-    _PlikMapy.load("Japan_Fukuoka.png");
-    if(!_PlikMapy.isNull())
+    //QLabel *_wMapa = new QLabel(this);
+    if(_PlikMapy.load("Japan_Fukuoka.png"))
     {
-        _wMapa->setPixmap(_PlikMapy);
+        //_wMapa->setPixmap(_PlikMapy);
+        setPixmap(_PlikMapy);
+        qDebug() << "Picture loaded";
     }
     else
-        qDebug() << "Cannot find picture...";
+        qDebug() << "Cannot load picture...";
 }

@@ -5,7 +5,7 @@
 #include <QLabel>
 #include <QDebug>
 
-class Mapa : public QWidget
+class Mapa : public QLabel
 {
     Q_OBJECT
 public:
@@ -17,7 +17,7 @@ public slots:
 
 private:
     QPixmap _PlikMapy;
-    QLabel *_wMapa;
+    //QLabel *_wMapa;
 };
 
 #endif // MAPA_H

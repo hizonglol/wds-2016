@@ -24,6 +24,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 }
 
+
 bool MainWindow::CzyMoznaZamknac()
 {
     return QMessageBox::question(this, tr("Ostrzezenie"),

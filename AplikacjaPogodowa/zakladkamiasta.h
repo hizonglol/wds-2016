@@ -5,7 +5,6 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QLCDNumber>
-//#include <QtDataVisualization/q3dbars.h>
 
 #include "miasto.h"
 
