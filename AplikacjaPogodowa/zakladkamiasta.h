@@ -5,8 +5,12 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QLCDNumber>
+#include <QVector>
+#include <QComboBox>
 
+#include "wyszukiwarkamiasta.h"
 #include "miasto.h"
+#include "qcustomplot.h"
 
 class ZakladkaMiasta : public QWidget
 {
@@ -20,19 +24,23 @@ signals:
 public slots:
 
 private:
+    //wyszukiwarka miasta
+    WyszukiwarkaMiasta *_wWyszukiwarka;
     //dane
     Miasto *_wMiasto;
     //grid
     QGridLayout *_wWyglad;
+    //Combobox
+    QComboBox *_menuZapytan;
     //pierwszy rzad grida
     QLabel *_wIkZach;
     QLCDNumber *_wTemper;
     QLCDNumber *_wPrawdop;
     QLabel *_wTekOpis;
     //drugi rzad grida
-    //Q3DBars *_wZachDzien;
+    QCustomPlot *_wZachDzien;
     //trzeci rzad grida
-    //Q3DBars *_wZachTydz;
+    QCustomPlot *_wZachTydz;
 };
 
 #endif // ZAKLADKAMIASTA_H

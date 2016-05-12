@@ -69,14 +69,14 @@ Miasto::Miasto(QString nazwa)
 
 QJsonValue Miasto::teraz_dane(QString klucz){
     QJsonObject dane = (*_wJsonObj)["currently"].toObject();
-    qDebug() << dane[klucz] << '\n';
+    //qDebug() << dane[klucz] << '\n';
     return dane[klucz];
 }
 
 
 QJsonValue Miasto::dwa_dni_podsum(){
     QJsonObject dane = (*_wJsonObj)["hourly"].toObject();
-    qDebug() << dane["summary"] << '\n';
+    //qDebug() << dane["summary"] << '\n';
     return dane["summary"];
 }
 
@@ -90,7 +90,7 @@ QJsonValue Miasto::godzin_dane(int godzina, QString klucz){
         QJsonObject dane_godzinowe = (*_wJsonObj)["hourly"].toObject();
         QJsonArray godzina_danych = dane_godzinowe["data"].toArray();
         QJsonObject dane = godzina_danych[godzina].toObject();
-        qDebug() << dane[klucz] << '\n';
+        //qDebug() << dane[klucz] << '\n';
         return dane[klucz];
     }
 }
@@ -98,7 +98,7 @@ QJsonValue Miasto::godzin_dane(int godzina, QString klucz){
 
 QJsonValue Miasto::tydzien_podsum(){
     QJsonObject dane = (*_wJsonObj)["daily"].toObject();
-    qDebug() << dane["summary"] << '\n';
+    //qDebug() << dane["summary"] << '\n';
     return dane["summary"];
 }
 
@@ -112,7 +112,7 @@ QJsonValue Miasto::dzien_dane(int dzien, QString klucz){
         QJsonObject dane_dniowe = (*_wJsonObj)["daily"].toObject();
         QJsonArray dzien_danych = dane_dniowe["data"].toArray();
         QJsonObject dane = dzien_danych[dzien].toObject();
-        qDebug() << dane[klucz] << '\n';
+        //qDebug() << dane[klucz] << '\n';
         return dane[klucz];
     }
 }

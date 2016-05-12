@@ -13,6 +13,8 @@ class OknoZZakladkami : public QTabWidget
     Q_OBJECT
 public:
     explicit OknoZZakladkami(QWidget *parent = nullptr);
+
+    //virtual void resizeEvent(QResizeEvent *event);
 signals:
 
 public slots:

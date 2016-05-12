@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network xml location
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network xml location printsupport
 
 TARGET = AplikacjaPogodowa
 TEMPLATE = app
@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     mapa.cpp \
     oknozzakladkami.cpp \
     zakladkamiasta.cpp \
-    wyszukiwarkamiasta.cpp
+    wyszukiwarkamiasta.cpp \
+    qcustomplot.cpp
 
 HEADERS  += mainwindow.h \
     miasto.h \
     mapa.h \
     oknozzakladkami.h \
     zakladkamiasta.h \
-    wyszukiwarkamiasta.h
+    wyszukiwarkamiasta.h \
+    qcustomplot.h
 
 FORMS    += mainwindow.ui
 
