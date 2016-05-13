@@ -1,19 +1,11 @@
 #include "zakladkamiasta.h"
 
-ZakladkaMiasta::ZakladkaMiasta(QWidget *parent) : QWidget(parent)
-{
-    _wMiasto = new Miasto();
-    _wWyglad = new QGridLayout();
-
-    this -> setLayout(_wWyglad);
-    this->show();
-}
 
 ZakladkaMiasta::ZakladkaMiasta(QString nazwa, QWidget *parent) : QWidget(parent)
 {
     _wWyszukiwarka = new WyszukiwarkaMiasta();
 
-    _wMiasto = new Miasto(nazwa);
+    _wMiasto = new Miasto(/*nazwa*/);
     _wWyglad = new QGridLayout(this);
 
     _wIkZach = new QLabel(this);

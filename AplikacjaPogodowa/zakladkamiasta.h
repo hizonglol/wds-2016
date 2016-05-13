@@ -1,5 +1,6 @@
 #ifndef ZAKLADKAMIASTA_H
 #define ZAKLADKAMIASTA_H
+/*! \file */
 
 #include <QWidget>
 #include <QGridLayout>
@@ -12,34 +13,82 @@
 #include "miasto.h"
 #include "qcustomplot.h"
 
+/*!
+ * \brief Widzet Zakladka Miasta
+ *
+ * Wyswietla opis pogody, temperature, wilgotnosc oraz dwa wykresy
+ * z temperatura na dwa nastepne dni oraz z temperatura na nastepny
+ * tydzien.
+ */
 class ZakladkaMiasta : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ZakladkaMiasta(QWidget *parent = 0);
-    ZakladkaMiasta(QString nazwa, QWidget *parent = 0);
+    /*!
+     * \brief Konstruktor klasy Zakladka Miasta
+     * \param Nazwa miasta
+     * \param Wskaznik na rodzica
+     *
+     * Tworzy i inicjalizuje wszystkie polozone na sobie widzety.
+     * Pobiera informacje pogodowe z obiektu Miasto.
+     * Domyslnie pobiera informacje na temat miasta Tokio.
+     */
+    ZakladkaMiasta(QString nazwa = "Tokio", QWidget *parent = nullptr);
 
 signals:
 
 public slots:
 
 private:
-    //wyszukiwarka miasta
+
+    /*!
+     * \brief Wyszukiwarka koordynatow miasta
+     */
     WyszukiwarkaMiasta *_wWyszukiwarka;
-    //dane
+
+    /*!
+     * \brief Klasa przechowujaca dane pogodowe
+     */
     Miasto *_wMiasto;
-    //grid
+
+    /*!
+     * \brief Zarzadca geometria
+     */
     QGridLayout *_wWyglad;
-    //Combobox
+
+    /*!
+     * \brief Menu wyszukiwania i wyboru miasta
+     */
     QComboBox *_menuZapytan;
-    //pierwszy rzad grida
+
+    /*!
+     * \brief Ikona zachmurzenia
+     */
     QLabel *_wIkZach;
+
+    /*!
+     * \brief Wartosc temperatury
+     */
     QLCDNumber *_wTemper;
+
+    /*!
+     * \brief Wartosc prawdopodobienstwa opadow
+     */
     QLCDNumber *_wPrawdop;
+
+    /*!
+     * \brief Tekstowy opis pogody
+     */
     QLabel *_wTekOpis;
-    //drugi rzad grida
+
+    /*!
+     * \brief Wykres z temperatura na dwa dni
+     */
     QCustomPlot *_wZachDzien;
-    //trzeci rzad grida
+
+    /*!
+     * \brief Wykres z temperatura na tydzien
+     */
     QCustomPlot *_wZachTydz;
 };
 

@@ -26,5 +26,5 @@ void WyszukiwarkaMiasta::handleSearchReply() {
         }
     }
     _wReply->deleteLater();  //discard reply
-    _wReply = 0;
+    _wReply = nullptr;
 }

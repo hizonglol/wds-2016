@@ -1,35 +1,5 @@
 #include "miasto.h"
 
-Miasto::Miasto()
-{
-    _wKoordynaty = new QString("35.685,139.7513889");
-    _AdrSerwInt.append(_wKoordynaty);
-
-    _wZadanie = new QNetworkRequest;
-    _wZadanie->setUrl(_AdrSerwInt);
-
-    _wOdpowiedz = _Menadzer.get(*_wZadanie);
-
-    QObject::connect(_wOdpowiedz, SIGNAL(finished()), &_Petla, SLOT(quit()));
-
-    _Petla.exec();
-
-    if (_wOdpowiedz->error() == QNetworkReply::NoError) {
-        _wStrOdpowiedz = new QString(_wOdpowiedz->readAll());
-        _wJsonOdpowiedz = new QJsonDocument;
-        (*_wJsonOdpowiedz) = QJsonDocument::fromJson(_wStrOdpowiedz->toUtf8());
-        _wJsonObj = new QJsonObject(_wJsonOdpowiedz->object());
-        delete _wJsonOdpowiedz;
-        delete _wStrOdpowiedz;
-    }
-    else {
-        qDebug() << "Blad przy pobieraniu danych z internetu...\n" <<_wOdpowiedz->errorString();
-    }
-    delete _wKoordynaty;
-    delete _wZadanie;
-    delete _wOdpowiedz;
-}
-
 
 Miasto::Miasto(QString nazwa)
 {
