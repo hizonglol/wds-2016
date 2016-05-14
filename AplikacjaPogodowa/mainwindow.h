@@ -61,7 +61,7 @@ private:
     Ui::MainWindow *ui;
 
     /*!
-     * \brief _wOknoZZ
+     * \brief Okno z zakladkami
      *
      * Ten wskaznik pokazuje na widzet z zakladkami.
      */

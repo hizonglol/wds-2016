@@ -10,7 +10,7 @@
 
 /*!
  * \brief Widzet okna z Zakladkami
- * a
+ *
  * Przechowuje widzet z mapa oraz widzet z informacjami o miescie.
  */
 class OknoZZakladkami : public QTabWidget

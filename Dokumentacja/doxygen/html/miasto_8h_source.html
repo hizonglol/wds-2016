@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Aplikacja Pogodowa: Plik źródłowy AplikacjaPogodowa/miasto.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Aplikacja Pogodowa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3bc1a044ccf0db5d2ce085077a1c3167.html">AplikacjaPogodowa</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">miasto.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="miasto_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MIASTO_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MIASTO_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QtNetwork/QNetworkAccessManager&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QtNetwork/QNetworkRequest&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QtNetwork/QNetworkReply&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QEventLoop&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QJsonDocument&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//#include &lt;QSslConfiguration&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QJsonObject&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QJsonArray&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_miasto.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_miasto.html">Miasto</a> : <span class="keyword">public</span> QObject</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    Q_OBJECT</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_miasto.html#a432462bf5d0e78399e7be5132ebb1528">Miasto</a>(QString nazwa = <span class="stringliteral">&quot;35.6895, 139.69171&quot;</span>);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    QJsonValue <a class="code" href="class_miasto.html#a8cf357aea3de4db65e585ee1c109d188">teraz_dane</a>(QString klucz);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    QJsonValue <a class="code" href="class_miasto.html#aa54007dee28d66f078edf0656c1df796">dwa_dni_podsum</a>();</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    QJsonValue <a class="code" href="class_miasto.html#ab0a1b871b43415f188cd384eed3ee9ba">godzin_dane</a>(<span class="keywordtype">int</span> godzina, QString klucz);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    QJsonValue <a class="code" href="class_miasto.html#ac9cd117bb08494095420996873d96527">tydzien_podsum</a>();</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    QJsonValue <a class="code" href="class_miasto.html#ae3e0371f233cc140d8e04f0b3a0db9b6">dzien_dane</a>(<span class="keywordtype">int</span> dzien, QString klucz);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;signals:</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">public</span> slots:</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    QString *_wKoordynaty;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    QString _AdrSerwInt = <span class="stringliteral">&quot;https://api.forecast.io/forecast/e0d597789a2dbf7ffbd658e2832b71df/&quot;</span>;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">//QSslCertificate _Cert;</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    QNetworkRequest *_wZadanie;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    QNetworkAccessManager _Menadzer;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    QNetworkReply *_wOdpowiedz;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    QString *_wStrOdpowiedz;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QEventLoop _Petla;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    QJsonDocument *_wJsonOdpowiedz;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    QJsonObject *_wJsonObj;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif // MIASTO_H</span></div><div class="ttc" id="class_miasto_html_ab0a1b871b43415f188cd384eed3ee9ba"><div class="ttname"><a href="class_miasto.html#ab0a1b871b43415f188cd384eed3ee9ba">Miasto::godzin_dane</a></div><div class="ttdeci">QJsonValue godzin_dane(int godzina, QString klucz)</div><div class="ttdoc">Metoda dostepu do dwudniowych danych. </div><div class="ttdef"><b>Definition:</b> miasto.cpp:54</div></div>
+<div class="ttc" id="class_miasto_html"><div class="ttname"><a href="class_miasto.html">Miasto</a></div><div class="ttdoc">Objekt Miasto. </div><div class="ttdef"><b>Definition:</b> miasto.h:22</div></div>
+<div class="ttc" id="class_miasto_html_ae3e0371f233cc140d8e04f0b3a0db9b6"><div class="ttname"><a href="class_miasto.html#ae3e0371f233cc140d8e04f0b3a0db9b6">Miasto::dzien_dane</a></div><div class="ttdeci">QJsonValue dzien_dane(int dzien, QString klucz)</div><div class="ttdoc">Metoda dostepu do tygodniowych danych. </div><div class="ttdef"><b>Definition:</b> miasto.cpp:76</div></div>
+<div class="ttc" id="class_miasto_html_ac9cd117bb08494095420996873d96527"><div class="ttname"><a href="class_miasto.html#ac9cd117bb08494095420996873d96527">Miasto::tydzien_podsum</a></div><div class="ttdeci">QJsonValue tydzien_podsum()</div><div class="ttdoc">Metoda dostepu do tygodniowego podsumowania. </div><div class="ttdef"><b>Definition:</b> miasto.cpp:69</div></div>
+<div class="ttc" id="class_miasto_html_a432462bf5d0e78399e7be5132ebb1528"><div class="ttname"><a href="class_miasto.html#a432462bf5d0e78399e7be5132ebb1528">Miasto::Miasto</a></div><div class="ttdeci">Miasto(QString nazwa=&quot;35.6895, 139.69171&quot;)</div><div class="ttdoc">Konstruktor klasy Miasto. </div><div class="ttdef"><b>Definition:</b> miasto.cpp:4</div></div>
+<div class="ttc" id="class_miasto_html_aa54007dee28d66f078edf0656c1df796"><div class="ttname"><a href="class_miasto.html#aa54007dee28d66f078edf0656c1df796">Miasto::dwa_dni_podsum</a></div><div class="ttdeci">QJsonValue dwa_dni_podsum()</div><div class="ttdoc">Metoda dostepu do dwudniowego podsumowania. </div><div class="ttdef"><b>Definition:</b> miasto.cpp:47</div></div>
+<div class="ttc" id="class_miasto_html_a8cf357aea3de4db65e585ee1c109d188"><div class="ttname"><a href="class_miasto.html#a8cf357aea3de4db65e585ee1c109d188">Miasto::teraz_dane</a></div><div class="ttdeci">QJsonValue teraz_dane(QString klucz)</div><div class="ttdoc">Metoda dostepu do danych teraz. </div><div class="ttdef"><b>Definition:</b> miasto.cpp:40</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
