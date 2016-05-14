@@ -1,17 +1,24 @@
+#pragma implementation
+
 #include "wyszukiwarkamiasta.h"
 
 WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa){
 
-    _wProvider = new QGeoServiceProvider("here");
+    QMap<QString,QVariant> params;
+    params["here.app_id"] = "j3rgq0ooNvXwenPixMoa";
+    params["here.token"] = "ySWyxIUi9CDi5Tfk1jov9A";
+
+    _wProvider = new QGeoServiceProvider("here", params);
     _wManager = _wProvider -> placeManager();
+    //assert(_wManager);
     QPlaceSearchRequest Request;
     Request.setSearchTerm("Tokio");
     Request.setSearchArea(QGeoCircle(QGeoCoordinate(35, 139)));
-    //Request.setLimit(4);
+    Request.setLimit(4);
 
-    //_wReply = _wManager->search(Request);
+    _wReply = _wManager->search(Request);
 
-    //connect(_wReply, SIGNAL(finished()), this, SLOT(handleSearchReply()));
+    connect(_wReply, SIGNAL(finished()), this, SLOT(handleSearchReply()));
 }
 
 void WyszukiwarkaMiasta::handleSearchReply() {

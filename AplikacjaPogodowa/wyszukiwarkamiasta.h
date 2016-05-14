@@ -2,7 +2,12 @@
 #define WYSZUKIWARKAMIASTA_H
 /*! \file */
 
+#pragma interface
+#pragma implementation
+
+#include <QObject>
 #include <QString>
+#include <QVariant>
 #include <QGeoServiceProvider>
 #include <QPlaceManager>
 #include <QPlaceSearchRequest>
@@ -11,6 +16,9 @@
 #include <QPlaceSearchReply>
 #include <QPlaceResult>
 #include <QDebug>
+#include <QMap>
+
+#include <cassert>
 
 /*!
  * \brief Objekt wyszukiwarki miasta
@@ -20,6 +28,7 @@
  */
 class WyszukiwarkaMiasta : public QObject
 {
+    Q_OBJECT
 public:
     /*!
      * \brief Konstruktor wyszukiwarki miasta
@@ -30,6 +39,7 @@ public:
      */
     WyszukiwarkaMiasta(QString nazwa = "Tokio");
 
+public slots:
     /*!
      * \brief Metoda obslugi odpowiedzi
      *

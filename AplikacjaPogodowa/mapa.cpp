@@ -18,6 +18,6 @@ Mapa::Mapa(QWidget *parent) : QWidget(parent)
 
 void Mapa::resizeEvent(QResizeEvent *event)
 {
-    _wMapa -> setPixmap(_PlikMapy.scaled((event->size().width()-20), (event->size().height()-40)));
+    _wMapa -> setPixmap(_PlikMapy.scaled((event->size().width()-50), (event->size().height()-50)));
 
 }
