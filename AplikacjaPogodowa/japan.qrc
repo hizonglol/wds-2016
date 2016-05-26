@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/mapy">
+        <file>Japan_Fukuoka.png</file>
+    </qresource>
+</RCC>

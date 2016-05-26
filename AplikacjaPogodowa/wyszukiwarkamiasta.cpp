@@ -1,5 +1,3 @@
-#pragma implementation
-
 #include "wyszukiwarkamiasta.h"
 
 WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa){
@@ -10,7 +8,7 @@ WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa){
 
     _wProvider = new QGeoServiceProvider("here", params);
     _wManager = _wProvider -> placeManager();
-    //assert(_wManager);
+    Q_CHECK_PTR(_wManager);
     QPlaceSearchRequest Request;
     Request.setSearchTerm("Tokio");
     Request.setSearchArea(QGeoCircle(QGeoCoordinate(35, 139)));

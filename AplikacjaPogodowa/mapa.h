@@ -7,6 +7,8 @@
 #include <QDebug>
 #include <QGridLayout>
 #include <QResizeEvent>
+#include <QPaintEvent>
+#include <QPainter>
 
 /*!
  * \brief Widzet z mapa
@@ -31,6 +33,12 @@ public:
      */
     virtual void resizeEvent(QResizeEvent *event);
 
+    /*!
+     * \brief paintEvent
+     * \param event rysowania temperatur
+     */
+    virtual void paintEvent(QPaintEvent *event);
+
 signals:
 
 public slots:
@@ -41,7 +49,7 @@ private:
      *
      * Odpowiada za realizacje resizeEvent.
      */
-    QGridLayout *_wWyglad;
+    //QGridLayout *_wWyglad;
 
     /*!
      * \brief Plik z mapa

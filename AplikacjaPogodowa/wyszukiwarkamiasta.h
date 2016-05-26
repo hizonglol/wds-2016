@@ -2,9 +2,6 @@
 #define WYSZUKIWARKAMIASTA_H
 /*! \file */
 
-#pragma interface
-#pragma implementation
-
 #include <QObject>
 #include <QString>
 #include <QVariant>
@@ -17,8 +14,6 @@
 #include <QPlaceResult>
 #include <QDebug>
 #include <QMap>
-
-#include <cassert>
 
 /*!
  * \brief Objekt wyszukiwarki miasta

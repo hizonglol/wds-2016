@@ -40,6 +40,26 @@ signals:
 public slots:
 
 private:
+    /*!
+     * \brief Metoda inicjalizujaca pierwszy rzad
+     *
+     * Inicjalizuje pierwszy rzad zakladki o miescie.
+     */
+
+    void pierwszy_rzad();
+    /*!
+     * \brief Metoda inicjalizujaca drugi rzad
+     *
+     * Inicjalizuje drugi rzad zakladki o miescie.
+     */
+    void drugi_rzad();
+
+    /*!
+     * \brief Metoda inicjalizujaca trzeci rzad
+     *
+     * Inicjalizuje trzeci rzad zakladki o miescie.
+     */
+    void trzeci_rzad();
 
     /*!
      * \brief Wyszukiwarka koordynatow miasta
