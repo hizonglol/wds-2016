@@ -1,9 +1,9 @@
 #include "miasto.h"
 
 
-Miasto::Miasto(QString nazwa)
+Miasto::Miasto(QString koordynaty)
 {
-    _wKoordynaty = new QString(nazwa);
+    _wKoordynaty = new QString(koordynaty);
     _AdrSerwInt.append(_wKoordynaty);
 
     _wZadanie = new QNetworkRequest;

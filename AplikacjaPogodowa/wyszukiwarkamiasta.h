@@ -14,6 +14,7 @@
 #include <QPlaceResult>
 #include <QDebug>
 #include <QMap>
+#include <QList>
 
 /*!
  * \brief Objekt wyszukiwarki miasta

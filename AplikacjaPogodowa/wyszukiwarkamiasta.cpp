@@ -11,7 +11,7 @@ WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa){
     Q_CHECK_PTR(_wManager);
     QPlaceSearchRequest Request;
     Request.setSearchTerm("Tokio");
-    Request.setSearchArea(QGeoCircle(QGeoCoordinate(35, 139)));
+    //Request.setSearchArea(QGeoCircle(QGeoCoordinate(35, 139)));
     Request.setLimit(4);
 
     _wReply = _wManager->search(Request);
@@ -26,7 +26,7 @@ void WyszukiwarkaMiasta::handleSearchReply() {
                 QPlaceResult placeResult = result;
                 qDebug() << "Name: " << placeResult.place().name();
                 qDebug() << "Coordinate " << placeResult.place().location().coordinate().toString();
-                qDebug() << "Distance: " << placeResult.distance();
+                qDebug() << "Category: " << placeResult.place().categories().at(0).name();
             }
         }
     }

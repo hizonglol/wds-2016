@@ -9,6 +9,9 @@
 #include <QResizeEvent>
 #include <QPaintEvent>
 #include <QPainter>
+#include <QFont>
+
+#include "miasto.h"
 
 /*!
  * \brief Widzet z mapa
@@ -35,7 +38,6 @@ public:
 
     /*!
      * \brief paintEvent
-     * \param event rysowania temperatur
      */
     virtual void paintEvent(QPaintEvent *event);
 
@@ -45,11 +47,11 @@ public slots:
 
 private:
     /*!
-     * \brief Zarzadca geometria
+     * \brief Rysownik
      *
-     * Odpowiada za realizacje resizeEvent.
+     * Odpowiada za rysowanie.
      */
-    //QGridLayout *_wWyglad;
+    QPainter *_wRysownik;
 
     /*!
      * \brief Plik z mapa
@@ -62,6 +64,20 @@ private:
      * \brief Wskaznik na tlo widzetu
      */
     QLabel *_wMapa;
+
+    /*!
+     * \brief Wektor obiektow miast
+     */
+    QVector< Miasto* > _vMiasta;
+
+    /*!
+     * \brief Wektor nazw z temperaturami
+     */
+    QVector< QString > _vNazwy;
+
+    int x, y;
+
+    int xt, yt;
 };
 
 #endif // MAPA_H

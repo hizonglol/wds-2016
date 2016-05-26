@@ -1,13 +1,12 @@
-paint event do mapa.h
-zamiast zarzadcy geometrii i QLabel
-QPainter moze rysowac tekst i obrazy
+Ikony:
 
-Skorzystac z tworzenia zasobow
-
-Obraz wgrac do zasobow i uzyc
-QPixmap("nazwa zasobu")
-
-najpierw rysowanie pixmap
-potem rysowanie tekstu z temperaturami
-
-
+clear-day 1,1
+clear-night 2,3
+rain 4,1
+snow 4,5
+sleet snieg z deszczem 4,6
+wind 5,2
+fog 3,2
+cloudy 3,4
+partly-cloudy-day 1,3
+partly-cloudy-night 2,4

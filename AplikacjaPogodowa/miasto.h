@@ -31,7 +31,7 @@ public:
      * informacji pogodowych na temat miejsca o zadanych koordynatach.
      * Domyslnie informacje pobiera dla Tokio.
      */
-    Miasto(QString nazwa = "35.6895, 139.69171");
+    Miasto(QString koordynaty = "35.6895, 139.69171");
 
     /*!
      * \brief Metoda dostepu do danych teraz.
