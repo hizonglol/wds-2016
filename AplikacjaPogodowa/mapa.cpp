@@ -6,7 +6,7 @@ Mapa::Mapa(QWidget *parent) : QWidget(parent)
 
     if(_PlikMapy.load(":/new/mapy/Japan_Fukuoka.png"))
     {
-        _wRysownik = new QPainter(this);
+        _wRysownik = new QPainter();
         //qDebug() << "Picture loaded";
     }
     else
