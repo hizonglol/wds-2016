@@ -35,6 +35,8 @@ public:
      */
     WyszukiwarkaMiasta(QString nazwa = "Tokio");
 
+    ~WyszukiwarkaMiasta();
+
 public slots:
     /*!
      * \brief Metoda obslugi odpowiedzi
@@ -43,6 +45,10 @@ public slots:
      * Wyszukane miejsca wypisuje w QDebug.
      */
     void handleSearchReply();
+
+signals:
+
+    void dane_pobrane();
 
 private:
     /*!
@@ -60,7 +66,12 @@ private:
      */
     QPlaceSearchReply *_wReply;
 
+public:
 
+    /*!
+     * \brief Wyniki wyszukiwania
+     */
+    QVector< QVector <QString> > _WynikiWyszukiwania;
 };
 
 #endif // WYSZUKIWARKAMIASTA_H

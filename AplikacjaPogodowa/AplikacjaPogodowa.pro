@@ -34,4 +34,5 @@ FORMS    += mainwindow.ui
 DISTFILES +=
 
 RESOURCES += \
-    japan.qrc
+    japan.qrc \
+    weather_icons.qrc

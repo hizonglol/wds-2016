@@ -70,6 +70,8 @@ public:
 
 signals:
 
+    void miasto_pobrane();
+
 public slots:
 
 private:

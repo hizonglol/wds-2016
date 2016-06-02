@@ -3,11 +3,17 @@
 /*! \file */
 
 #include <QWidget>
-#include <QGridLayout>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QLCDNumber>
 #include <QVector>
+#include <QGroupBox>
 #include <QComboBox>
+#include <QPixmap>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+#include <QRegularExpressionMatchIterator>
 
 #include "wyszukiwarkamiasta.h"
 #include "miasto.h"
@@ -39,14 +45,30 @@ signals:
 
 public slots:
 
+    void czy_pobrane_koordynaty();
+
+    void wpisz_wyniki();
+
+    void uzyj_klikniete(int indeks);
+
+    void wyswietl_reszte_widzetow();
+
 private:
+
+    /*!
+     * \brief Metoda tworzaca combo box
+     *
+     * Pozwala na utworzenie zapytania o koordynaty miasta
+     */
+    void combo_box();
+
     /*!
      * \brief Metoda inicjalizujaca pierwszy rzad
      *
      * Inicjalizuje pierwszy rzad zakladki o miescie.
      */
-
     void pierwszy_rzad();
+
     /*!
      * \brief Metoda inicjalizujaca drugi rzad
      *
@@ -61,6 +83,8 @@ private:
      */
     void trzeci_rzad();
 
+    bool CzyChceszToMiasto();
+
     /*!
      * \brief Wyszukiwarka koordynatow miasta
      */
@@ -74,42 +98,13 @@ private:
     /*!
      * \brief Zarzadca geometria
      */
-    QGridLayout *_wWyglad;
+    QVBoxLayout *_wWyglad;
 
     /*!
      * \brief Menu wyszukiwania i wyboru miasta
      */
-    QComboBox *_menuZapytan;
+    QComboBox *_wMenuZapytan;
 
-    /*!
-     * \brief Ikona zachmurzenia
-     */
-    QLabel *_wIkZach;
-
-    /*!
-     * \brief Wartosc temperatury
-     */
-    QLCDNumber *_wTemper;
-
-    /*!
-     * \brief Wartosc prawdopodobienstwa opadow
-     */
-    QLCDNumber *_wPrawdop;
-
-    /*!
-     * \brief Tekstowy opis pogody
-     */
-    QLabel *_wTekOpis;
-
-    /*!
-     * \brief Wykres z temperatura na dwa dni
-     */
-    QCustomPlot *_wZachDzien;
-
-    /*!
-     * \brief Wykres z temperatura na tydzien
-     */
-    QCustomPlot *_wZachTydz;
 };
 
 #endif // ZAKLADKAMIASTA_H

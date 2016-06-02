@@ -9,11 +9,6 @@ Miasto::Miasto(QString koordynaty)
     _wZadanie = new QNetworkRequest;
     _wZadanie->setUrl(_AdrSerwInt);
 
-    //_Cert.fromPath("darkskynet.crt");
-    //QSslConfiguration Konfiguracja;
-    //Konfiguracja.setLocalCertificate(_Cert);
-    //_wOdpowiedz->setSslConfiguration(Konfiguracja);
-
     _wOdpowiedz = _Menadzer.get(*_wZadanie);
 
     QObject::connect(_wOdpowiedz, SIGNAL(finished()), &_Petla, SLOT(quit()));
@@ -25,6 +20,13 @@ Miasto::Miasto(QString koordynaty)
         _wJsonOdpowiedz = new QJsonDocument;
         (*_wJsonOdpowiedz) = QJsonDocument::fromJson(_wStrOdpowiedz->toUtf8());
         _wJsonObj = new QJsonObject(_wJsonOdpowiedz->object());
+
+        qDebug() << "miasto sie tworzy";
+
+
+        emit miasto_pobrane();
+
+
         delete _wJsonOdpowiedz;
         delete _wStrOdpowiedz;
     }
