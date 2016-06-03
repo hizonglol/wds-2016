@@ -68,6 +68,8 @@ public:
      */
     QJsonValue dzien_dane(int dzien, QString klucz);
 
+    bool czy_pobrane = false;
+
 signals:
 
     void miasto_pobrane();

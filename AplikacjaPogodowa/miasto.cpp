@@ -24,7 +24,7 @@ Miasto::Miasto(QString koordynaty)
         qDebug() << "miasto sie tworzy";
 
 
-        emit miasto_pobrane();
+        czy_pobrane = true;
 
 
         delete _wJsonOdpowiedz;

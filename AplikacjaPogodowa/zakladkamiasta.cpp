@@ -48,11 +48,6 @@ void ZakladkaMiasta::wpisz_wyniki()
 
     connect(_wMenuZapytan, SIGNAL(activated(int)), this, SLOT(uzyj_klikniete(int)));
 
-    /*
-    pierwszy_rzad();
-    drugi_rzad();
-    trzeci_rzad();
-    */
 }
 
 bool ZakladkaMiasta::CzyChceszToMiasto()
@@ -72,6 +67,18 @@ void ZakladkaMiasta::uzyj_klikniete(int indeks)
         qDebug() << _wWyszukiwarka->_WynikiWyszukiwania[indeks][1];
 
         QRegularExpression re("(\\d+)° (\\d+)'");
+
+        /*
+        QString przeszukiwany_string = "4.768 miles/s glupoty";
+        QRegularExpression re1("(\\d+).(\\d+) miles/s");
+        QRegularExpressionMatch match = re1.match(przeszukiwany_string);
+        QString odpowiedz1 = match.captured(1);
+        QString odpowiedz2 = match.captured(2);
+        QString odpowiedz = odpowiedz1 + '.' + odpowiedz2;
+        double wynik = odpowiedz.toDouble();
+        qDebug() << wynik;
+        */
+
         QRegularExpressionMatchIterator i = re.globalMatch(_wWyszukiwarka->_WynikiWyszukiwania[indeks][1]);
         QRegularExpressionMatch match1 = i.next();
         QString word1 = match1.captured(1);
@@ -84,8 +91,10 @@ void ZakladkaMiasta::uzyj_klikniete(int indeks)
 
         _wMenuZapytan -> setEnabled(false);
         _wMiasto = new Miasto(koordynaty);
-        connect(_wMiasto, SIGNAL(miasto_pobrane()), this, SLOT(wyswietl_reszte_widzetow()));
 
+        while(!_wMiasto->czy_pobrane) ;
+
+        wyswietl_reszte_widzetow();
     }
 }
 
@@ -93,11 +102,10 @@ void ZakladkaMiasta::wyswietl_reszte_widzetow(){
 
     qDebug() << "sygnal nadszedl";
 
-    /*
+
     pierwszy_rzad();
     drugi_rzad();
     trzeci_rzad();
-    */
 }
 
 
@@ -108,6 +116,7 @@ void ZakladkaMiasta::pierwszy_rzad()
 
     QPixmap _PlikIkony;
     QString _Zasob;
+    qDebug() << _wMiasto -> teraz_dane("icon").toString();
     _Zasob = ":/new/weather_icons/weather_icons/" + _wMiasto -> teraz_dane("icon").toString() + ".png";
     _PlikIkony.load(_Zasob);
 

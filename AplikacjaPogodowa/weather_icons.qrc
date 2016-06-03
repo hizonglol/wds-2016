@@ -3,12 +3,12 @@
         <file>weather_icons/clear-night.png</file>
         <file>weather_icons/cloudy.png</file>
         <file>weather_icons/fog.png</file>
-        <file>weather_icons/partially-cloudy.png</file>
-        <file>weather_icons/partially-cloudy-night.png</file>
         <file>weather_icons/rain.png</file>
         <file>weather_icons/sleet.png</file>
         <file>weather_icons/snow.png</file>
         <file>weather_icons/wind.png</file>
         <file>weather_icons/clear-day.png</file>
+        <file>weather_icons/partly-cloudy-day.png</file>
+        <file>weather_icons/partly-cloudy-night.png</file>
     </qresource>
 </RCC>
