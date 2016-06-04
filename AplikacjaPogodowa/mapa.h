@@ -18,8 +18,7 @@
  *
  * Wyswietla na sobie mape Japonii.
  */
-class Mapa : public QWidget
-{
+class Mapa : public QWidget {
     Q_OBJECT
 public:
     /*!
@@ -28,18 +27,20 @@ public:
      *
      * Laduje mape oraz ustawia ja jako tlo.
      */
-    explicit Mapa(QWidget *parent = nullptr);
+    explicit Mapa(QWidget* parent = nullptr);
+
+    //~Mapa();
 
     /*!
      * \brief resizeEvent
      * \param event zmiany rozmiaru okna
      */
-    virtual void resizeEvent(QResizeEvent *event);
+    virtual void resizeEvent(QResizeEvent* event);
 
     /*!
      * \brief paintEvent
      */
-    virtual void paintEvent(QPaintEvent *event);
+    virtual void paintEvent(QPaintEvent* event);
 
 signals:
 
@@ -51,7 +52,7 @@ private:
      *
      * Odpowiada za rysowanie.
      */
-    QPainter *_wRysownik;
+    QPainter* _wRysownik;
 
     /*!
      * \brief Plik z mapa
@@ -63,7 +64,7 @@ private:
     /*!
      * \brief Wskaznik na tlo widzetu
      */
-    QLabel *_wMapa;
+    QLabel* _wMapa;
 
     /*!
      * \brief Wektor obiektow miast
@@ -71,13 +72,19 @@ private:
     QVector< Miasto* > _vMiasta;
 
     /*!
+     * \brief Koordynaty miast
+     */
+    QVector< QString > _vKoordynaty;
+
+    /*!
      * \brief Wektor nazw z temperaturami
      */
     QVector< QString > _vNazwy;
 
-    int x, y;
 
-    int xt, yt;
+    int _x, _y;
+
+    int _xt, _yt;
 };
 
 #endif // MAPA_H

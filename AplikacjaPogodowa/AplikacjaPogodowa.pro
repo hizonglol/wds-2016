@@ -13,23 +13,27 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
     miasto.cpp \
     mapa.cpp \
     oknozzakladkami.cpp \
     zakladkamiasta.cpp \
     wyszukiwarkamiasta.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    danapogodowa.cpp \
+    mainwindow.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     miasto.h \
     mapa.h \
     oknozzakladkami.h \
     zakladkamiasta.h \
     wyszukiwarkamiasta.h \
-    qcustomplot.h
+    qcustomplot.h \
+    danapogodowa.h \
+    mainwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    mainwindow.ui
 
 DISTFILES +=
 

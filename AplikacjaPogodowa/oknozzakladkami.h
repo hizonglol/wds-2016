@@ -13,8 +13,7 @@
  *
  * Przechowuje widzet z mapa oraz widzet z informacjami o miescie.
  */
-class OknoZZakladkami : public QTabWidget
-{
+class OknoZZakladkami : public QTabWidget {
     Q_OBJECT
 public:
     /*!
@@ -24,7 +23,9 @@ public:
      * Inicjalizuje dwa widzety: mape oraz zakladke miasta
      * i umieszcza je w kolejnych zakladkach.
      */
-    explicit OknoZZakladkami(QWidget *parent = nullptr);
+    explicit OknoZZakladkami(QWidget* parent = nullptr);
+
+    //~OknoZZakladkami();
 
 signals:
 
@@ -34,17 +35,18 @@ private:
     /*!
      * \brief Wskaznik na widzet mapy
      */
-    Mapa *_wMapa;
+    Mapa* _wMapa;
 
     /*!
      * \brief Wskaznik na zakladke miasta
      */
-    ZakladkaMiasta *_wZakMias;
+    ZakladkaMiasta* _wZakMias;
 
     /*!
      * \brief Wskaznik na przycisk zamkniecia
      */
-    QPushButton *_wPrzyciskZamknij;
+    QPushButton* _wPrzyciskZamknij;
+
 };
 
 #endif // OKNOZZAKLADKAMI_H

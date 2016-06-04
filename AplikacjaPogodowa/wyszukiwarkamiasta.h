@@ -16,14 +16,15 @@
 #include <QMap>
 #include <QList>
 
+#include "danapogodowa.h"
+
 /*!
  * \brief Objekt wyszukiwarki miasta
  *
  * Wyszukuje koordynaty miejsc o podanej nazwie.
  * Pobiera maksymalnie 4 rekordy.
  */
-class WyszukiwarkaMiasta : public QObject
-{
+class WyszukiwarkaMiasta : public QObject {
     Q_OBJECT
 public:
     /*!
@@ -35,7 +36,7 @@ public:
      */
     WyszukiwarkaMiasta(QString nazwa = "Tokio");
 
-    ~WyszukiwarkaMiasta();
+    //~WyszukiwarkaMiasta();
 
 public slots:
     /*!
@@ -48,23 +49,23 @@ public slots:
 
 signals:
 
-    void dane_pobrane();
+    void danePobrane();
 
 private:
     /*!
      * \brief Dostawca informacji
      */
-    QGeoServiceProvider *_wProvider;
+    QGeoServiceProvider* _wProvider;
 
     /*!
      * \brief Menadzer polaczenia z dostawca
      */
-    QPlaceManager *_wManager;
+    QPlaceManager* _wManager;
 
     /*!
      * \brief Odpowiedz od dostawcy informacji
      */
-    QPlaceSearchReply *_wReply;
+    QPlaceSearchReply* _wReply;
 
 public:
 

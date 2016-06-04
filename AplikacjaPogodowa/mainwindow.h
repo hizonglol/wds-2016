@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QCloseEvent>
+
 /*!
  *  \brief Glowne okno
  *
@@ -16,8 +17,7 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
@@ -28,22 +28,22 @@ public:
      * Zajmuje sie tworzeniem i inicjalizacja okna z zakladkami
      * oraz status baru.
      */
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget* parent = nullptr);
 
     //! Destruktor klasy GlowneOkno
-    ~MainWindow();
+    //~MainWindow();
 
     /*!
      * \brief resizeEvent
      * \param event zmiany rozmiaru okna
      */
-    virtual void resizeEvent(QResizeEvent *event);
+    virtual void resizeEvent(QResizeEvent* event);
 
     /*!
      * \brief closeEvent
      * \param event zmiany rozmiaru okna
      */
-    virtual void closeEvent(QCloseEvent *event);
+    virtual void closeEvent(QCloseEvent* event);
 
     /*!
      * \brief CzyMoznaZamknac
@@ -58,14 +58,16 @@ private:
     /*!
      * \brief ui
      */
-    Ui::MainWindow *ui;
+    Ui::MainWindow* _wUi;
 
     /*!
      * \brief Okno z zakladkami
      *
      * Ten wskaznik pokazuje na widzet z zakladkami.
      */
-    OknoZZakladkami *_wOknoZZ;
+    OknoZZakladkami* _wOknoZZ;
+
+    QStatusBar* _wBelkaStatusowa;
 };
 
 #endif // MAINWINDOW_H

@@ -1,6 +1,7 @@
 #include "wyszukiwarkamiasta.h"
 
-WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa){
+WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa)
+{
 
     QMap<QString,QVariant> params;
     params["here.app_id"] = "j3rgq0ooNvXwenPixMoa";
@@ -19,36 +20,29 @@ WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa){
     connect(_wReply, SIGNAL(finished()), this, SLOT(handleSearchReply()));
 }
 
-
+/*
 WyszukiwarkaMiasta::~WyszukiwarkaMiasta(){
     delete _wProvider;
-    delete _wManager;
-    delete _wReply;
 }
+*/
 
-
-void WyszukiwarkaMiasta::handleSearchReply() {
+void WyszukiwarkaMiasta::handleSearchReply()
+{
     if (_wReply->error() == QPlaceReply::NoError) {
-        foreach (const QPlaceSearchResult &result, _wReply->results()) {
+        foreach (const QPlaceSearchResult& result, _wReply->results()) {
             if (result.type() == QPlaceSearchResult::PlaceResult) {
                 QVector <QString> temp_miasto;
                 QPlaceResult placeResult = result;
-                /*
-                qDebug() << "Name: " << placeResult.place().name();
-                qDebug() << "Coordinate " << placeResult.place().location().coordinate().toString();
-                qDebug() << "Category: " << placeResult.place().categories().at(0).name();
-                */
                 temp_miasto.push_back(placeResult.place().name());
                 temp_miasto.push_back(placeResult.place().location().coordinate().toString());
                 temp_miasto.push_back(placeResult.place().categories().at(0).name());
                 _WynikiWyszukiwania.push_back(temp_miasto);
             }
         }
-        emit dane_pobrane();
+        emit danePobrane();
     }
-    else {
-        qDebug() << "Search error";
-    }
-    _wReply->deleteLater();  //discard reply
+    else
+        qDebug() << "Blad wyszukiwania nazwy miasta...";
+    _wReply->deleteLater();
     _wReply = nullptr;
 }
