@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/new/general_icons">
+        <file>general_icons/sniezynka.png</file>
+        <file>general_icons/termometr.png</file>
+        <file>general_icons/angry-rain.png</file>
+        <file>general_icons/confuzed-rain.png</file>
+    </qresource>
+</RCC>

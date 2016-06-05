@@ -18,12 +18,15 @@
 
 #include "wyszukiwarkamiasta.h"
 #include "miasto.h"
+#include "ikonkapogodowa.h"
 #include "qcustomplot.h"
+#include "wykres1.h"
+#include "wykres2.h"
 
 /*!
  * \brief Widzet Zakladka Miasta
  *
- * Wyswietla opis pogody, temperature, wilgotnosc oraz dwa wykresy
+ * Wyswietla ikone pogody, dane pogodowe, opisy tekstowe oraz dwa wykresy
  * z temperatura na dwa nastepne dni oraz z temperatura na nastepny
  * tydzien.
  */
@@ -31,28 +34,61 @@ class ZakladkaMiasta : public QWidget {
     Q_OBJECT
 public:
     /*!
-     * \brief Konstruktor klasy Zakladka Miasta
-     * \param Nazwa miasta
+     * \brief Konstruktor
      * \param Wskaznik na rodzica
      *
-     * Tworzy i inicjalizuje wszystkie polozone na sobie widzety.
-     * Pobiera informacje pogodowe z obiektu Miasto.
-     * Domyslnie pobiera informacje na temat miasta Tokio.
+     * Tworzy i inicjalizuje tytul zapytania oraz ComboBox. Tworzy
+     * wektor danych pogodowych. Tworzy zarzadce geometrii
+     * i go inicjalizuje
      */
-    ZakladkaMiasta(QString nazwa = "Tokio", QWidget* parent = nullptr);
+    ZakladkaMiasta(QWidget* parent = nullptr);
 
-    //~ZakladkaMiasta();
+    /*!
+     * \brief Destruktor
+     *
+     * Usuwa obiekty z zarzadcy geometrii oraz kasuje
+     * przechowywane obiekty jesli jeszcze nie zostaly skasowane
+     */
+    ~ZakladkaMiasta();
 
 signals:
 
 public slots:
-
+    /*!
+     * \brief Slot odbierajacy sygnal skonczeniu wpisywania wyszukiwanej nazwy
+     *
+     * Tworzy zapytanie za pomoca klasy WyszukiwarkaMiasta, blokuje
+     * edycje ComboBox oraz laczy sygnal danePobrane() z wyszukiwarki
+     * ze slotem wpiszWyniki tej klasy
+     */
     void czyPobraneKoordynaty();
 
+    /*!
+     * \brief Slot wpisujacy otrzymane wyniki do ComboBox
+     *
+     * Wpisuje otrzymane wyniki do ComboBox. W razie otrzymania
+     * zero wynikow wraca do slotu czyPobraneKoordynaty().
+     * Jesli pobranych wynikow jest wiecej niz zero to laczy sygnal
+     * danego klikniecia ze slotem uzyjKlikniete
+     */
     void wpiszWyniki();
 
+    /*!
+     * \brief Slot przetwarzajacy odpowiedzi z wyszukiwarki
+     * \param Indeks wybranego miasta
+     *
+     * Przetwarza odpowiedz z WyszukiwarkaMiasta w sposob
+     * zrozumialy dla Miasto. Laczy sygnal pobranych danych
+     * ze slotem wyswietlReszteWidzetow().
+     */
     void uzyjKlikniete(int indeks);
 
+    /*!
+     * \brief Slot wyswietlajacy reszte widzetow
+     *
+     * Wyswietla reszte widzetow jesli zostaly juz pobrane dane
+     * potrzebne do ich utworzenia i zainicjowania
+     */
     void wyswietlReszteWidzetow();
 
 private:
@@ -85,17 +121,24 @@ private:
      */
     void TrzeciRzad();
 
+    /*!
+     * \brief Okienko z zapytaniem
+     * \return True jesli wybrane tak, false w innym wypadku
+     *
+     * Tworzy okienko z zapytaniem czy uzytkownik na pewno
+     * zdecydowal sie na wybranie tego miasta z listy
+     */
     bool CzyChceszToMiasto();
 
     /*!
      * \brief Wyszukiwarka koordynatow miasta
      */
-    WyszukiwarkaMiasta* _wWyszukiwarka;
+    WyszukiwarkaMiasta* _wWyszukiwarka = nullptr;
 
     /*!
      * \brief Klasa przechowujaca dane pogodowe
      */
-    Miasto* _wMiasto;
+    Miasto* _wMiasto = nullptr;
 
     /*!
      * \brief Zarzadca geometria
@@ -103,31 +146,68 @@ private:
     QVBoxLayout* _wWyglad;
 
     /*!
+     * \brief Podpowiedz nad menu wyszukiwania
+     */
+    QLabel* _wTytulZapytania = nullptr;
+
+    /*!
      * \brief Menu wyszukiwania i wyboru miasta
      */
-    QComboBox* _wMenuZapytan;
+    QComboBox* _wMenuZapytan = nullptr;
 
+    /*!
+     * \brief Rzad pierwszy z danymi do wyswietlenia
+     */
     QGroupBox* _wRzadPierwszy;
 
-    QGridLayout* _wRzadPierwszyLayout;
+    /*!
+     * \brief Zarzadca geometrii rzedu pierwszego
+     */
+    QGridLayout* _wRzadPierwszyLayout = nullptr;
 
-    QGroupBox* _wIkonkaPogodowa;
+    /*!
+     * \brief Ikonka pogodowa dla rzedu pierwszego
+     */
+    IkonkaPogodowa* _wIkonkaPogodowa = nullptr;
 
-    QHBoxLayout* _wWygladIkonki;
+    /*!
+     * \brief Wektor widzetow z danymi pogodowymi
+     */
+    QVector<DanaPogodowa* > _vwDanePogodowe;
 
-    QVector<DanaPogodowa* > _vwDanePogodowe; //TO JESZCZE DO SKASOWANIA W DESTRUKTORZE
-
+    /*!
+     * \brief Rzad drugi z danymi do wyswietlenia
+     */
     QGroupBox* _wRzadDrugi;
 
-    QHBoxLayout* _wRzadDrugiLayout;
+    /*!
+     * \brief Zarzadca geometrii rzedu drugiego
+     */
+    QHBoxLayout* _wRzadDrugiLayout = nullptr;
 
-    QCustomPlot* _wZachDzien;
+    /*!
+     * \brief Pierwszy wykres w zakladce
+     *
+     * Polozony w drugim rzedzie z danymi do wyswietlenia
+     */
+    Wykres1* _wWykresPierwszy;
 
+    /*!
+     * \brief Rzad trzeci z danymi do wyswietlenia
+     */
     QGroupBox* _wRzadTrzeci;
 
-    QHBoxLayout* _wRzadTrzeciLayout;
+    /*!
+     * \brief Zarzadca geometrii rzedu trzeciego
+     */
+    QHBoxLayout* _wRzadTrzeciLayout = nullptr;
 
-    QCustomPlot* _wZachTydz;
+    /*!
+     * \brief Drugi wykres w zakladce
+     *
+     * Polozony w trzecim rzedzie z danymi do wyswietlenia
+     */
+    Wykres2* _wWykresDrugi;
 
 };
 

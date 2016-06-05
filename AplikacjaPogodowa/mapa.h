@@ -16,20 +16,30 @@
 /*!
  * \brief Widzet z mapa
  *
- * Wyswietla na sobie mape Japonii.
+ * Wyswietla na sobie mape Japonii oraz rysuje nazwy wraz z aktualna
+ * temperatura najwiekszego miasta wszystkich prefektur
  */
 class Mapa : public QWidget {
     Q_OBJECT
 public:
     /*!
-     * \brief Konstruktor klasy Mapa
-     * \param wskaznik na rodzica
+     * \brief Konstruktor
+     * \param Wskaznik na rodzica
      *
-     * Laduje mape oraz ustawia ja jako tlo.
+     * Laduje mape, ustawia ja jako tlo, laduje koordynaty najwiekszych
+     * miast prefektur oraz zapisuje nazwy tychże miast. Dodatkowo
+     * tworzy liste z obiektami Miasto i ja inicjalizuje.
+     * Nastepnie przepisuje te dane do wektora QString przygotowujac
+     * je w ten sposob dla QPainter.
      */
     explicit Mapa(QWidget* parent = nullptr);
 
-    //~Mapa();
+    /*!
+     * \brief Destruktor
+     *
+     * Kasuje wszystkie obiekty w klasie Mapa.
+     */
+    ~Mapa();
 
     /*!
      * \brief resizeEvent
@@ -49,15 +59,11 @@ public slots:
 private:
     /*!
      * \brief Rysownik
-     *
-     * Odpowiada za rysowanie.
      */
     QPainter* _wRysownik;
 
     /*!
      * \brief Plik z mapa
-     *
-     * Przechowuje plik z mapa.
      */
     QPixmap _PlikMapy;
 
@@ -69,7 +75,7 @@ private:
     /*!
      * \brief Wektor obiektow miast
      */
-    QVector< Miasto* > _vMiasta;
+    QVector< Miasto* > _vwMiasta;
 
     /*!
      * \brief Koordynaty miast
@@ -81,10 +87,23 @@ private:
      */
     QVector< QString > _vNazwy;
 
+    /*!
+     * \brief Szerokosc okna po resizeEvent
+     */
+    int _x;
+    /*!
+     * \brief Wysokosc okna po resizeEvent
+     */
+    int _y;
+    /*!
+     * \brief Tymczasowa pozycja x dla QPainter
+     */
+    int _xt;
 
-    int _x, _y;
-
-    int _xt, _yt;
+    /*!
+     * \brief Tymczasowa pozycja y dla QPainter
+     */
+    int _yt;
 };
 
 #endif // MAPA_H

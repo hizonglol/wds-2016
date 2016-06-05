@@ -13,38 +13,52 @@
 #include <QJsonArray>
 
 /*!
- * \brief Objekt Miasto
+ * \brief Obiekt Miasto
  *
- * Pobiera z internetu, przechowuje oraz udostepnia metody przekazujace
- * informacje o sobie jako o miescie
+ * Pobiera informacje pogodowe z internetu, przechowuje je
+ * oraz udostepnia metody przekazujace te informacje
+ * za pomoca swoich metod
  */
 class Miasto : public QObject {
     Q_OBJECT
 public:
     /*!
-     * \brief Konstruktor klasy Miasto
+     * \brief Konstruktor
      * \param Koordynaty wyszukiwanego miasta
      *
      * Wysyla zadanie do strony internetowej i pobiera odpowiedz w postaci
      * informacji pogodowych na temat miejsca o zadanych koordynatach.
-     * Domyslnie informacje pobiera dla Tokio.
+     * Domyslnie informacje pobiera dla koordynatow Tokio.
      */
     Miasto(QString koordynaty = "35.6895, 139.69171");
 
-    //~Miasto();
+    /*!
+     * \brief Destruktor
+     *
+     * Kasuje wszystkie obiekty w klasie Miasto,
+     * ktore jeszcze nie zostaly skasowane
+     */
+    ~Miasto();
 
+    /*!
+     * \brief Metoda inicjalizujaca
+     *
+     * Inicjalizuje pola wskazujace na obiekty, tworzy zapytanie sieciowe
+     * oraz przetwarza otrzymane dane docelowo na _wJsonObj. Kasuje
+     * poprzednie niepotrzebne obiekty.
+     */
     void Inicjalizuj();
 
     /*!
      * \brief Metoda dostepu do danych teraz.
      * \param Klucz jaki bedzie poszukiwany.
-     * \return Zwraca obiekt przechowujacy dane i informacje o typie danej.
+     * \return Obiekt przechowujacy dane i informacje o typie danej.
      */
     QJsonValue TerazDane(QString klucz);
 
     /*!
      * \brief Metoda dostepu do dwudniowego podsumowania.
-     * \return Zwraca obiekt przechowujacy dane i informacje o typie danej.
+     * \return Obiekt przechowujacy dane i informacje o typie danej.
      */
     QJsonValue DwaDniPodsum();
 
@@ -52,13 +66,13 @@ public:
      * \brief Metoda dostepu do dwudniowych danych.
      * \param Numer godziny dla jakiej bedzie wyszukiwanie.
      * \param Klucz jaki bedzie poszukiwany.
-     * \return Zwraca obiekt przechowujacy dane i informacje o typie danej.
+     * \return Obiekt przechowujacy dane i informacje o typie danej.
      */
     QJsonValue GodzinoweDane(int godzina, QString klucz);
 
     /*!
      * \brief Metoda dostepu do tygodniowego podsumowania.
-     * \return Zwraca obiekt przechowujacy dane i informacje o typie danej.
+     * \return Obiekt przechowujacy dane i informacje o typie danej.
      */
     QJsonValue TydzienPodsum();
 
@@ -66,12 +80,18 @@ public:
      * \brief Metoda dostepu do tygodniowych danych.
      * \param Numer dnia dla jakiego bedzie wyszukiwanie.
      * \param Klucz jaki bedzie poszukiwany.
-     * \return Zwraca obiekt przechowujacy dane i informacje o typie danej.
+     * \return Obiekt przechowujacy dane i informacje o typie danej.
      */
     QJsonValue TygodnioweDane(int dzien, QString klucz);
 
 signals:
 
+    /*!
+     * \brief Sygnal pobranych danych
+     *
+     * Sygnalizuje pobranie danych zezwalajace
+     * na otrzymanie dostepu do tych danych
+     */
     void danePobrane();
 
 public slots:
@@ -95,7 +115,7 @@ private:
     /*!
      * \brief Menadzer polaczenia z serwisem internetowym.
      */
-    QNetworkAccessManager _Menadzer;
+    QNetworkAccessManager* _Menadzer;
 
     /*!
      * \brief Odpowiedz z serwisu internetowego.

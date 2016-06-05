@@ -5,24 +5,23 @@ Miasto::Miasto(QString koordynaty)
 {
     _wKoordynaty = new QString(koordynaty);
     _AdrSerwInt.append(_wKoordynaty);
-
     _wZadanie = new QNetworkRequest;
     _wZadanie->setUrl(_AdrSerwInt);
 }
 
-/*
-Miasto::~Miasto(){
+
+Miasto::~Miasto()
+{
     delete _wJsonObj;
+    delete _Menadzer;
 }
-*/
+
 
 void Miasto::Inicjalizuj()
 {
-
-    _wOdpowiedz = _Menadzer.get(*_wZadanie);
-
+    _Menadzer = new QNetworkAccessManager(this);
+    _wOdpowiedz = _Menadzer->get(*_wZadanie);
     QObject::connect(_wOdpowiedz, SIGNAL(finished()), &_Petla, SLOT(quit()));
-
     _Petla.exec();
 
     if (_wOdpowiedz->error() == QNetworkReply::NoError) {
@@ -30,14 +29,13 @@ void Miasto::Inicjalizuj()
         _wJsonOdpowiedz = new QJsonDocument;
         (*_wJsonOdpowiedz) = QJsonDocument::fromJson(_wStrOdpowiedz->toUtf8());
         _wJsonObj = new QJsonObject(_wJsonOdpowiedz->object());
-
         emit danePobrane();
-
         delete _wJsonOdpowiedz;
         delete _wStrOdpowiedz;
     }
     else
         qDebug() << "Blad przy pobieraniu danych z internetu...\n" <<_wOdpowiedz->errorString();
+
     delete _wKoordynaty;
     delete _wZadanie;
     delete _wOdpowiedz;

@@ -9,7 +9,7 @@
 #include <QResizeEvent>
 
 /*!
- * \brief Widzet okna z Zakladkami
+ * \brief Okna z Zakladkami
  *
  * Przechowuje widzet z mapa oraz widzet z informacjami o miescie.
  */
@@ -17,15 +17,21 @@ class OknoZZakladkami : public QTabWidget {
     Q_OBJECT
 public:
     /*!
-     * \brief Konstruktor Okna z Zakladkami
+     * \brief Konstruktor
      * \param Wskaznik na rodzica
      *
      * Inicjalizuje dwa widzety: mape oraz zakladke miasta
-     * i umieszcza je w kolejnych zakladkach.
+     * i umieszcza je w kolejnych zakladkach nadajacac im
+     * odpowiednie nazwy
      */
     explicit OknoZZakladkami(QWidget* parent = nullptr);
 
-    //~OknoZZakladkami();
+    /*!
+     *\brief Destruktor
+     *
+     * Kasuje przechowywane obiekty
+     */
+    ~OknoZZakladkami();
 
 signals:
 
@@ -33,7 +39,7 @@ public slots:
 
 private:
     /*!
-     * \brief Wskaznik na widzet mapy
+     * \brief Wskaznik na mape
      */
     Mapa* _wMapa;
 
@@ -41,11 +47,6 @@ private:
      * \brief Wskaznik na zakladke miasta
      */
     ZakladkaMiasta* _wZakMias;
-
-    /*!
-     * \brief Wskaznik na przycisk zamkniecia
-     */
-    QPushButton* _wPrzyciskZamknij;
 
 };
 

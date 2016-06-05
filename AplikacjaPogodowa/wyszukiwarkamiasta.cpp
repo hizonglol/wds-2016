@@ -2,11 +2,9 @@
 
 WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa)
 {
-
     QMap<QString,QVariant> params;
     params["here.app_id"] = "j3rgq0ooNvXwenPixMoa";
     params["here.token"] = "ySWyxIUi9CDi5Tfk1jov9A";
-
     _wProvider = new QGeoServiceProvider("here", params);
     _wManager = _wProvider -> placeManager();
     Q_CHECK_PTR(_wManager);
@@ -14,17 +12,16 @@ WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa)
     Request.setSearchTerm(nazwa);
     Request.setSearchArea(QGeoCircle(QGeoCoordinate(35, 139)));
     Request.setLimit(4);
-
     _wReply = _wManager->search(Request);
-
     connect(_wReply, SIGNAL(finished()), this, SLOT(handleSearchReply()));
 }
 
-/*
-WyszukiwarkaMiasta::~WyszukiwarkaMiasta(){
+
+WyszukiwarkaMiasta::~WyszukiwarkaMiasta()
+{
     delete _wProvider;
 }
-*/
+
 
 void WyszukiwarkaMiasta::handleSearchReply()
 {
@@ -36,13 +33,12 @@ void WyszukiwarkaMiasta::handleSearchReply()
                 temp_miasto.push_back(placeResult.place().name());
                 temp_miasto.push_back(placeResult.place().location().coordinate().toString());
                 temp_miasto.push_back(placeResult.place().categories().at(0).name());
-                _WynikiWyszukiwania.push_back(temp_miasto);
+                _vWynikiWyszukiwania.push_back(temp_miasto);
             }
         }
+
         emit danePobrane();
     }
     else
         qDebug() << "Blad wyszukiwania nazwy miasta...";
-    _wReply->deleteLater();
-    _wReply = nullptr;
 }

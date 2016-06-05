@@ -7,67 +7,79 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 
-/*!
- *  \brief Glowne okno
- *
- *  Modeluje glowne okno programu. To na nim polozony jest widzet
- *  z zakladkami.
- */
+
 namespace Ui {
 class MainWindow;
 }
 
+/*!
+ * \brief Glowne okno
+ *
+ * Modeluje glowne okno programu, na ktorym polozone
+ * jest okno z zakladkami.
+ */
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
     /*!
-     * \brief Konstruktor klasy GlowneOkno
-     * \param wskaznik na rodzica
+     * \brief Konstruktor
+     * \param Wskaznik na rodzica
      *
-     * Zajmuje sie tworzeniem i inicjalizacja okna z zakladkami
-     * oraz status baru.
+     * Tworzy i inicjalizuje okna z zakladkami
+     * oraz tworzy status bar.
      */
     explicit MainWindow(QWidget* parent = nullptr);
 
-    //! Destruktor klasy GlowneOkno
-    //~MainWindow();
+    /*!
+     * \brief Destruktor
+     *
+     * Kasuje wszystkie obiekty w klasie MainWindow
+     */
+    ~MainWindow();
 
     /*!
      * \brief resizeEvent
-     * \param event zmiany rozmiaru okna
+     * \param Event zmiany rozmiaru okna
      */
     virtual void resizeEvent(QResizeEvent* event);
 
     /*!
      * \brief closeEvent
-     * \param event zmiany rozmiaru okna
+     * \param Event zamkniecia okna
      */
     virtual void closeEvent(QCloseEvent* event);
 
     /*!
-     * \brief CzyMoznaZamknac
+     * \brief Metoda pytajaca o zamkniecie okna
      * \return Czy male okno zostalo zamkniete
      *
-     * Otwiera male okienko, w ktorym uzytkownik ma potwierdzic
-     * chec zamkniecia programu.
+     * Otwiera male okienko, za pomoca ktorego
+     * zadaje pytanie uzytkownikowi potwierdzajace
+     * chec zamkniecia okna.
      */
     bool CzyMoznaZamknac();
 
 private:
     /*!
-     * \brief ui
+     * \brief UI klasy MainWindow
      */
     Ui::MainWindow* _wUi;
 
     /*!
      * \brief Okno z zakladkami
-     *
-     * Ten wskaznik pokazuje na widzet z zakladkami.
      */
     OknoZZakladkami* _wOknoZZ;
 
+    /*!
+     * \brief Belka statusowa
+     */
     QStatusBar* _wBelkaStatusowa;
+
+    /*!
+     * \brief Ikona aplikacji
+     */
+    QIcon* _wIkona;
 };
 
 #endif // MAINWINDOW_H

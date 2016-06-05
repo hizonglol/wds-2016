@@ -20,7 +20,10 @@ SOURCES += main.cpp\
     wyszukiwarkamiasta.cpp \
     qcustomplot.cpp \
     danapogodowa.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    wykres1.cpp \
+    wykres2.cpp \
+    ikonkapogodowa.cpp
 
 HEADERS  += \
     miasto.h \
@@ -30,7 +33,10 @@ HEADERS  += \
     wyszukiwarkamiasta.h \
     qcustomplot.h \
     danapogodowa.h \
-    mainwindow.h
+    mainwindow.h \
+    wykres1.h \
+    wykres2.h \
+    ikonkapogodowa.h
 
 FORMS    += \
     mainwindow.ui
@@ -39,4 +45,5 @@ DISTFILES +=
 
 RESOURCES += \
     japan.qrc \
-    weather_icons.qrc
+    weather_icons.qrc \
+    general_icons.qrc

@@ -3,18 +3,47 @@
 /*! \file */
 
 #include <QFrame>
-#include <QFrame>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QLCDNumber>
 
+/*!
+ * \brief Dana pogodowa
+ *
+ * Modeluje jeden kwadratowy element z tytulem
+ * oraz liczba reprezentujaca dany parametr pogodowy
+ */
 class DanaPogodowa : public QFrame {
     Q_OBJECT
 public:
+
+    /*!
+     * \brief Konstruktor
+     * \param Wskaznik na rodzica
+     *
+     * Wpisuje wskaznik na rodzica oraz tworzy zarzadce
+     * geometrii
+     */
     explicit DanaPogodowa(QWidget* parent = nullptr);
 
-    //~DanaPogodowa();
+    /*!
+     * \brief Destruktor
+     *
+     * Usuwa tytul oraz widzet z wartoscia z zarzadcy
+     * geometrii oraz kasuje wszystkie obiekty
+     * w klasie DanaPogodowa
+     */
+    ~DanaPogodowa();
 
+    /*!
+     * \brief Metoda inicjalizujaca
+     * \param Tytul okna
+     * \param Numer do wyswietlenia
+     *
+     * Inicjalizuje pola wskazujace na obiekty, wpisuje
+     * obiekty do zarzadcy geometrii oraz odpowiednio
+     * go konfiguruje.
+     */
     void DodajTytulIWartosc(QString title, double number);
 
 signals:
@@ -22,13 +51,21 @@ signals:
 public slots:
 
 private:
-    QFrame* _wRamka;
 
+    /*!
+     * \brief Zarzadca geometrii
+     */
     QVBoxLayout* _wWyglad;
 
-    QLabel* _wTytul;
+    /*!
+     * \brief Tytul okna
+     */
+    QLabel* _wTytul = nullptr;
 
-    QLCDNumber* _wLCD;
+    /*!
+     * \brief Wartosc do wyswietlenia
+     */
+    QLCDNumber* _wLCD = nullptr;
 };
 
 #endif // DANAPOGODOWA_H
