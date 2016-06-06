@@ -3,9 +3,12 @@
 Mapa::Mapa(QWidget* parent) : QWidget(parent)
 {
     _wMapa = new QLabel(this);
+    Q_CHECK_PTR(_wMapa);
 
-    if(_PlikMapy.load(":/new/mapy/Japan_Fukuoka.png"))
+    if(_PlikMapy.load(":/new/mapy/Japan_Fukuoka.png")) {
         _wRysownik = new QPainter();
+        Q_CHECK_PTR(_wRysownik);
+    }
     else
         qDebug() << "Nie można zaladowac pliku z mapa...";
 
@@ -33,6 +36,7 @@ Mapa::Mapa(QWidget* parent) : QWidget(parent)
 
     for (int i = 0; i<9; ++i) {
         Miasto* miasto = new Miasto(_vKoordynaty[i]);
+        Q_CHECK_PTR(miasto);
         miasto -> Inicjalizuj();
         _vwMiasta.push_back(miasto);
         _vNazwy[i].append(QString::number(_vwMiasta[i] -> TerazDane("temperature").toDouble()) + " °F");

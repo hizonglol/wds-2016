@@ -6,6 +6,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QLCDNumber>
+#include <QDebug>
 
 /*!
  * \brief Dana pogodowa

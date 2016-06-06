@@ -4,17 +4,17 @@
 
 #include <QObject>
 #include <QString>
-#include <QVariant>
 #include <QGeoServiceProvider>
+#include <QPlaceSearchReply>
 #include <QPlaceManager>
 #include <QPlaceSearchRequest>
+#include <QVector>
+#include <QVariant>
+#include <QMap>
 #include <QGeoCircle>
 #include <QGeoCoordinate>
-#include <QPlaceSearchReply>
 #include <QPlaceResult>
 #include <QDebug>
-#include <QMap>
-#include <QList>
 
 #include "danapogodowa.h"
 

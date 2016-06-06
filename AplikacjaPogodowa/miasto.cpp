@@ -4,8 +4,10 @@
 Miasto::Miasto(QString koordynaty)
 {
     _wKoordynaty = new QString(koordynaty);
+    Q_CHECK_PTR(_wKoordynaty);
     _AdrSerwInt.append(_wKoordynaty);
     _wZadanie = new QNetworkRequest;
+    Q_CHECK_PTR(_wZadanie);
     _wZadanie->setUrl(_AdrSerwInt);
 }
 
@@ -20,15 +22,19 @@ Miasto::~Miasto()
 void Miasto::Inicjalizuj()
 {
     _Menadzer = new QNetworkAccessManager(this);
+    Q_CHECK_PTR(_Menadzer);
     _wOdpowiedz = _Menadzer->get(*_wZadanie);
     QObject::connect(_wOdpowiedz, SIGNAL(finished()), &_Petla, SLOT(quit()));
     _Petla.exec();
 
     if (_wOdpowiedz->error() == QNetworkReply::NoError) {
         _wStrOdpowiedz = new QString(_wOdpowiedz->readAll());
+        Q_CHECK_PTR(_wStrOdpowiedz);
         _wJsonOdpowiedz = new QJsonDocument;
+        Q_CHECK_PTR(_wJsonOdpowiedz);
         (*_wJsonOdpowiedz) = QJsonDocument::fromJson(_wStrOdpowiedz->toUtf8());
         _wJsonObj = new QJsonObject(_wJsonOdpowiedz->object());
+        Q_CHECK_PTR(_wJsonObj);
         emit danePobrane();
         delete _wJsonOdpowiedz;
         delete _wStrOdpowiedz;

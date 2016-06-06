@@ -5,6 +5,7 @@
 #include <QFrame>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QDebug>
 
 #include "miasto.h"
 #include "qcustomplot.h"

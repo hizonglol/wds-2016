@@ -3,6 +3,7 @@
 IkonkaPogodowa::IkonkaPogodowa(QWidget* parent) : QGroupBox(parent)
 {
     _wWygladIkonki = new QHBoxLayout(this);
+    Q_CHECK_PTR(_wWygladIkonki);
 }
 
 IkonkaPogodowa::~IkonkaPogodowa()
@@ -21,6 +22,7 @@ void IkonkaPogodowa::Inicjalizuj(Miasto* miasto)
     _Zasob = ":/new/weather_icons/weather_icons/" + miasto -> TerazDane("icon").toString() + ".png";
     _PlikIkony.load(_Zasob);
     _wLabelIkonki = new QLabel(this);
+    Q_CHECK_PTR(_wLabelIkonki);
     _wLabelIkonki -> setPixmap(_PlikIkony);
     this -> setTitle(miasto -> TerazDane("summary").toString());
     _wWygladIkonki -> addWidget(_wLabelIkonki);

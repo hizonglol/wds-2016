@@ -7,14 +7,12 @@
 #include <QHBoxLayout>
 #include <QGridLayout>
 #include <QLabel>
-#include <QLCDNumber>
 #include <QVector>
-#include <QGroupBox>
 #include <QComboBox>
-#include <QPixmap>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QRegularExpressionMatchIterator>
+#include <QDebug>
 
 #include "wyszukiwarkamiasta.h"
 #include "miasto.h"

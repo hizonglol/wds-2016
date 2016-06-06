@@ -3,6 +3,7 @@
 Wykres1::Wykres1(QWidget* parent) : QFrame(parent)
 {
     _wWyglad = new QVBoxLayout(this);
+    Q_CHECK_PTR(_wWyglad);
 }
 
 
@@ -19,7 +20,9 @@ Wykres1::~Wykres1()
 void Wykres1::DodajTytulIWykres(QString tytul, Miasto* miasto)
 {
     _wTytul = new QLabel(this);
+    Q_CHECK_PTR(_wTytul);
     _wZachDzien = new QCustomPlot(this);
+    Q_CHECK_PTR(_wZachDzien);
     _wZachDzien -> addGraph();
     _wZachDzien -> addGraph();
     double ymin = 200;

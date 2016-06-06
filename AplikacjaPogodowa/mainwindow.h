@@ -2,11 +2,14 @@
 #define MAINWINDOW_H
 /*! \file */
 
-#include "oknozzakladkami.h"
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QIcon>
+#include <QStatusBar>
+#include <QDebug>
 
+#include "oknozzakladkami.h"
 
 namespace Ui {
 class MainWindow;

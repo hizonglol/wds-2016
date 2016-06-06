@@ -4,6 +4,9 @@
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QPixmap>
+#include <QString>
+#include <QDebug>
 
 #include "miasto.h"
 

@@ -7,13 +7,16 @@ MainWindow::MainWindow(QWidget* parent) :
 {
     _wUi->setupUi(this);
     _wOknoZZ = new OknoZZakladkami(this);
+    Q_CHECK_PTR(_wOknoZZ);
     _wBelkaStatusowa = new QStatusBar();
+    Q_CHECK_PTR(_wBelkaStatusowa);
     setStatusBar(_wBelkaStatusowa);
     setCentralWidget(_wOknoZZ);
     _wIkona = new QIcon;
+    Q_CHECK_PTR(_wIkona);
     _wIkona -> addFile(":/new/general_icons/general_icons/termometr.png");
     this -> setWindowIcon(*(_wIkona));
-    this -> setWindowTitle("Weather app");
+    this -> setWindowTitle(tr("Weather app"));
 }
 
 
@@ -37,8 +40,8 @@ void MainWindow::resizeEvent(QResizeEvent* event)
 bool MainWindow::CzyMoznaZamknac()
 {
     QMessageBox question;
-    question.setWindowTitle("Attention");
-    question.setText("Are you sure you want to quit the application?");
+    question.setWindowTitle(tr("Attention"));
+    question.setText(tr("Are you sure you want to quit the application?"));
     question.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     question.setDefaultButton(QMessageBox::No);
     question.setIconPixmap(QPixmap(":/new/general_icons/general_icons/angry-rain.png"));

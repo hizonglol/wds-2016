@@ -4,13 +4,12 @@
 ZakladkaMiasta::ZakladkaMiasta(QWidget* parent) : QWidget(parent)
 {
     _wWyglad = new QVBoxLayout(this);
+    Q_CHECK_PTR(_wWyglad);
     _vwDanePogodowe.resize(11);
 
-    for(int i=0; i<11; ++i)
-        _vwDanePogodowe[i] = new DanaPogodowa(this);
-
     _wTytulZapytania = new QLabel(this);
-    _wTytulZapytania -> setText("Please type the place of your interests below");
+    Q_CHECK_PTR(_wTytulZapytania);
+    _wTytulZapytania -> setText(tr("Please type the place of your interests below"));
     _wWyglad -> addWidget(_wTytulZapytania);
     ComboBox();
     this -> setLayout(_wWyglad);
@@ -72,6 +71,7 @@ void ZakladkaMiasta::ComboBox()
 {
     if (_wMenuZapytan == nullptr) {
         _wMenuZapytan = new QComboBox(this);
+        Q_CHECK_PTR(_wMenuZapytan);
         _wWyglad -> addWidget(_wMenuZapytan);
     }
 
@@ -84,6 +84,7 @@ void ZakladkaMiasta::czyPobraneKoordynaty()
     disconnect(_wMenuZapytan->lineEdit(), SIGNAL(editingFinished()), this, SLOT(czyPobraneKoordynaty()));
     QString nazwa_miasta = _wMenuZapytan->currentText();
     _wWyszukiwarka = new WyszukiwarkaMiasta(nazwa_miasta);
+    Q_CHECK_PTR(_wWyszukiwarka);
     _wMenuZapytan -> setEditable(false);
     connect(_wWyszukiwarka, SIGNAL(danePobrane()), this, SLOT(wpiszWyniki()));
 }
@@ -109,8 +110,8 @@ void ZakladkaMiasta::wpiszWyniki()
 bool ZakladkaMiasta::CzyChceszToMiasto()
 {
     QMessageBox question;
-    question.setWindowTitle("Attention");
-    question.setText("Are you sure you want to choose this city?");
+    question.setWindowTitle(tr("Attention"));
+    question.setText(tr("Are you sure you want to choose this city?"));
     question.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     question.setDefaultButton(QMessageBox::No);
     question.setIconPixmap(QPixmap(":/new/general_icons/general_icons/confuzed-rain.png"));
@@ -141,6 +142,7 @@ void ZakladkaMiasta::uzyjKlikniete(int indeks)
         QString koordynaty = word1 + '.' + word2 + ", " + word3 + '.' + word4;
         _wMenuZapytan -> setEnabled(false);
         _wMiasto = new Miasto(koordynaty);
+        Q_CHECK_PTR(_wMiasto);
         connect(_wMiasto, SIGNAL(danePobrane()), this, SLOT(wyswietlReszteWidzetow()));
         _wMiasto -> Inicjalizuj();
     }
@@ -156,12 +158,17 @@ void ZakladkaMiasta::wyswietlReszteWidzetow()
 void ZakladkaMiasta::PierwszyRzad()
 {
     _wRzadPierwszy = new QGroupBox(tr("Today's weather"));
+    Q_CHECK_PTR(_wRzadPierwszy);
     _wRzadPierwszyLayout = new QGridLayout(_wRzadPierwszy);
+    Q_CHECK_PTR(_wRzadPierwszyLayout);
 
-    for (int i=0; i<11; ++i)
+    for (int i=0; i<11; ++i){
         _vwDanePogodowe[i] = new DanaPogodowa(this);
+        Q_CHECK_PTR(_vwDanePogodowe[i]);
+    }
 
     _wIkonkaPogodowa = new IkonkaPogodowa(this);
+    Q_CHECK_PTR(_wIkonkaPogodowa);
     _wIkonkaPogodowa -> Inicjalizuj(_wMiasto);
     _wRzadPierwszyLayout -> addWidget(_wIkonkaPogodowa,0,0,2,2);
     _vwDanePogodowe[0] -> DodajTytulIWartosc("Temperature (°F)", _wMiasto -> TerazDane("temperature").toDouble());
@@ -191,8 +198,11 @@ void ZakladkaMiasta::PierwszyRzad()
 void ZakladkaMiasta::DrugiRzad()
 {
     _wRzadDrugi = new QGroupBox(tr("Temperature for the next 48 hours"));
+    Q_CHECK_PTR(_wRzadDrugi);
     _wRzadDrugiLayout = new QHBoxLayout(_wRzadDrugi);
+    Q_CHECK_PTR(_wRzadDrugiLayout);
     _wWykresPierwszy = new Wykres1(this);
+    Q_CHECK_PTR(_wWykresPierwszy);
     _wWykresPierwszy -> DodajTytulIWykres(_wMiasto -> DwaDniPodsum().toString(), _wMiasto);
     _wRzadDrugiLayout -> addWidget(_wWykresPierwszy);
     _wRzadDrugi->setLayout(_wRzadDrugiLayout);
@@ -202,8 +212,11 @@ void ZakladkaMiasta::DrugiRzad()
 void ZakladkaMiasta::TrzeciRzad()
 {
     _wRzadTrzeci = new QGroupBox(tr("Temperature for the next 7 days"));
+    Q_CHECK_PTR(_wRzadTrzeci);
     _wRzadTrzeciLayout = new QHBoxLayout(_wRzadTrzeci);
+    Q_CHECK_PTR(_wRzadTrzeciLayout);
     _wWykresDrugi = new Wykres2(this);
+    Q_CHECK_PTR(_wWykresDrugi);
     _wWykresDrugi -> DodajTytulIWykres(_wMiasto -> TydzienPodsum().toString(), _wMiasto);
     _wRzadTrzeciLayout -> addWidget(_wWykresDrugi);
     _wRzadTrzeci->setLayout(_wRzadTrzeciLayout);

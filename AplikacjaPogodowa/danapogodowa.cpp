@@ -3,6 +3,7 @@
 DanaPogodowa::DanaPogodowa(QWidget* parent) : QFrame(parent)
 {
     _wWyglad = new QVBoxLayout(this);
+    Q_CHECK_PTR(_wWyglad);
 }
 
 
@@ -19,7 +20,9 @@ DanaPogodowa::~DanaPogodowa()
 void DanaPogodowa::DodajTytulIWartosc(QString title, double number)
 {
     _wTytul = new QLabel(this);
+    Q_CHECK_PTR(_wTytul);
     _wLCD = new QLCDNumber(this);
+    Q_CHECK_PTR(_wLCD);
     _wTytul -> setText(title);
     _wTytul -> setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     _wWyglad -> addWidget(_wTytul);

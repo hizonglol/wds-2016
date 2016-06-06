@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QMAKE_CXXFLAGS += /Ox /GA /GL /GS /Gw /Qpar /Qpar-report:2 /favor:AMD64
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network xml location printsupport
 

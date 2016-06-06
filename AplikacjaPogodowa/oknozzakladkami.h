@@ -2,11 +2,12 @@
 #define OKNOZZAKLADKAMI_H
 /*! \file */
 
+#include <QTabWidget>
+#include <QResizeEvent>
+#include <QDebug>
+
 #include "mapa.h"
 #include "zakladkamiasta.h"
-#include <QTabWidget>
-#include <QPushButton>
-#include <QResizeEvent>
 
 /*!
  * \brief Okna z Zakladkami

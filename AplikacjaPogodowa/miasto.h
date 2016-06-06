@@ -4,13 +4,14 @@
 
 #include <QObject>
 #include <QString>
-#include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 #include <QEventLoop>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QDebug>
 
 /*!
  * \brief Obiekt Miasto

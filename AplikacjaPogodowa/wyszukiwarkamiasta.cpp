@@ -6,6 +6,7 @@ WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa)
     params["here.app_id"] = "j3rgq0ooNvXwenPixMoa";
     params["here.token"] = "ySWyxIUi9CDi5Tfk1jov9A";
     _wProvider = new QGeoServiceProvider("here", params);
+    Q_CHECK_PTR(_wProvider);
     _wManager = _wProvider -> placeManager();
     Q_CHECK_PTR(_wManager);
     QPlaceSearchRequest Request;
@@ -13,6 +14,7 @@ WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa)
     Request.setSearchArea(QGeoCircle(QGeoCoordinate(35, 139)));
     Request.setLimit(4);
     _wReply = _wManager->search(Request);
+    Q_CHECK_PTR(_wReply);
     connect(_wReply, SIGNAL(finished()), this, SLOT(handleSearchReply()));
 }
 

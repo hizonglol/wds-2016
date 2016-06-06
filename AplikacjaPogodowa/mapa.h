@@ -2,14 +2,16 @@
 #define MAPA_H
 /*! \file */
 
-#include <QObject>
+#include <QWidget>
+#include <QPainter>
+#include <QPixmap>
 #include <QLabel>
-#include <QDebug>
-#include <QGridLayout>
+#include <QVector>
+#include <QString>
 #include <QResizeEvent>
 #include <QPaintEvent>
-#include <QPainter>
 #include <QFont>
+#include <QDebug>
 
 #include "miasto.h"
 
