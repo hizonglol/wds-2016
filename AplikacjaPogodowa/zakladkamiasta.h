@@ -121,12 +121,13 @@ private:
 
     /*!
      * \brief Okienko z zapytaniem
+     * \param Indeks wybieranego miasta
      * \return True jesli wybrane tak, false w innym wypadku
      *
      * Tworzy okienko z zapytaniem czy uzytkownik na pewno
      * zdecydowal sie na wybranie tego miasta z listy
      */
-    bool CzyChceszToMiasto();
+    bool CzyChceszToMiasto(int indeks);
 
     /*!
      * \brief Wyszukiwarka koordynatow miasta

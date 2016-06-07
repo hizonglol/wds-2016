@@ -11,6 +11,7 @@ ZakladkaMiasta::ZakladkaMiasta(QWidget* parent) : QWidget(parent)
     Q_CHECK_PTR(_wTytulZapytania);
     _wTytulZapytania -> setText(tr("Please type the place of your interests below"));
     _wWyglad -> addWidget(_wTytulZapytania);
+    _wWyglad -> setAlignment(_wTytulZapytania, Qt::AlignBottom);
     ComboBox();
     this -> setLayout(_wWyglad);
     this -> show();
@@ -73,6 +74,7 @@ void ZakladkaMiasta::ComboBox()
         _wMenuZapytan = new QComboBox(this);
         Q_CHECK_PTR(_wMenuZapytan);
         _wWyglad -> addWidget(_wMenuZapytan);
+        _wWyglad -> setAlignment(_wMenuZapytan, Qt::AlignTop);
     }
 
     _wMenuZapytan -> setEditable(true);
@@ -107,11 +109,16 @@ void ZakladkaMiasta::wpiszWyniki()
     connect(_wMenuZapytan, SIGNAL(activated(int)), this, SLOT(uzyjKlikniete(int)));
 }
 
-bool ZakladkaMiasta::CzyChceszToMiasto()
+bool ZakladkaMiasta::CzyChceszToMiasto(int indeks)
 {
     QMessageBox question;
     question.setWindowTitle(tr("Attention"));
-    question.setText(tr("Are you sure you want to choose this city?"));
+    QString tekst_zapytania;
+    tekst_zapytania = tr("Are you sure you want to choose this city:");
+    tekst_zapytania.append(' ');
+    tekst_zapytania.append(_wWyszukiwarka->_vWynikiWyszukiwania[indeks][0]);
+    tekst_zapytania.append('?');
+    question.setText(tekst_zapytania);
     question.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     question.setDefaultButton(QMessageBox::No);
     question.setIconPixmap(QPixmap(":/new/general_icons/general_icons/confuzed-rain.png"));
@@ -127,7 +134,9 @@ bool ZakladkaMiasta::CzyChceszToMiasto()
 
 void ZakladkaMiasta::uzyjKlikniete(int indeks)
 {
-    if(CzyChceszToMiasto()) {
+    if(_wWyszukiwarka->_vWynikiWyszukiwania.size() != 1)
+        if(!CzyChceszToMiasto(indeks)) return;
+
         _wWyglad -> removeWidget(_wTytulZapytania);
         delete _wTytulZapytania;
         _wTytulZapytania = nullptr;
@@ -145,7 +154,7 @@ void ZakladkaMiasta::uzyjKlikniete(int indeks)
         Q_CHECK_PTR(_wMiasto);
         connect(_wMiasto, SIGNAL(danePobrane()), this, SLOT(wyswietlReszteWidzetow()));
         _wMiasto -> Inicjalizuj();
-    }
+
 }
 
 void ZakladkaMiasta::wyswietlReszteWidzetow()
