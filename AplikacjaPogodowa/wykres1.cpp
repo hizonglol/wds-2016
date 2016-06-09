@@ -27,13 +27,13 @@ void Wykres1::DodajTytulIWykres(QString tytul, Miasto* miasto)
     _wZachDzien -> addGraph();
     double ymin = 200;
     double ymax = -200;
-    _wZachDzien -> xAxis -> setLabel("Hour");
+    _wZachDzien -> xAxis -> setLabel(tr("Hour"));
     _wZachDzien -> xAxis -> setRange(0, 48);
-    _wZachDzien -> yAxis -> setLabel("Temperature (°F)");
+    _wZachDzien -> yAxis -> setLabel(tr("Temperature (°F)"));
     _wZachDzien -> legend -> setVisible(true);
     _wZachDzien -> legend -> setFont(QFont("Helvetica",9));
-    _wZachDzien -> graph(0) -> setName("Real temperatue");
-    _wZachDzien -> graph(1) -> setName("Perceptible temperature");
+    _wZachDzien -> graph(0) -> setName(tr("Real temperatue"));
+    _wZachDzien -> graph(1) -> setName(tr("Perceptible temperature"));
     _wZachDzien -> axisRect() -> insetLayout() -> setInsetAlignment(0, Qt::AlignRight|Qt::AlignBottom);
     _wZachDzien -> graph(0) -> setLineStyle(QCPGraph::lsStepCenter);
     _wZachDzien -> graph(1) -> setLineStyle(QCPGraph::lsStepCenter);

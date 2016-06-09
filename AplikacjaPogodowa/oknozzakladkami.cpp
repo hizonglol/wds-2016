@@ -4,12 +4,12 @@ OknoZZakladkami::OknoZZakladkami(QWidget* parent) : QTabWidget(parent)
 {
     _wMapa = new Mapa();
     Q_CHECK_PTR(_wMapa);
-    this -> insertTab(0,_wMapa, "Map of Japan");
+    this -> insertTab(0,_wMapa, tr("Map of Japan"));
     _wMapa -> show();
     ZakladkaMiasta* ZakMias = new ZakladkaMiasta(this);
     Q_CHECK_PTR(ZakMias);
     _wvZakMias.push_back(ZakMias);
-    this -> insertTab(1,ZakMias, "City");
+    this -> insertTab(1,ZakMias, tr("City"));
     _wPrzycisk = new QWidget(this);
     this -> addTab(_wPrzycisk, "+");
     this -> setTabsClosable(true);
@@ -51,7 +51,7 @@ void OknoZZakladkami::czyKlikniete(int index)
     if(this->count()-1 == index) {
         ZakladkaMiasta* Zakladka = new ZakladkaMiasta(this);
         _wvZakMias.push_back(Zakladka);
-        this -> insertTab(this->count()-1, Zakladka, "City");
+        this -> insertTab(this->count()-1, Zakladka, tr("City"));
     }
 
     if(this->count()-1 > 5)

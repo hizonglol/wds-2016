@@ -29,9 +29,9 @@ void Wykres2::DodajTytulIWykres(QString tytul, Miasto* miasto)
     _wZachTydz -> graph(0) -> setChannelFillGraph(_wZachTydz -> graph(1));
     double ymin = 200;
     double ymax = -200;
-    _wZachTydz -> xAxis -> setLabel("Day");
+    _wZachTydz -> xAxis -> setLabel(tr("Day"));
     _wZachTydz -> xAxis -> setRange(0, 7);
-    _wZachTydz -> yAxis -> setLabel("Range of temperatures (°F)");
+    _wZachTydz -> yAxis -> setLabel(tr("Range of temperatures (°F)"));
     _wZachTydz -> graph(0) -> setLineStyle(QCPGraph::lsStepLeft);
     _wZachTydz -> graph(1) -> setLineStyle(QCPGraph::lsStepLeft);
     QVector<double> x0(8), y0(8);
