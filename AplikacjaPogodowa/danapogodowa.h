@@ -47,6 +47,12 @@ public:
      */
     void DodajTytulIWartosc(QString title, double number);
 
+    /*!
+     * \brief Metoda zmieniajaca tytul widzetu
+     * \param Tytul okna
+     */
+    void ZmienTytul(QString title);
+
 signals:
 
 public slots:

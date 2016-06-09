@@ -32,7 +32,7 @@ Interaktywność mapy będzie polegać na tym, że domyślnie dla każdej stolic
 
 W programie będzie również druga zakładka, w której użytkownik będzie mógł wyszukać miasto i wyświetlić dla niego szczegółowe informacje na temat pogody. Wyświetlona zostanie prognoza godzinowa wszystkich czynników podanych wcześniej do wyświetlania na mapie oraz odpowiednie wykresy.
 
-Ma być też możliwość dodania nowych zakładek za pomocą zakładki +. Wtedy jej konfiguracja będzie przebiegać tak samo jak dla drugiej zakładki. Schemat jej zawartości będzie taki sam jak w przypadku drugiej zakładki. Dodatkowe zakładki będą umożliwiać skasowanie się.
+Ma być też możliwość dodania nowych zakładek za pomocą zakładki +. Wtedy jej konfiguracja będzie przebiegać tak samo jak dla drugiej zakładki. Schemat jej zawartości będzie taki sam jak w przypadku drugiej zakładki. Wszystkie zakładki z miastami mają możliwość skasowania się.
 
 \item Źródła pogodowe:
 Dane pogodowe są pobierane z serwisu developer.forecast.io. Serwis ten pozwala na 1000 darmowych zapytań dziennie ale przy tym udostępniając bardzo dużo danych pogodowych. Dane z tego serwisu pochodzą z: USA NOAA’s NEXRAD system, UK Met Office’s NIMROD system, The USA NOAA’s LAMP system, UK Met Office’s Datapoint API, Norwegian Meteorological Institute’s meteorological forecast API, USA NOAA’s Global Forecast System, USA NOAA’s Integrated Surface Database, USA NOAA’s Public Alert system, UK Met Office’s Severe Weather Warning system, Environment Canada’s Canadian Meteorological Center ensemble model, US Navy’s Fleet Numerical Meteorology and Oceanography Ensemble Forecast System, USA NOAA and Environment Canada’s North American Ensemble Forecast System, USA NOAA’s North American Mesoscale Model, USA NOAA’s Rapid Refresh Model, Norwegian Meteorological Institute’s GRIB file forecast for Central Europe, Norwegian Meteorological Institute’s GRIB file forecast for Northern Europe, Worldwide METAR weather reports, USA NOAA/NCEP’s Short-Range Ensemble Forecast, USA NOAA/NCEP’s Real-Time Mesoscale Analysis model, USA NOAA/ESRL’s Meteorological Assimilation Data Ingest System.
@@ -46,6 +46,11 @@ Dane ze wszystkich powyżej wymienionych serwisów są następnie uśredniane i 
 \item Obiekt Miasto pobierający i przechowujący dane pogodowe;
 \item Zakładka przechowująca obiekt klasy Miasto i wyświetlająca wykresy;
 \item Obiekt wyszukujący koordynaty miasta na podstawie podanej nazwy.
+\item Widzet ikonka pogodowa wyswietlajacy ikone pogodowa
+\item Widzety wyswietlajace wykresy temperaturowe
+\item Widzety wyswietlajace paramert pogodowy
+\item Tlumaczenia calego programu do trzech jezykow
+\item Dynamiczne dodawanie i usuwanie zakladek z miastami
 \end{itemize}
 
 \item Funkcjonalności do zrealizowania:
@@ -57,37 +62,54 @@ Dane ze wszystkich powyżej wymienionych serwisów są następnie uśredniane i 
 \item Opis zaimplementowanych funkcjonalności:
 \begin{itemize}
 
-\item Widżet Mapa
-Przechowuje plik png z mapą Japonii oraz wskaźnik na obiekt klasy QLabel. Wykorzystuje obiekt QLabel w celu ustawienia swojego tła jako mapę Japonii. Widżet ten jest skaluje się wraz ze zmianą rozmiaru całego okna.
+\item Widżet Mapa\\
+Przechowuje plik png z mapą Japonii oraz wskaźnik na obiekt klasy QLabel. Wykorzystuje obiekt QLabel w celu ustawienia swojego tła jako mapę Japonii. Rysuje temperatury dla najwiekszych miast wszystkich prefektur. Wykorzystuje do tego QPainter.
 
 Docelowo na mapie mają być wyświetlane chmurki przy większych miastach Japonii pokazujące temperaturę i ikonę zachmurzenia w tych miejscach. Po najechaniu na ikonę miasta chmurka ma się rozwinąć przedstawiając szczegółowe informacje nt tego miejsca.
 
-\item Obiekt Miasto
+\item Obiekt Miasto\\
 Obiekt ten modeluje jedno miasto. Przechowuje koordynaty miasta oraz dane pogodowe na temat tego miasta w formacie json. Łączy się z serwisem internetowym developer.forecast.io pobierając z niego dane pogodowe. Następnie konwertuje odebrane dane do formatu obsługiwanego przez klasę składową obiektu Miasto, QJsonObject.
 W obiekcie Miasto są metody umożliwiające dostęp do fragmentów klasy QJsonObject wycinając z niego opis pogody, dane pogodowe, itp.
 
-\item Widżet OknoZZakladkami
-Widżet ten modeluje fragment głównego okna programu będący widżetem z zakładkami. Ma możliwość zmiany swojego rozmiaru wraz ze zmianą rozmiaru głównego okna programu. Tworzy się z dwiema zakładkami: mapą oraz zakładką miasta, która wyświetla informacje pogodowe dla Tokio.
+\item Widżet OknoZZakladkami\\
+Widżet ten modeluje fragment głównego okna programu będący widżetem z zakładkami. Ma możliwość zmiany swojego rozmiaru wraz ze zmianą rozmiaru głównego okna programu. Tworzy się z dwiema zakładkami: mapą oraz zakładką miasta, która wyświetla informacje pogodowe dla Tokio. Wyświetla zapytanie o nazwę miasta w celu wyświetlenia danych pogodowych. Wyszukane propozycje miast wyświetlane są w ComboBox.Jest jeszcze trzecia zakładka ze znakiem + dodająca kolejne zakładki z miastami. Po dodaniu nowej zakładki z miastem trzeba będzie ustawić miasto tej zakładki. Po tym zostaną pobrane informacje. Skasować będzie można tylko zakładki z miastami. Pierwszej i ostatniej nie da się skasować.
 
-Docelowo zakładka miasta wyświetli zapytanie o nazwę miasta w celu wyświetlenia danych pogodowych. Wyszukane propozycje miast wyświetlą się w ComboBox. Będzie jeszcze trzecia zakładka ze znakiem + dodająca kolejne zakładki z miastami. Po dodaniu nowej zakładki z miastem trzeba będzie ustawić miasto tej zakładki. Po tym zostaną pobrane informacje. Skasować będzie można tylko dodane zakładki. Dwóch pierwszych nie będzie dało się skasować. Ilość zakładek w sumie nie będzie mogła być większa niż 5.
+\item Widżet ZakladkaMiasta\\
+Widżet ten wyświetla aktualną temperaturę, ciśnienie i wilgotność w pierwszym rzędzie. W drugim rzędzie wyświetla wykres zmiany temperatury rzeczywistej oraz odczuwalnej w przeciągu 48 godzin. W trzecim rzędzie wyświetla zakres zmiany temperatury w przeciągu 7 dni.
 
-\item Widżet ZakladkaMiasta
-Widżet ten wyświetla aktualną temperaturę, ciśnienie i wilgotność w pierwszym rzędzie. W drugim rzędzie wyświetla wykres zmiany temperatury w przeciągu 48 godzin. W trzecim rzędzie wyświetla wykres zmiany temperatury w przeciągu 7 dni.
+\item Obiekt WyszukiwarkaMiasta\\
+Obiekt ten wyszukuje koordynaty miasta na podstawie podanej nazwy. Informacje wyszukuje w serwisie Here firmy Nokia i zwraca odpowiednie trafienia.
 
-\item Obiekt WyszukiwarkaMiasta
-Obiekt ten wyszukuje koordynaty miasta na podstawie podanej nazwy. Informacje wyszukuje w serwisie Here firmy Nokia.
+\item Widzet IkonkaPogodowa\\
+Wyświetla ikonkę odpowiadającą aktualnej pogodzie w wyszukanym miejscu.
+
+\item Widzet Wykres1\\
+Wyświetla rozkład temperatury na następne 48 godzin na wykresie oraz wyświetla tekstowy opis prognozowanej pogody na ten czas.
+
+\item Widzet Wykres2\\
+Wyświetla rozklad temperatury na następne 7 dni na wykresie oraz wyświetla tekstowy opis prognozowanej pogody na ten czas.
+
+\item Widzet DanaPogodowa\\
+Wyświetla aktualny parametr pogodowy za pomocą QLCDNumber oraz swój tytuł nad liczbą.
+
+\item Dynamiczny tłumacz\\
+Menu wyboru tłumaczenia programu. Tłumaczy program w locie. Dodatkowe tłumaczenia wystarczy dołączyć do projektu i do zasobów aplikacji, żeby aplikacja automatycznie je wczytała.
 
 \end{itemize}
 
 \pagebreak
 \item Opis funkcjonalności do implementacji:
 \begin{itemize}
-\item Aktualizacja widżetu Mapa
-Za pomocą paintEvent na mapie mają być wyrysowane temperatury dla odpowiednich regionów Japonii. Tło również ma zostać wyrysowane z pliku z mapą Japonii.
 
-\item Połączenie obiektu Miasto z obiektem WyszukiwarkaMiasta
-Skorzystanie z obiektu WyszukiwarkaMiasta w obiekcie Miasto w celu otrzymania możliwości wysuzkiwania miasta na podstawie nazwy, nie koordynatów. Wyszukiwarka miasta szuka koordynatów na podstawie szukanego słowa, a obiekt miasto za pomocą koordynatów pobiera dane pogodowe.
+\item Tlo w ksztalcie chmurki pod tekstami wyświetlanymi na zakładce Mapa oraz rozwijające się szczegóły po najechaniu na nazwę miasta.
+
+\item Dynamiczne aktualizowanie się danych w wybranym przez użytkownika okresie.
 \end{itemize}
+
+\item Przykłady uzyskiwanych efektów pracy aplikacji:
+
+\item Wnioski i podsumowanie:
+
 
 \item Harmonogram:
 
@@ -101,6 +123,8 @@ Skorzystanie z obiektu WyszukiwarkaMiasta w obiekcie Miasto w celu otrzymania mo
 \item[29 kwietnia - zrealizowane] | przekazanie wstępnej wersji programu do oceny;
 
 \item[6 maja - zrealizowane] | dodanie dwóch kolejnych funkcjonalności: zakładki z obiektem Miasto oraz wyszukiwanie koordynatów miasta na podstawie podanej nazwy;
+
+\item[10 czerwca - zrealizowane] | oddanie finalnej wersji programu.
 
 \item[20 maja - w trakcie] | połączenie działania wyszukiwarki miasta z obiektem Miasto oraz wyrysowanie temperatur na mapie Japonii w pierwszej zakładce.
 \end{description}

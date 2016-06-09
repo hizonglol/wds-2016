@@ -44,7 +44,13 @@ FORMS    += \
 
 DISTFILES +=
 
+TRANSLATIONS += \
+    languages/AplikacjaPogodowa_pl.ts \
+    languages/AplikacjaPogodowa_de.ts \
+    languages/AplikacjaPogodowa_en.ts
+
 RESOURCES += \
     japan.qrc \
     weather_icons.qrc \
-    general_icons.qrc
+    general_icons.qrc \
+    translations.qrc

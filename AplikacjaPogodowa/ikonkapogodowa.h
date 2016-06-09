@@ -1,5 +1,6 @@
 #ifndef IKONKAPOGODOWA_H
 #define IKONKAPOGODOWA_H
+/*! \file */
 
 #include <QGroupBox>
 #include <QHBoxLayout>

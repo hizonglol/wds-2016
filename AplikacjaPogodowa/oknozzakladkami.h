@@ -34,9 +34,37 @@ public:
      */
     ~OknoZZakladkami();
 
+protected:
+    /*!
+     * \brief Event zmian
+     *
+     * Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia
+     */
+    void changeEvent(QEvent* event);
+
 signals:
 
 public slots:
+
+    /*!
+     * \brief Czy poprawne klikniecie w zakladke
+     *
+     * Sprawdza czy zostala kliknieta zakladka z plusem.
+     * Jesli tak to dodaje zakladki z miastem o ile ich ilosc
+     * nie przekracza 5. Blokuje sie po przekroczeniu ilosci
+     * 5 miast
+     */
+    void czyKlikniete(int);
+
+    /*!
+     * \brief Czy mozna zamknac dana zakladke
+     *
+     * Sprawdza czy mozna zamknac dana zakladke. Nastepnie
+     * kasuje odpowiadajacy jej obiekt. Jesli w ten sposob
+     * ilosc zakladek z miastami spadnie ponizej 5 to
+     * blokuje przycisk +
+     */
+    void czyMoznaZamknac(int);
 
 private:
     /*!
@@ -45,9 +73,14 @@ private:
     Mapa* _wMapa;
 
     /*!
-     * \brief Wskaznik na zakladke miasta
+     * \brief Wskaznik na ostatnia zakladke z +
      */
-    ZakladkaMiasta* _wZakMias;
+    QWidget* _wPrzycisk;
+
+    /*!
+     * \brief Wektor zakladek z miastami
+     */
+    QVector<ZakladkaMiasta* > _wvZakMias;
 
 };
 

@@ -46,6 +46,14 @@ public:
      */
     void DodajTytulIWykres(QString tytul, Miasto* miasto);
 
+protected:
+    /*!
+     * \brief Event zmian
+     *
+     * Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia
+     */
+    void changeEvent(QEvent* event);
+
 signals:
 
 public slots:
@@ -65,7 +73,7 @@ private:
     /*!
      * \brief Wykres z danymi tygodniowymi
      */
-    QCustomPlot* _wZachTydz;
+    QCustomPlot* _wZachTydz = nullptr;
 };
 
 #endif // WYKRES2_H

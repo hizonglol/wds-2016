@@ -48,12 +48,20 @@ public:
      */
     void DodajTytulIWykres(QString tytul, Miasto* miasto);
 
+protected:
+    /*!
+     * \brief Event zmian
+     *
+     * Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia
+     */
+    void changeEvent(QEvent* event);
+
 private:
 
     /*!
      * \brief Zarzadca geometrii
      */
-    QVBoxLayout* _wWyglad;
+    QVBoxLayout* _wWyglad = nullptr;
 
     /*!
      * \brief Tytul widzetu
@@ -63,7 +71,7 @@ private:
     /*!
      * \brief Wykres z danymi dwudniowymi
      */
-    QCustomPlot* _wZachDzien;
+    QCustomPlot* _wZachDzien = nullptr;
 
 };
 

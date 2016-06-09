@@ -16,7 +16,8 @@ MainWindow::MainWindow(QWidget* parent) :
     Q_CHECK_PTR(_wIkona);
     _wIkona -> addFile(":/new/general_icons/general_icons/termometr.png");
     this -> setWindowIcon(*(_wIkona));
-    this -> setWindowTitle(tr("Weather app"));
+    this -> setWindowTitle("Weather app");
+    this -> StworzMenuJezykowe();
 }
 
 
@@ -59,4 +60,91 @@ void MainWindow::closeEvent( QCloseEvent* event)
 {
     if(CzyMoznaZamknac()) event -> accept();
     else event -> ignore();
+}
+
+
+void MainWindow::StworzMenuJezykowe(void)
+{
+    QActionGroup* GrupaJezykowa = new QActionGroup(_wUi -> menuLanguages);
+    GrupaJezykowa->setExclusive(true);
+    connect(GrupaJezykowa, SIGNAL (triggered(QAction*)), this, SLOT (jezykZmieniony(QAction*)));
+    // format systems language
+    QString domyslneLocale = QLocale::system().name(); // e.g. "pl_PL"
+    domyslneLocale.truncate(domyslneLocale.lastIndexOf('_')); // e.g. "pl"
+    //QString domyslneLocale = "en";
+    _SciezkaDoZasobowJezykowych.append(":/new/translations/languages");
+    QDir sciezka(_SciezkaDoZasobowJezykowych);
+    QStringList NazwyPlikow = sciezka.entryList(QStringList("AplikacjaPogodowa_*.qm"));
+
+    for (int i = 0; i < NazwyPlikow.size(); ++i) {
+        // get locale extracted by filename
+        QString locale;
+        locale = NazwyPlikow[i]; // "TranslationExample_de.qm"
+        locale.truncate(locale.lastIndexOf('.')); // "TranslationExample_de"
+        locale.remove(0, locale.indexOf('_') + 1); // "de"
+        QString Jezyk = QLocale::languageToString(QLocale(locale).language());
+        QIcon ico(QString("%1/%2.png").arg(_SciezkaDoZasobowJezykowych).arg(locale));
+        QAction* action = new QAction(ico, Jezyk, this);
+        action->setCheckable(true);
+        action->setData(locale);
+        _wUi -> menuLanguages->addAction(action);
+        GrupaJezykowa->addAction(action);
+
+// set default translators and language checked
+        if (domyslneLocale == locale)
+            action->setChecked(true);
+    }
+}
+
+
+void MainWindow::jezykZmieniony(QAction* action)
+{
+    if(0 != action) {
+        // load the language dependant on the action content
+        ZaladujJezyk(action->data().toString());
+    }
+}
+
+void ZmienTlumacza(QTranslator& tlumacz, const QString& nazwa_pliku)
+{
+    // remove the old translator
+    qApp->removeTranslator(&tlumacz);
+
+    // load the new translator
+    if(tlumacz.load(nazwa_pliku))
+        qApp->installTranslator(&tlumacz);
+}
+
+void MainWindow::ZaladujJezyk(const QString& r_jezyka)
+{
+    if(_AktualnyJezyk != r_jezyka) {
+        _AktualnyJezyk = r_jezyka;
+        QLocale locale = QLocale(_AktualnyJezyk);
+        QLocale::setDefault(locale);
+        QString languageName = QLocale::languageToString(locale.language());
+        ZmienTlumacza(_Tlumacz, QString(":/new/translations/languages/AplikacjaPogodowa_%1.qm").arg(r_jezyka));
+        _wBelkaStatusowa->showMessage(tr("Current Language changed to %1").arg(languageName));
+    }
+}
+
+void MainWindow::changeEvent(QEvent* event)
+{
+    if(0 != event) {
+        switch(event->type()) {
+        // this event is send if a translator is loaded
+        case QEvent::LanguageChange:
+            _wUi -> retranslateUi(this);
+            break;
+
+        // this event is send, if the system, language changes
+        case QEvent::LocaleChange: {
+            QString locale = QLocale::system().name();
+            locale.truncate(locale.lastIndexOf('_'));
+            ZaladujJezyk(locale);
+        }
+        break;
+        }
+    }
+
+    QMainWindow::changeEvent(event);
 }

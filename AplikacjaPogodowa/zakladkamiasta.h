@@ -49,6 +49,14 @@ public:
      */
     ~ZakladkaMiasta();
 
+protected:
+    /*!
+     * \brief Event zmian
+     *
+     * Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia
+     */
+    void changeEvent(QEvent* event);
+
 signals:
 
 public slots:

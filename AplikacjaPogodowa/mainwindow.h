@@ -63,7 +63,42 @@ public:
      */
     bool CzyMoznaZamknac();
 
+protected:
+
+    /*!
+     * \brief Event zmian
+     *
+     * Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia
+     */
+    void changeEvent(QEvent* event);
+
+protected slots:
+
+    /*!
+     * \brief Slot wywolujacy ladowanie jezyka
+     * \param action
+     *
+     * Uruchamia metode ZaladujJezyk()
+     */
+    void jezykZmieniony(QAction* action);
+
 private:
+
+    /*!
+     * \brief ZaladujJezyk
+     * \param skrot jezyka
+     *
+     * Zmienia locale oraz laduje tlumacza odpowiadajacemu danemu skrotowi
+     */
+    void ZaladujJezyk(const QString& r_jezyka);
+
+    /*!
+     * \brief Metoda tworzaca menu jezykowe
+     *
+     * Laduje tlumaczenia z zasobow aplikacji, tworzy wybor jezykow do tlumaczenia
+     */
+    void StworzMenuJezykowe(void);
+
     /*!
      * \brief UI klasy MainWindow
      */
@@ -83,6 +118,21 @@ private:
      * \brief Ikona aplikacji
      */
     QIcon* _wIkona;
+
+    /*!
+     * \brief Tlumacz aplikacji
+     */
+    QTranslator _Tlumacz;
+
+    /*!
+     * \brief Skrot aktualnego jezyka aplikacji
+     */
+    QString _AktualnyJezyk;
+
+    /*!
+     * \brief Sciezka do zasobow jezykowych
+     */
+    QString _SciezkaDoZasobowJezykowych;
 };
 
 #endif // MAINWINDOW_H

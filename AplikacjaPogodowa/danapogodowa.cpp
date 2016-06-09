@@ -32,3 +32,8 @@ void DanaPogodowa::DodajTytulIWartosc(QString title, double number)
     _wWyglad -> addWidget(_wLCD);
     this -> setFrameStyle(QFrame::Box);
 }
+
+void DanaPogodowa::ZmienTytul(QString title)
+{
+    _wTytul -> setText(title);
+}

@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/new/translations">
+        <file>languages/AplikacjaPogodowa_de.qm</file>
+        <file>languages/AplikacjaPogodowa_pl.qm</file>
+        <file>languages/AplikacjaPogodowa_en.qm</file>
+        <file>languages/de.png</file>
+        <file>languages/pl.png</file>
+        <file>languages/en.png</file>
+    </qresource>
+</RCC>

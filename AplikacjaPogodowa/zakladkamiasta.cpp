@@ -6,10 +6,9 @@ ZakladkaMiasta::ZakladkaMiasta(QWidget* parent) : QWidget(parent)
     _wWyglad = new QVBoxLayout(this);
     Q_CHECK_PTR(_wWyglad);
     _vwDanePogodowe.resize(11);
-
     _wTytulZapytania = new QLabel(this);
     Q_CHECK_PTR(_wTytulZapytania);
-    _wTytulZapytania -> setText(tr("Please type the place of your interests below"));
+    _wTytulZapytania -> setText("Please type the place of your interests below");
     _wWyglad -> addWidget(_wTytulZapytania);
     _wWyglad -> setAlignment(_wTytulZapytania, Qt::AlignBottom);
     ComboBox();
@@ -20,17 +19,27 @@ ZakladkaMiasta::ZakladkaMiasta(QWidget* parent) : QWidget(parent)
 
 ZakladkaMiasta::~ZakladkaMiasta()
 {
-    if(_wWyszukiwarka != nullptr) delete _wWyszukiwarka;
+    if(_wWyszukiwarka != nullptr) {
+        delete _wWyszukiwarka;
+        _wWyszukiwarka = nullptr;
+    }
 
-    if(_wMiasto != nullptr) delete _wMiasto;
+    if(_wMiasto != nullptr) {
+        delete _wMiasto;
+        _wMiasto = nullptr;
+    }
 
     if(_wTytulZapytania != nullptr) {
         _wWyglad -> removeWidget(_wTytulZapytania);
         delete _wTytulZapytania;
+        _wTytulZapytania = nullptr;
     }
 
-    _wWyglad -> removeWidget(_wMenuZapytan);
-    delete _wMenuZapytan;
+    if(_wWyglad != nullptr) {
+        _wWyglad -> removeWidget(_wMenuZapytan);
+        delete _wMenuZapytan;
+        _wMenuZapytan = nullptr;
+    }
 
     if(_wRzadPierwszyLayout != nullptr) {
         _wWyglad -> removeWidget(_wRzadPierwszy);
@@ -64,7 +73,10 @@ ZakladkaMiasta::~ZakladkaMiasta()
         delete _wRzadTrzeci;
     }
 
-    delete _wWyglad;
+    if(_wWyglad != nullptr) {
+        delete _wWyglad;
+        _wWyglad = nullptr;
+    }
 }
 
 
@@ -98,6 +110,7 @@ void ZakladkaMiasta::wpiszWyniki()
 
     if(_wWyszukiwarka->_vWynikiWyszukiwania.size() == 0) {
         delete _wWyszukiwarka;
+        _wWyszukiwarka = nullptr;
         _wMenuZapytan -> setEnabled(true);
         ComboBox();
         return;
@@ -137,24 +150,25 @@ void ZakladkaMiasta::uzyjKlikniete(int indeks)
     if(_wWyszukiwarka->_vWynikiWyszukiwania.size() != 1)
         if(!CzyChceszToMiasto(indeks)) return;
 
-        _wWyglad -> removeWidget(_wTytulZapytania);
-        delete _wTytulZapytania;
-        _wTytulZapytania = nullptr;
-        QRegularExpression re("(\\d+)° (\\d+)'");
-        QRegularExpressionMatchIterator i = re.globalMatch(_wWyszukiwarka->_vWynikiWyszukiwania[indeks][1]);
-        QRegularExpressionMatch match1 = i.next();
-        QString word1 = match1.captured(1);
-        QString word2 = match1.captured(2);
-        QRegularExpressionMatch match2 = i.next();
-        QString word3 = match2.captured(1);
-        QString word4 = match2.captured(2);
-        QString koordynaty = word1 + '.' + word2 + ", " + word3 + '.' + word4;
-        _wMenuZapytan -> setEnabled(false);
-        _wMiasto = new Miasto(koordynaty);
-        Q_CHECK_PTR(_wMiasto);
-        connect(_wMiasto, SIGNAL(danePobrane()), this, SLOT(wyswietlReszteWidzetow()));
-        _wMiasto -> Inicjalizuj();
-
+    _wWyglad -> removeWidget(_wTytulZapytania);
+    delete _wTytulZapytania;
+    _wTytulZapytania = nullptr;
+    QRegularExpression re("(\\d+)° (\\d+)'");
+    QRegularExpressionMatchIterator i = re.globalMatch(_wWyszukiwarka->_vWynikiWyszukiwania[indeks][1]);
+    QRegularExpressionMatch match1 = i.next();
+    QString word1 = match1.captured(1);
+    QString word2 = match1.captured(2);
+    QRegularExpressionMatch match2 = i.next();
+    QString word3 = match2.captured(1);
+    QString word4 = match2.captured(2);
+    QString koordynaty = word1 + '.' + word2 + ", " + word3 + '.' + word4;
+    _wMenuZapytan -> setEnabled(false);
+    _wMenuZapytan -> setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+    _wWyglad -> setAlignment(_wMenuZapytan, Qt::AlignAbsolute | Qt::AlignLeft);
+    _wMiasto = new Miasto(koordynaty);
+    Q_CHECK_PTR(_wMiasto);
+    connect(_wMiasto, SIGNAL(danePobrane()), this, SLOT(wyswietlReszteWidzetow()));
+    _wMiasto -> Inicjalizuj();
 }
 
 void ZakladkaMiasta::wyswietlReszteWidzetow()
@@ -166,12 +180,12 @@ void ZakladkaMiasta::wyswietlReszteWidzetow()
 
 void ZakladkaMiasta::PierwszyRzad()
 {
-    _wRzadPierwszy = new QGroupBox(tr("Today's weather"));
+    _wRzadPierwszy = new QGroupBox("Today's weather");
     Q_CHECK_PTR(_wRzadPierwszy);
     _wRzadPierwszyLayout = new QGridLayout(_wRzadPierwszy);
     Q_CHECK_PTR(_wRzadPierwszyLayout);
 
-    for (int i=0; i<11; ++i){
+    for (int i=0; i<11; ++i) {
         _vwDanePogodowe[i] = new DanaPogodowa(this);
         Q_CHECK_PTR(_vwDanePogodowe[i]);
     }
@@ -182,8 +196,8 @@ void ZakladkaMiasta::PierwszyRzad()
     _wRzadPierwszyLayout -> addWidget(_wIkonkaPogodowa,0,0,2,2);
     _vwDanePogodowe[0] -> DodajTytulIWartosc("Temperature (°F)", _wMiasto -> TerazDane("temperature").toDouble());
     _wRzadPierwszyLayout -> addWidget(_vwDanePogodowe[0],0,2,2,2);
-    _vwDanePogodowe[1] -> DodajTytulIWartosc("Rain precipitation (m)", _wMiasto -> TerazDane("precipIntensity").toDouble());
-    _vwDanePogodowe[2] -> DodajTytulIWartosc("Precipitation probability (%)", (_wMiasto -> TerazDane("precipProbability").toDouble())*100);
+    _vwDanePogodowe[1] -> DodajTytulIWartosc("Forecasted rain (m)", _wMiasto -> TerazDane("precipIntensity").toDouble());
+    _vwDanePogodowe[2] -> DodajTytulIWartosc("Rain precipitation (%)", (_wMiasto -> TerazDane("precipProbability").toDouble())*100);
     _vwDanePogodowe[3] -> DodajTytulIWartosc("Apparent temperature (°F)", _wMiasto -> TerazDane("apparentTemperature").toDouble());
     _vwDanePogodowe[4] -> DodajTytulIWartosc("Dew point (°F)", _wMiasto -> TerazDane("dewPoint").toDouble());
     _vwDanePogodowe[5] -> DodajTytulIWartosc("Humidity (%)", (_wMiasto -> TerazDane("humidity").toDouble())*100);
@@ -206,7 +220,7 @@ void ZakladkaMiasta::PierwszyRzad()
 
 void ZakladkaMiasta::DrugiRzad()
 {
-    _wRzadDrugi = new QGroupBox(tr("Temperature for the next 48 hours"));
+    _wRzadDrugi = new QGroupBox("Temperature for the next 48 hours");
     Q_CHECK_PTR(_wRzadDrugi);
     _wRzadDrugiLayout = new QHBoxLayout(_wRzadDrugi);
     Q_CHECK_PTR(_wRzadDrugiLayout);
@@ -220,7 +234,7 @@ void ZakladkaMiasta::DrugiRzad()
 
 void ZakladkaMiasta::TrzeciRzad()
 {
-    _wRzadTrzeci = new QGroupBox(tr("Temperature for the next 7 days"));
+    _wRzadTrzeci = new QGroupBox("Temperature for the next 7 days");
     Q_CHECK_PTR(_wRzadTrzeci);
     _wRzadTrzeciLayout = new QHBoxLayout(_wRzadTrzeci);
     Q_CHECK_PTR(_wRzadTrzeciLayout);
@@ -230,4 +244,35 @@ void ZakladkaMiasta::TrzeciRzad()
     _wRzadTrzeciLayout -> addWidget(_wWykresDrugi);
     _wRzadTrzeci->setLayout(_wRzadTrzeciLayout);
     _wWyglad -> addWidget(_wRzadTrzeci);
+}
+
+
+void ZakladkaMiasta::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::LanguageChange) {
+        if(_wTytulZapytania != nullptr) _wTytulZapytania->setText(tr("Please type the place of your interests below"));
+
+        if(_wRzadPierwszyLayout != nullptr) {
+            _wRzadPierwszy -> setTitle(tr("Today's weather"));
+            _vwDanePogodowe[0] -> ZmienTytul(tr("Temperature (°F)"));
+            _vwDanePogodowe[1] -> ZmienTytul(tr("Forecasted rain (m)"));
+            _vwDanePogodowe[2] -> ZmienTytul(tr("Rain precipitation (%)"));
+            _vwDanePogodowe[3] -> ZmienTytul(tr("Apparent temperature (°F)"));
+            _vwDanePogodowe[4] -> ZmienTytul(tr("Dew point (°F)"));
+            _vwDanePogodowe[5] -> ZmienTytul(tr("Humidity (%)"));
+            _vwDanePogodowe[6] -> ZmienTytul(tr("Wind speed (mph)"));
+            _vwDanePogodowe[7] -> ZmienTytul(tr("Wind bearing (degrees)"));
+            _vwDanePogodowe[8] -> ZmienTytul(tr("Cloud cover (%)"));
+            _vwDanePogodowe[9] -> ZmienTytul(tr("Pressure (mbar)"));
+            _vwDanePogodowe[10] -> ZmienTytul(tr("Ozone (µg m^-3)"));
+        }
+
+        if(_wRzadDrugiLayout != nullptr)
+            _wRzadDrugi -> setTitle(tr("Temperature for the next 48 hours"));
+
+        if(_wRzadTrzeciLayout != nullptr)
+            _wRzadTrzeci -> setTitle(tr("Temperature for the next 7 days"));
+    }
+    else
+        QWidget::changeEvent(event);
 }
