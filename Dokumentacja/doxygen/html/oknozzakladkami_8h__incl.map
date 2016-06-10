@@ -1,7 +1,11 @@
-<map id="AplikacjaPogodowa/oknozzakladkami.h" name="AplikacjaPogodowa/oknozzakladkami.h">
-<area shape="rect" id="node2" href="$mapa_8h.html" title="mapa.h" alt="" coords="1589,80,1655,107"/>
-<area shape="rect" id="node8" href="$zakladkamiasta_8h.html" title="zakladkamiasta.h" alt="" coords="1888,80,2012,107"/>
-<area shape="rect" id="node13" href="$wyszukiwarkamiasta_8h.html" title="wyszukiwarkamiasta.h" alt="" coords="923,155,1078,181"/>
-<area shape="rect" id="node25" href="$miasto_8h.html" title="miasto.h" alt="" coords="2077,155,2149,181"/>
-<area shape="rect" id="node33" href="$qcustomplot_8h.html" title="qcustomplot.h" alt="" coords="3299,155,3403,181"/>
+<map id="/home/morrisor/Desktop/wds&#45;2016/AplikacjaPogodowa/oknozzakladkami.h" name="/home/morrisor/Desktop/wds&#45;2016/AplikacjaPogodowa/oknozzakladkami.h">
+<area shape="rect" id="node5" href="$mapa_8h.html" title="mapa.h" alt="" coords="637,184,702,211"/>
+<area shape="rect" id="node23" href="$zakladkamiasta_8h.html" title="zakladkamiasta.h" alt="" coords="1858,109,1982,136"/>
+<area shape="rect" id="node14" href="$miasto_8h.html" title="miasto.h" alt="" coords="1417,259,1489,285"/>
+<area shape="rect" id="node31" href="$wyszukiwarkamiasta_8h.html" title="wyszukiwarkamiasta.h" alt="" coords="2887,184,3041,211"/>
+<area shape="rect" id="node42" href="$ikonkapogodowa_8h.html" title="ikonkapogodowa.h" alt="" coords="1463,184,1593,211"/>
+<area shape="rect" id="node44" href="$qcustomplot_8h.html" title="qcustomplot.h" alt="" coords="757,259,861,285"/>
+<area shape="rect" id="node49" href="$wykres1_8h.html" title="wykres1.h" alt="" coords="1775,184,1857,211"/>
+<area shape="rect" id="node50" href="$wykres2_8h.html" title="wykres2.h" alt="" coords="1668,184,1751,211"/>
+<area shape="rect" id="node41" href="$danapogodowa_8h.html" title="danapogodowa.h" alt="" coords="2364,259,2484,285"/>
 </map>

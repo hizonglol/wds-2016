@@ -6,5 +6,8 @@
         <file>languages/de.png</file>
         <file>languages/pl.png</file>
         <file>languages/en.png</file>
+        <file>languages/qt_de.qm</file>
+        <file>languages/qt_en.qm</file>
+        <file>languages/qt_pl.qm</file>
     </qresource>
 </RCC>

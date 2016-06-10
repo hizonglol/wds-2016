@@ -125,6 +125,11 @@ private:
     QTranslator _Tlumacz;
 
     /*!
+     * \brief Tlumacz Qt
+     */
+    QTranslator _TlumaczQt;
+
+    /*!
      * \brief Skrot aktualnego jezyka aplikacji
      */
     QString _AktualnyJezyk;

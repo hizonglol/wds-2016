@@ -99,25 +99,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
 Diagram dziedziczenia dla Mapa</div>
 <div class="dyncontent">
 <div class="center"><img src="class_mapa__inherit__graph.png" border="0" usemap="#_mapa_inherit__map" alt="Inheritance graph"/></div>
+<map name="_mapa_inherit__map" id="_mapa_inherit__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <div class="dynheader">
 Diagram współpracy dla Mapa:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_mapa__coll__graph.png" border="0" usemap="#_mapa_coll__map" alt="Collaboration graph"/></div>
+<map name="_mapa_coll__map" id="_mapa_coll__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
 <tr class="memitem:a1456e2abeeb3b86d45a0b312431716f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mapa.html#a1456e2abeeb3b86d45a0b312431716f7">Mapa</a> (QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a1456e2abeeb3b86d45a0b312431716f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor klasy <a class="el" href="class_mapa.html" title="Widzet z mapa. ">Mapa</a>.  <a href="#a1456e2abeeb3b86d45a0b312431716f7">Więcej...</a><br /></td></tr>
+<tr class="memdesc:a1456e2abeeb3b86d45a0b312431716f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor.  <a href="#a1456e2abeeb3b86d45a0b312431716f7">Więcej...</a><br /></td></tr>
 <tr class="separator:a1456e2abeeb3b86d45a0b312431716f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07a0a8c278b1549eebd3f02e9b54885"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mapa.html#af07a0a8c278b1549eebd3f02e9b54885">~Mapa</a> ()</td></tr>
+<tr class="memdesc:af07a0a8c278b1549eebd3f02e9b54885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor.  <a href="#af07a0a8c278b1549eebd3f02e9b54885">Więcej...</a><br /></td></tr>
+<tr class="separator:af07a0a8c278b1549eebd3f02e9b54885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64ffb0894afb16c03755ed2a3e9b7999"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mapa.html#a64ffb0894afb16c03755ed2a3e9b7999">resizeEvent</a> (QResizeEvent *event)</td></tr>
 <tr class="memdesc:a64ffb0894afb16c03755ed2a3e9b7999"><td class="mdescLeft">&#160;</td><td class="mdescRight">resizeEvent  <a href="#a64ffb0894afb16c03755ed2a3e9b7999">Więcej...</a><br /></td></tr>
 <tr class="separator:a64ffb0894afb16c03755ed2a3e9b7999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27fa1c11eeb43d0be3cf274e6c238eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af27fa1c11eeb43d0be3cf274e6c238eb"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mapa.html#af27fa1c11eeb43d0be3cf274e6c238eb">paintEvent</a> (QPaintEvent *event)</td></tr>
+<tr class="memdesc:af27fa1c11eeb43d0be3cf274e6c238eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">paintEvent <br /></td></tr>
+<tr class="separator:af27fa1c11eeb43d0be3cf274e6c238eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Widzet z mapa. </p>
-<p>Wyswietla na sobie mape Japonii. </p>
+<p>Wyswietla na sobie mape Japonii oraz rysuje nazwy wraz z aktualna temperatura najwiekszego miasta wszystkich prefektur </p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
 <a class="anchor" id="a1456e2abeeb3b86d45a0b312431716f7"></a>
 <div class="memitem">
@@ -141,14 +152,32 @@ Metody publiczne</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Konstruktor klasy <a class="el" href="class_mapa.html" title="Widzet z mapa. ">Mapa</a>. </p>
+<p>Konstruktor. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">wskaznik</td><td>na rodzica</td></tr>
+    <tr><td class="paramname">Wskaznik</td><td>na rodzica</td></tr>
   </table>
   </dd>
 </dl>
-<p>Laduje mape oraz ustawia ja jako tlo. </p>
+<p>Laduje mape, ustawia ja jako tlo, laduje koordynaty najwiekszych miast prefektur oraz zapisuje nazwy tychże miast. Dodatkowo tworzy liste z obiektami <a class="el" href="class_miasto.html" title="Obiekt Miasto. ">Miasto</a> i ja inicjalizuje. Nastepnie przepisuje te dane do wektora QString przygotowujac je w ten sposob dla QPainter. </p>
+
+</div>
+</div>
+<a class="anchor" id="af07a0a8c278b1549eebd3f02e9b54885"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mapa::~Mapa </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destruktor. </p>
+<p>Kasuje wszystkie obiekty w klasie <a class="el" href="class_mapa.html" title="Widzet z mapa. ">Mapa</a>. </p>
 
 </div>
 </div>
@@ -186,8 +215,8 @@ Metody publiczne</h2></td></tr>
 </div>
 </div>
 <hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
-<li>AplikacjaPogodowa/<a class="el" href="mapa_8h_source.html">mapa.h</a></li>
-<li>AplikacjaPogodowa/mapa.cpp</li>
+<li>/home/morrisor/Desktop/wds-2016/AplikacjaPogodowa/<a class="el" href="mapa_8h_source.html">mapa.h</a></li>
+<li>/home/morrisor/Desktop/wds-2016/AplikacjaPogodowa/mapa.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

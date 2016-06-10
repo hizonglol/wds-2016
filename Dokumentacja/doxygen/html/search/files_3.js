@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wyszukiwarkamiasta_2eh',['wyszukiwarkamiasta.h',['../wyszukiwarkamiasta_8h.html',1,'']]]
+  ['oknozzakladkami_2eh',['oknozzakladkami.h',['../oknozzakladkami_8h.html',1,'']]]
 ];

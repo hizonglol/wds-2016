@@ -2,6 +2,7 @@ var searchData=
 [
   ['celltocoord',['cellToCoord',['../class_q_c_p_color_map_data.html#ac96d6e84befe7b9951b5da6d4d4a2a47',1,'QCPColorMapData']]],
   ['center',['center',['../class_q_c_p_range.html#a3825b53cf17da5de0843c1f3baad07db',1,'QCPRange::center()'],['../class_q_c_p_axis_rect.html#aea5e6042bca198424fa1bc02fc282e59',1,'QCPAxisRect::center()']]],
+  ['changeevent',['changeEvent',['../class_main_window.html#ac7c881667b4ba4986b5a0030452ee3f0',1,'MainWindow::changeEvent()'],['../class_okno_z_zakladkami.html#a3fafe377d3b198be0197d23d52d85457',1,'OknoZZakladkami::changeEvent()'],['../class_wykres1.html#a44e2bf2e6454d7ff8b7d8f3307788d76',1,'Wykres1::changeEvent()'],['../class_wykres2.html#a858daa375ef7475a37f4d99afece1b6b',1,'Wykres2::changeEvent()'],['../class_zakladka_miasta.html#ad74667fbfb6b384506ff074d6ad52497',1,'ZakladkaMiasta::changeEvent()']]],
   ['children',['children',['../class_q_c_p_layer.html#a94c2f0100e48cefad2de8fe0fbb03c27',1,'QCPLayer']]],
   ['clear',['clear',['../class_q_c_p_margin_group.html#a144b67f216e4e86c3a3a309e850285fe',1,'QCPMarginGroup::clear()'],['../class_q_c_p_layout.html#a02883bdf2769b5b227f0232dba1ac4ee',1,'QCPLayout::clear()'],['../class_q_c_p_bars_group.html#a3ddf23928c6cd89530bd34ab7ba7b177',1,'QCPBarsGroup::clear()'],['../class_q_c_p_color_map_data.html#a9910ba830e96955bd5c8e5bef1e77ef3',1,'QCPColorMapData::clear()']]],
   ['clearcolorstops',['clearColorStops',['../class_q_c_p_color_gradient.html#a939213e85f0d1279519d555c5fcfb6ad',1,'QCPColorGradient']]],
@@ -17,5 +18,7 @@ var searchData=
   ['coordtocell',['coordToCell',['../class_q_c_p_color_map_data.html#a26e33c5ec7094b60136350bcd77d3737',1,'QCPColorMapData']]],
   ['coordtopixel',['coordToPixel',['../class_q_c_p_axis.html#a985ae693b842fb0422b4390fe36d299a',1,'QCPAxis']]],
   ['currentlayer',['currentLayer',['../class_q_custom_plot.html#af73057345656cbd1463454982d808b00',1,'QCustomPlot']]],
-  ['czymoznazamknac',['CzyMoznaZamknac',['../class_main_window.html#a5851a60f7f9e3a01c6701ff5b1112246',1,'MainWindow']]]
+  ['czyklikniete',['czyKlikniete',['../class_okno_z_zakladkami.html#a2b72e095e599b744f3dc3125481bcd94',1,'OknoZZakladkami']]],
+  ['czymoznazamknac',['CzyMoznaZamknac',['../class_main_window.html#a5851a60f7f9e3a01c6701ff5b1112246',1,'MainWindow::CzyMoznaZamknac()'],['../class_okno_z_zakladkami.html#aa247f0d989513421779e6ef688d0d2f4',1,'OknoZZakladkami::czyMoznaZamknac()']]],
+  ['czypobranekoordynaty',['czyPobraneKoordynaty',['../class_zakladka_miasta.html#a089258c75d54e7afe3b7e01eb554de42',1,'ZakladkaMiasta']]]
 ];

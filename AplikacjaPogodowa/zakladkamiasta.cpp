@@ -120,7 +120,6 @@ void ZakladkaMiasta::wpiszWyniki()
         _wMenuZapytan->addItem(_wWyszukiwarka->_vWynikiWyszukiwania[i][0]);
 
     _wTytulZapytania -> setText(tr("Please choose your city from the list by clicking on it"));
-
     connect(_wMenuZapytan, SIGNAL(activated(int)), this, SLOT(uzyjKlikniete(int)));
 }
 
@@ -253,6 +252,7 @@ void ZakladkaMiasta::changeEvent(QEvent* event)
 {
     if (event->type() == QEvent::LanguageChange) {
         if(_wTytulZapytania != nullptr && _wWyszukiwarka == nullptr) _wTytulZapytania -> setText(tr("Please type the place of your interests below"));
+
         if(_wTytulZapytania != nullptr && _wWyszukiwarka != nullptr) _wTytulZapytania -> setText(tr("Please choose your city from the list by clicking on it"));
 
         if(_wRzadPierwszyLayout != nullptr) {

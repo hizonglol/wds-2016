@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['oknozzakladkami_2eh',['oknozzakladkami.h',['../oknozzakladkami_8h.html',1,'']]]
+  ['ikonkapogodowa_2eh',['ikonkapogodowa.h',['../ikonkapogodowa_8h.html',1,'']]]
 ];

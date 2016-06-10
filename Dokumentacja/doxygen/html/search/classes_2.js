@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['oknozzakladkami',['OknoZZakladkami',['../class_okno_z_zakladkami.html',1,'']]]
+  ['ikonkapogodowa',['IkonkaPogodowa',['../class_ikonka_pogodowa.html',1,'']]]
 ];

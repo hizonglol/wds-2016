@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['zakladkamiasta',['ZakladkaMiasta',['../class_zakladka_miasta.html',1,'ZakladkaMiasta'],['../class_zakladka_miasta.html#a30256730cbee5cbe60627c8336ea2b4d',1,'ZakladkaMiasta::ZakladkaMiasta()']]],
-  ['zakladkamiasta_2eh',['zakladkamiasta.h',['../zakladkamiasta_8h.html',1,'']]]
+  ['xaxis',['xAxis',['../class_q_custom_plot.html#a9a79cd0158a4c7f30cbc702f0fd800e4',1,'QCustomPlot']]],
+  ['xaxis2',['xAxis2',['../class_q_custom_plot.html#ada41599f22cad901c030f3dcbdd82fd9',1,'QCustomPlot']]]
 ];

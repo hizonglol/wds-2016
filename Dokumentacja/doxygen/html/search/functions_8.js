@@ -1,6 +1,8 @@
 var searchData=
 [
+  ['ikonkapogodowa',['IkonkaPogodowa',['../class_ikonka_pogodowa.html#a9ca02221baa836ce76ce9d0eb287a4ab',1,'IkonkaPogodowa']]],
   ['index',['index',['../class_q_c_p_layer.html#ad5d7010829a6b99f326b07d7e37c8c99',1,'QCPLayer']]],
+  ['inicjalizuj',['Inicjalizuj',['../class_ikonka_pogodowa.html#a8546de53888af032e9e5ecfb88689437',1,'IkonkaPogodowa::Inicjalizuj()'],['../class_miasto.html#a3cd67555eed01727c6d970a695035614',1,'Miasto::Inicjalizuj()']]],
   ['insert',['insert',['../class_q_c_p_bars_group.html#a309a5f7233db189f3ea9c2d04ece6c13',1,'QCPBarsGroup']]],
   ['insertcolumn',['insertColumn',['../class_q_c_p_layout_grid.html#a1e880a321dbe8b43b471ccd764433dc4',1,'QCPLayoutGrid']]],
   ['insertrow',['insertRow',['../class_q_c_p_layout_grid.html#a48af3dd7c3a653d9c3d7dd99bd02e838',1,'QCPLayoutGrid']]],

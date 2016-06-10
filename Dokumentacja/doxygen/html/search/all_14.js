@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['wheelevent',['wheelEvent',['../class_q_c_p_layout_element.html#a300521d2fd18a893c1b85f6be11ce2bf',1,'QCPLayoutElement::wheelEvent()'],['../class_q_c_p_axis_rect.html#a5acf41fc30aa68ea263246ecfad85c31',1,'QCPAxisRect::wheelEvent()'],['../class_q_c_p_color_scale.html#ab398e14c01240f3dc855884fe9e1ee8c',1,'QCPColorScale::wheelEvent()']]],
-  ['width',['width',['../class_q_c_p_axis_rect.html#a45bf5c17f4ca29131b7eb0db06efc259',1,'QCPAxisRect']]],
-  ['widthtype',['WidthType',['../class_q_c_p_bars.html#a65dbbf1ab41cbe993d71521096ed4649',1,'QCPBars']]],
-  ['wtabsolute',['wtAbsolute',['../class_q_c_p_bars.html#a65dbbf1ab41cbe993d71521096ed4649ab74315c9aa77df593c58dd25dfc0de35',1,'QCPBars']]],
-  ['wtaxisrectratio',['wtAxisRectRatio',['../class_q_c_p_bars.html#a65dbbf1ab41cbe993d71521096ed4649a90bc09899361ad3422ff277f7c790ffe',1,'QCPBars']]],
-  ['wtplotcoords',['wtPlotCoords',['../class_q_c_p_bars.html#a65dbbf1ab41cbe993d71521096ed4649aad3cc60ae1bfb1160a30237bee9eaf10',1,'QCPBars']]],
-  ['wyszukiwarkamiasta',['WyszukiwarkaMiasta',['../class_wyszukiwarka_miasta.html',1,'WyszukiwarkaMiasta'],['../class_wyszukiwarka_miasta.html#ac1143bb2faa8b65264ce6386237ff314',1,'WyszukiwarkaMiasta::WyszukiwarkaMiasta()']]],
-  ['wyszukiwarkamiasta_2eh',['wyszukiwarkamiasta.h',['../wyszukiwarkamiasta_8h.html',1,'']]]
+  ['update',['update',['../class_q_c_p_layout_element.html#a929c2ec62e0e0e1d8418eaa802e2af9b',1,'QCPLayoutElement::update()'],['../class_q_c_p_layout.html#a34ab477e820537ded7bade4399c482fd',1,'QCPLayout::update()'],['../class_q_c_p_axis_rect.html#a255080a017df9083a60a321ef2ba9ed8',1,'QCPAxisRect::update()'],['../class_q_c_p_color_scale.html#ab8f6991ac88243fc582b44b183670334',1,'QCPColorScale::update()']]],
+  ['updatelegendicon',['updateLegendIcon',['../class_q_c_p_color_map.html#a5d8158b62d55fcfeaabcb68ce0083e87',1,'QCPColorMap']]],
+  ['updatephase',['UpdatePhase',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374d',1,'QCPLayoutElement']]],
+  ['updateposition',['updatePosition',['../class_q_c_p_item_tracer.html#a5b90296109e36384aedbc8908a670413',1,'QCPItemTracer']]],
+  ['uplayout',['upLayout',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045',1,'QCPLayoutElement']]],
+  ['upmargins',['upMargins',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676',1,'QCPLayoutElement']]],
+  ['uppreparation',['upPreparation',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3',1,'QCPLayoutElement']]],
+  ['uzyjklikniete',['uzyjKlikniete',['../class_zakladka_miasta.html#a9e7d47bab88d98a67e13fc0316d75523',1,'ZakladkaMiasta']]]
 ];

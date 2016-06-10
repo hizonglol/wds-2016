@@ -1,3 +1,5 @@
 <map id="Graficzna hierarchia klas" name="Graficzna hierarchia klas">
-<area shape="rect" id="node2" href="$class_main_window.html" title="MainWindow" alt="" coords="160,5,257,32"/>
+<area shape="rect" id="node2" href="$class_dana_pogodowa.html" title="Dana pogodowa. " alt="" coords="123,5,237,32"/>
+<area shape="rect" id="node3" href="$class_wykres1.html" title="Wykres dwudniowy. " alt="" coords="143,56,217,83"/>
+<area shape="rect" id="node4" href="$class_wykres2.html" title="Wykres tygodniowy. " alt="" coords="143,107,217,133"/>
 </map>

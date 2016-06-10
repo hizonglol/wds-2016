@@ -71,7 +71,7 @@ void MainWindow::StworzMenuJezykowe(void)
     // format systems language
     QString domyslneLocale = QLocale::system().name(); // e.g. "pl_PL"
     domyslneLocale.truncate(domyslneLocale.lastIndexOf('_')); // e.g. "pl"
-    //QString domyslneLocale = "en";
+    QString LocaleAplikacji = "en";
     _SciezkaDoZasobowJezykowych.append(":/new/translations/languages");
     QDir sciezka(_SciezkaDoZasobowJezykowych);
     QStringList NazwyPlikow = sciezka.entryList(QStringList("AplikacjaPogodowa_*.qm"));
@@ -89,6 +89,9 @@ void MainWindow::StworzMenuJezykowe(void)
         action->setData(locale);
         _wUi -> menuLanguages->addAction(action);
         GrupaJezykowa->addAction(action);
+
+        if(LocaleAplikacji != domyslneLocale)
+            ZaladujJezyk(domyslneLocale);
 
 // set default translators and language checked
         if (domyslneLocale == locale)
@@ -123,6 +126,7 @@ void MainWindow::ZaladujJezyk(const QString& r_jezyka)
         QLocale::setDefault(locale);
         QString languageName = QLocale::languageToString(locale.language());
         ZmienTlumacza(_Tlumacz, QString(":/new/translations/languages/AplikacjaPogodowa_%1.qm").arg(r_jezyka));
+        ZmienTlumacza(_TlumaczQt, QString(":/new/translations/languages/qt_%1.qm").arg(r_jezyka));
         _wBelkaStatusowa->showMessage(tr("Current Language changed to %1").arg(languageName));
     }
 }
