@@ -5,7 +5,7 @@ var searchData=
   ['mapa',['Mapa',['../class_mapa.html#a1456e2abeeb3b86d45a0b312431716f7',1,'Mapa']]],
   ['marginsidetoaxistype',['marginSideToAxisType',['../class_q_c_p_axis.html#ac0a6b77bd52bec6c81cd62d167cfeba6',1,'QCPAxis']]],
   ['maximumsizehint',['maximumSizeHint',['../class_q_c_p_layout_element.html#adbd3a00fec44c977150c6be7329eb801',1,'QCPLayoutElement::maximumSizeHint()'],['../class_q_c_p_layout_grid.html#a1ec4bf5914900a51829a7919f74aa58c',1,'QCPLayoutGrid::maximumSizeHint()'],['../class_q_c_p_plot_title.html#a2afaf11a379038e5ca58040a0eb0ae4c',1,'QCPPlotTitle::maximumSizeHint()']]],
-  ['miasto',['Miasto',['../class_miasto.html#a0126ede529ed2d7ea1367f8be34da1f5',1,'Miasto']]],
+  ['miasto',['Miasto',['../class_miasto.html#a10fdebfb44c175b7b4b5b262e874eec7',1,'Miasto']]],
   ['minimumsizehint',['minimumSizeHint',['../class_q_c_p_layout_element.html#aebe14fb71f858c0f98caf8d342a9864a',1,'QCPLayoutElement::minimumSizeHint()'],['../class_q_c_p_layout_grid.html#a67aae235fb4dd9a479aafe07462ef9ee',1,'QCPLayoutGrid::minimumSizeHint()'],['../class_q_c_p_plottable_legend_item.html#a76bad654ebc8e870392f488419a6a483',1,'QCPPlottableLegendItem::minimumSizeHint()'],['../class_q_c_p_plot_title.html#a695e6037e72a1e129387e7e4a980faea',1,'QCPPlotTitle::minimumSizeHint()']]],
   ['mousedoubleclick',['mouseDoubleClick',['../class_q_custom_plot.html#a9b232142c64fcf273a953ee08e5b90e9',1,'QCustomPlot']]],
   ['mousedoubleclickevent',['mouseDoubleClickEvent',['../class_q_c_p_layout_element.html#aa8fef6486cb6ceb7c82cbdd50bc32ee9',1,'QCPLayoutElement']]],

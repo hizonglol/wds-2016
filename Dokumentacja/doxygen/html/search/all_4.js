@@ -8,7 +8,7 @@ var searchData=
   ['datascaletypechanged',['dataScaleTypeChanged',['../class_q_c_p_color_scale.html#a61558b962f7791ff2f15a565dcf60181',1,'QCPColorScale::dataScaleTypeChanged()'],['../class_q_c_p_color_map.html#a978d5d5c9f68cffef8c902b855c04490',1,'QCPColorMap::dataScaleTypeChanged()']]],
   ['deselectall',['deselectAll',['../class_q_custom_plot.html#a9d4808ab925b003054085246c92a257c',1,'QCustomPlot']]],
   ['dodajtytuliwartosc',['DodajTytulIWartosc',['../class_dana_pogodowa.html#a9234c557a437f8ff6aeb4696d40705dd',1,'DanaPogodowa']]],
-  ['dodajtytuliwykres',['DodajTytulIWykres',['../class_wykres1.html#abfcaf75ab3da33030831c40eb52b4a4c',1,'Wykres1::DodajTytulIWykres()'],['../class_wykres2.html#aed5137393e48b356a33e8dc110a51b03',1,'Wykres2::DodajTytulIWykres()']]],
+  ['dodajtytuliwykres',['DodajTytulIWykres',['../class_wykres1.html#a3f687a3cee25f9d55f8b277c5de53f59',1,'Wykres1::DodajTytulIWykres()'],['../class_wykres2.html#ab244fd6ef85381c29c81879bb1e2aad4',1,'Wykres2::DodajTytulIWykres()']]],
   ['drawline',['drawLine',['../class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0',1,'QCPPainter']]],
   ['drawshape',['drawShape',['../class_q_c_p_scatter_style.html#a992d531ac471ec2b29bdec6aeb400a06',1,'QCPScatterStyle::drawShape(QCPPainter *painter, QPointF pos) const '],['../class_q_c_p_scatter_style.html#ae76811ac9f70ebf7a2b4c759853e6ed8',1,'QCPScatterStyle::drawShape(QCPPainter *painter, double x, double y) const ']]],
   ['dwadnipodsum',['DwaDniPodsum',['../class_miasto.html#a654444f668df977ddbf07e68c0edefe6',1,'Miasto']]]

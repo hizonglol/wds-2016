@@ -19,7 +19,7 @@
 #include "danapogodowa.h"
 
 /*!
- * \brief Wyszukiwarka miasta
+ * \brief Wyszukuje koordynaty na podstawie nazwy
  *
  * Wyszukuje koordynaty miejsc o podanej nazwie.
  * Pobiera maksymalnie 4 rekordy.
@@ -29,12 +29,12 @@ class WyszukiwarkaMiasta : public QObject {
 public:
     /*!
      * \brief Konstruktor
-     * \param Nazwa wyszukiwanego miasta
+     * \param[in] nazwa - nazwa wyszukiwanego miasta
      *
      * Wysyla zadanie do serwisu Here i pobiera od niego odpowiedz
      * w postaci propozycji miejsc pasujacych do wyszukiwanego hasla
      */
-    WyszukiwarkaMiasta(QString nazwa = "Tokio");
+    WyszukiwarkaMiasta(const QString& nazwa = "Tokio");
 
     /*!
      * \brief Destruktor
@@ -65,16 +65,23 @@ signals:
 private:
     /*!
      * \brief Dostawca informacji
+     *
+     * Dostarcza informacji o koordynatach wyszukiwanych miejsc.
      */
     QGeoServiceProvider* _wProvider;
 
     /*!
      * \brief Menadzer polaczenia z dostawca
+     *
+     * Obsluguje dostawce informacji i przerzuca informacje
+     * do _wReply jesli nadeszly.
      */
     QPlaceManager* _wManager;
 
     /*!
      * \brief Odpowiedz od dostawcy informacji
+     *
+     * Dane otrzymane od dostawcy informacji.
      */
     QPlaceSearchReply* _wReply;
 
@@ -82,6 +89,9 @@ public:
 
     /*!
      * \brief Wyniki wyszukiwania
+     *
+     * Wektor miejsc wyszukanych przez dostawce informacji
+     * pasujacych do wyszukiwanego klucza.
      */
     QVector< QVector <QString> > _vWynikiWyszukiwania;
 };

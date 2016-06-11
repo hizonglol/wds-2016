@@ -16,7 +16,7 @@ class MainWindow;
 }
 
 /*!
- * \brief Glowne okno
+ * \brief Wyswietla glowne okno programu
  *
  * Modeluje glowne okno programu, na ktorym polozone
  * jest okno z zakladkami.
@@ -27,7 +27,7 @@ class MainWindow : public QMainWindow {
 public:
     /*!
      * \brief Konstruktor
-     * \param Wskaznik na rodzica
+     * \param[in] parent - wskaznik na rodzica
      *
      * Tworzy i inicjalizuje okna z zakladkami
      * oraz tworzy status bar.
@@ -43,23 +43,28 @@ public:
 
     /*!
      * \brief resizeEvent
-     * \param Event zmiany rozmiaru okna
+     * \param[in] event - zdarzenie zmiany rozmiaru okna
+     *
+     * Zmienia geometrie okna.
      */
     virtual void resizeEvent(QResizeEvent* event);
 
     /*!
      * \brief closeEvent
-     * \param Event zamkniecia okna
+     * \param[in] event - zdarzenie zamkniecia okna
+     *
+     * Pokazuje okienko z pytaniem do uzytkownika
+     * czy na pewno chce zamknac aplikacje
      */
     virtual void closeEvent(QCloseEvent* event);
 
     /*!
      * \brief Metoda pytajaca o zamkniecie okna
-     * \return Czy male okno zostalo zamkniete
+     * \return true - jesli uzytkownik zgodzil sie na zamkniecie aplikacji
+     * \return false - jesli uzytkownik nie zgodzil sie na zamkniecie aplikacji
      *
-     * Otwiera male okienko, za pomoca ktorego
-     * zadaje pytanie uzytkownikowi potwierdzajace
-     * chec zamkniecia okna.
+     * Otwiera male okienko pytajace sie uzytkownika o to
+     * czy chce zamknac aplikacje.
      */
     bool CzyMoznaZamknac();
 
@@ -67,6 +72,7 @@ protected:
 
     /*!
      * \brief Event zmian
+     * \param[in] event - zdarzenie zmiany jezyka aplikacji
      *
      * Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia
      */
@@ -76,7 +82,7 @@ protected slots:
 
     /*!
      * \brief Slot wywolujacy ladowanie jezyka
-     * \param action
+     * \param[in] action - akcje
      *
      * Uruchamia metode ZaladujJezyk()
      */
@@ -86,7 +92,7 @@ private:
 
     /*!
      * \brief ZaladujJezyk
-     * \param skrot jezyka
+     * \param[in] r_jezyka - kod jezyka
      *
      * Zmienia locale oraz laduje tlumacza odpowiadajacemu danemu skrotowi
      */
@@ -106,6 +112,8 @@ private:
 
     /*!
      * \brief Okno z zakladkami
+     *
+     * Wskaznik na widzet okna z zakladkami
      */
     OknoZZakladkami* _wOknoZZ;
 
@@ -121,16 +129,23 @@ private:
 
     /*!
      * \brief Tlumacz aplikacji
+     *
+     * Tlumacz obiektow aplikacji
      */
     QTranslator _Tlumacz;
 
     /*!
      * \brief Tlumacz Qt
+     *
+     * Tlumacz odpowiadajcy za tlumaczenie
+     * w obiektach wbudowanych Qt
      */
     QTranslator _TlumaczQt;
 
     /*!
      * \brief Skrot aktualnego jezyka aplikacji
+     *
+     * Przechowuje string z kodem aktualnego jezyka aplikacji
      */
     QString _AktualnyJezyk;
 

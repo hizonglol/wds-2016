@@ -101,15 +101,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
 Diagram dziedziczenia dla MainWindow</div>
 <div class="dyncontent">
 <div class="center"><img src="class_main_window__inherit__graph.png" border="0" usemap="#_main_window_inherit__map" alt="Inheritance graph"/></div>
-<map name="_main_window_inherit__map" id="_main_window_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <div class="dynheader">
 Diagram współpracy dla MainWindow:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_main_window__coll__graph.png" border="0" usemap="#_main_window_coll__map" alt="Collaboration graph"/></div>
-<map name="_main_window_coll__map" id="_main_window_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -171,7 +167,7 @@ Metody chronione</h2></td></tr>
 <p>Konstruktor. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Wskaznik</td><td>na rodzica</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parent</td><td>- wskaznik na rodzica</td></tr>
   </table>
   </dd>
 </dl>
@@ -221,6 +217,12 @@ Metody chronione</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Event zmian. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>- zdarzenie zmiany jezyka aplikacji</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia </p>
 
 </div>
@@ -250,10 +252,11 @@ Metody chronione</h2></td></tr>
 <p>closeEvent </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Event</td><td>zamkniecia okna </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>- zdarzenie zamkniecia okna</td></tr>
   </table>
   </dd>
 </dl>
+<p>Pokazuje okienko z pytaniem do uzytkownika czy na pewno chce zamknac aplikacje </p>
 
 </div>
 </div>
@@ -271,8 +274,10 @@ Metody chronione</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Metoda pytajaca o zamkniecie okna. </p>
-<dl class="section return"><dt>Zwraca</dt><dd>Czy male okno zostalo zamkniete</dd></dl>
-<p>Otwiera male okienko, za pomoca ktorego zadaje pytanie uzytkownikowi potwierdzajace chec zamkniecia okna. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true - jesli uzytkownik zgodzil sie na zamkniecie aplikacji </dd>
+<dd>
+false - jesli uzytkownik nie zgodzil sie na zamkniecie aplikacji</dd></dl>
+<p>Otwiera male okienko pytajace sie uzytkownika o to czy chce zamknac aplikacje. </p>
 
 </div>
 </div>
@@ -301,10 +306,11 @@ Metody chronione</h2></td></tr>
 <p>Slot wywolujacy ladowanie jezyka. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">action</td><td>Uruchamia metode ZaladujJezyk() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">action</td><td>- akcje</td></tr>
   </table>
   </dd>
 </dl>
+<p>Uruchamia metode ZaladujJezyk() </p>
 
 </div>
 </div>
@@ -333,10 +339,11 @@ Metody chronione</h2></td></tr>
 <p>resizeEvent </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Event</td><td>zmiany rozmiaru okna </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>- zdarzenie zmiany rozmiaru okna</td></tr>
   </table>
   </dd>
 </dl>
+<p>Zmienia geometrie okna. </p>
 
 </div>
 </div>

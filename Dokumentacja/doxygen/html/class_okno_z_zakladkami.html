@@ -101,25 +101,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
 Diagram dziedziczenia dla OknoZZakladkami</div>
 <div class="dyncontent">
 <div class="center"><img src="class_okno_z_zakladkami__inherit__graph.png" border="0" usemap="#_okno_z_zakladkami_inherit__map" alt="Inheritance graph"/></div>
-<map name="_okno_z_zakladkami_inherit__map" id="_okno_z_zakladkami_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <div class="dynheader">
 Diagram współpracy dla OknoZZakladkami:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_okno_z_zakladkami__coll__graph.png" border="0" usemap="#_okno_z_zakladkami_coll__map" alt="Collaboration graph"/></div>
-<map name="_okno_z_zakladkami_coll__map" id="_okno_z_zakladkami_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Sloty publiczne</h2></td></tr>
-<tr class="memitem:a2b72e095e599b744f3dc3125481bcd94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_okno_z_zakladkami.html#a2b72e095e599b744f3dc3125481bcd94">czyKlikniete</a> (int)</td></tr>
-<tr class="memdesc:a2b72e095e599b744f3dc3125481bcd94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Czy poprawne klikniecie w zakladke.  <a href="#a2b72e095e599b744f3dc3125481bcd94">Więcej...</a><br /></td></tr>
-<tr class="separator:a2b72e095e599b744f3dc3125481bcd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa247f0d989513421779e6ef688d0d2f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_okno_z_zakladkami.html#aa247f0d989513421779e6ef688d0d2f4">czyMoznaZamknac</a> (int)</td></tr>
-<tr class="memdesc:aa247f0d989513421779e6ef688d0d2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Czy mozna zamknac dana zakladke.  <a href="#aa247f0d989513421779e6ef688d0d2f4">Więcej...</a><br /></td></tr>
-<tr class="separator:aa247f0d989513421779e6ef688d0d2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae522d652608ee144cea062c80d0cb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_okno_z_zakladkami.html#acae522d652608ee144cea062c80d0cb5">czyKlikniete</a> (int index)</td></tr>
+<tr class="memdesc:acae522d652608ee144cea062c80d0cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Czy poprawne klikniecie w zakladke.  <a href="#acae522d652608ee144cea062c80d0cb5">Więcej...</a><br /></td></tr>
+<tr class="separator:acae522d652608ee144cea062c80d0cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1209289fbbace34320804197f0365ff3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_okno_z_zakladkami.html#a1209289fbbace34320804197f0365ff3">czyMoznaZamknac</a> (int index)</td></tr>
+<tr class="memdesc:a1209289fbbace34320804197f0365ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Czy mozna zamknac dana zakladke.  <a href="#a1209289fbbace34320804197f0365ff3">Więcej...</a><br /></td></tr>
+<tr class="separator:a1209289fbbace34320804197f0365ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
@@ -138,7 +134,7 @@ Metody chronione</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Okna z Zakladkami. </p>
-<p>Przechowuje widzet z mapa oraz widzet z informacjami o miescie. </p>
+<p>Przechowuje widzet z mapa oraz widzet z informacjami o miastach. Posiada przycisk do dodawania nowych zakladek z miastami. Miasta maja przycisk to usuwania sie. </p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
 <a class="anchor" id="aeb672f5424456d641b926a2e5f24decc"></a>
 <div class="memitem">
@@ -165,11 +161,11 @@ Metody chronione</h2></td></tr>
 <p>Konstruktor. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Wskaznik</td><td>na rodzica</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parent</td><td>- wskaznik na rodzica</td></tr>
   </table>
   </dd>
 </dl>
-<p>Inicjalizuje dwa widzety: mape oraz zakladke miasta i umieszcza je w kolejnych zakladkach nadajacac im odpowiednie nazwy </p>
+<p>Inicjalizuje dwa widzety: mape oraz zakladke miasta i umieszcza je w kolejnych zakladkach nadajacac im odpowiednie nazwy. Nastepnie tworzy przyciski do zamykania zakladek oraz dodaje przycisk do tworzenia nowych zakladek. </p>
 
 </div>
 </div>
@@ -215,11 +211,17 @@ Metody chronione</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Event zmian. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>- zdarzenie zmiany jezyka aplikacji</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia </p>
 
 </div>
 </div>
-<a class="anchor" id="a2b72e095e599b744f3dc3125481bcd94"></a>
+<a class="anchor" id="acae522d652608ee144cea062c80d0cb5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -242,11 +244,17 @@ Metody chronione</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Czy poprawne klikniecie w zakladke. </p>
-<p>Sprawdza czy zostala kliknieta zakladka z plusem. Jesli tak to dodaje zakladki z miastem o ile ich ilosc nie przekracza 5. Blokuje sie po przekroczeniu ilosci 5 miast </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>- indeks kliknietego okna</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Sprawdza czy zostala kliknieta zakladka z plusem. Jesli tak to dodaje zakladki z miastem o ile ich ilosc nie przekracza 5. Blokuje sie po przekroczeniu ilosci 5 miast Zakladki dodawane sa przed przyciskiem dodawania nowych zakladek oraz do wektora wskaznikow do obiektow odpowiadajcych tym zakladkom </p>
 
 </div>
 </div>
-<a class="anchor" id="aa247f0d989513421779e6ef688d0d2f4"></a>
+<a class="anchor" id="a1209289fbbace34320804197f0365ff3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -269,7 +277,13 @@ Metody chronione</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Czy mozna zamknac dana zakladke. </p>
-<p>Sprawdza czy mozna zamknac dana zakladke. Nastepnie kasuje odpowiadajacy jej obiekt. Jesli w ten sposob ilosc zakladek z miastami spadnie ponizej 5 to blokuje przycisk + </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>- indeks zamykanego okna</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Sprawdza czy mozna zamknac dana zakladke. Nastepnie kasuje odpowiadajacy jej obiekt. Jesli w ten sposob ilosc zakladek z miastami spadnie ponizej 5 to blokuje przycisk + Kasowany obiekt jest usuwany z listy zakladek oraz usuwany z wektora zakladek po uzyciu delete </p>
 
 </div>
 </div>

@@ -100,15 +100,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
 Diagram dziedziczenia dla Wykres1</div>
 <div class="dyncontent">
 <div class="center"><img src="class_wykres1__inherit__graph.png" border="0" usemap="#_wykres1_inherit__map" alt="Inheritance graph"/></div>
-<map name="_wykres1_inherit__map" id="_wykres1_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <div class="dynheader">
 Diagram współpracy dla Wykres1:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_wykres1__coll__graph.png" border="0" usemap="#_wykres1_coll__map" alt="Collaboration graph"/></div>
-<map name="_wykres1_coll__map" id="_wykres1_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -119,9 +115,9 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a9162b2e00e52adaac6d3d42c93d70dcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wykres1.html#a9162b2e00e52adaac6d3d42c93d70dcb">~Wykres1</a> ()</td></tr>
 <tr class="memdesc:a9162b2e00e52adaac6d3d42c93d70dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor.  <a href="#a9162b2e00e52adaac6d3d42c93d70dcb">Więcej...</a><br /></td></tr>
 <tr class="separator:a9162b2e00e52adaac6d3d42c93d70dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfcaf75ab3da33030831c40eb52b4a4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wykres1.html#abfcaf75ab3da33030831c40eb52b4a4c">DodajTytulIWykres</a> (QString tytul, <a class="el" href="class_miasto.html">Miasto</a> *miasto)</td></tr>
-<tr class="memdesc:abfcaf75ab3da33030831c40eb52b4a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda inicjalizujaca.  <a href="#abfcaf75ab3da33030831c40eb52b4a4c">Więcej...</a><br /></td></tr>
-<tr class="separator:abfcaf75ab3da33030831c40eb52b4a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f687a3cee25f9d55f8b277c5de53f59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wykres1.html#a3f687a3cee25f9d55f8b277c5de53f59">DodajTytulIWykres</a> (const QString &amp;tytul, <a class="el" href="class_miasto.html">Miasto</a> *miasto)</td></tr>
+<tr class="memdesc:a3f687a3cee25f9d55f8b277c5de53f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda inicjalizujaca.  <a href="#a3f687a3cee25f9d55f8b277c5de53f59">Więcej...</a><br /></td></tr>
+<tr class="separator:a3f687a3cee25f9d55f8b277c5de53f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Metody chronione</h2></td></tr>
@@ -158,7 +154,7 @@ Metody chronione</h2></td></tr>
 <p>Konstruktor. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Wskaznik</td><td>na rodzica</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parent</td><td>- wskaznik na rodzica</td></tr>
   </table>
   </dd>
 </dl>
@@ -208,18 +204,24 @@ Metody chronione</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Event zmian. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>- event zmiany jezyka aplikacji</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia </p>
 
 </div>
 </div>
-<a class="anchor" id="abfcaf75ab3da33030831c40eb52b4a4c"></a>
+<a class="anchor" id="a3f687a3cee25f9d55f8b277c5de53f59"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Wykres1::DodajTytulIWykres </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>tytul</em>, </td>
         </tr>
         <tr>
@@ -239,8 +241,8 @@ Metody chronione</h2></td></tr>
 <p>Metoda inicjalizujaca. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Tytul</td><td>widzetu </td></tr>
-    <tr><td class="paramname">Wskaznik</td><td>na miasto</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tytul</td><td>- tytul widzetu </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">miasto</td><td>- wskaznik na miasto</td></tr>
   </table>
   </dd>
 </dl>

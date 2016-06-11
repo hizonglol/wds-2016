@@ -11,7 +11,7 @@
 #include "qcustomplot.h"
 
 /*!
- * \brief Wykres dwudniowy
+ * \brief Wyswietla wykres dwudniowy
  *
  * Wyswietla wykres przedstawiajacy zmiany tempteratury
  * w ciagu najblizszych dwu dni oraz wyswietla
@@ -23,7 +23,7 @@ class Wykres1 : public QFrame {
 public:
     /*!
      * \brief Konstruktor
-     * \param Wskaznik na rodzica
+     * \param[in] parent - wskaznik na rodzica
      *
      * Tworzy zarzadce geometrii
      */
@@ -39,18 +39,19 @@ public:
 
     /*!
      * \brief Metoda inicjalizujaca
-     * \param Tytul widzetu
-     * \param Wskaznik na miasto
+     * \param[in] tytul - tytul widzetu
+     * \param[in] miasto - wskaznik na miasto
      *
      * Tworzy wykres oraz go inicjalizuje odpowiednimi danymi pogodowymi.
      * Dodaje wykres do zarzadcy geometrii. Inicjalizuje tytul i dodaje
      * go do zarzadcy geometrii
      */
-    void DodajTytulIWykres(QString tytul, Miasto* miasto);
+    void DodajTytulIWykres(const QString& tytul, Miasto* miasto);
 
 protected:
     /*!
      * \brief Event zmian
+     * \param[in] event - event zmiany jezyka aplikacji
      *
      * Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia
      */
@@ -60,16 +61,26 @@ private:
 
     /*!
      * \brief Zarzadca geometrii
+     *
+     * Na nim polozony jest tytul widzetu oraz wykres.
      */
     QVBoxLayout* _wWyglad = nullptr;
 
     /*!
      * \brief Tytul widzetu
+     *
+     * Tytul widzetu wyswietlany w prawym gornym
+     * rogu widzetu. Przedstawia opis pogody dla danego
+     * okresu czasu.
      */
     QLabel* _wTytul;
 
     /*!
      * \brief Wykres z danymi dwudniowymi
+     *
+     * Przedstawia wykres z temperatura odczuwalna oraz
+     * rzeczywista. Pokazuje dodatkowo legende dla tych
+     * wykresow
      */
     QCustomPlot* _wZachDzien = nullptr;
 

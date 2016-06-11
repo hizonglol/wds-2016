@@ -12,7 +12,7 @@
 #include "miasto.h"
 
 /*!
- * \brief Ikona pogodowa
+ * \brief Wyswietla ikone pogodowa
  *
  * Modeluje jeden kwadratowy widget wyswietlajacy
  * ikonke aktualnej pogody wraz z tytulem w swoim
@@ -23,7 +23,7 @@ class IkonkaPogodowa : public QGroupBox {
 public:
     /*!
      * \brief Konstruktor
-     * \param Wskaznik na rodzica
+     * \param[in] parent - wskaznik na rodzica
      *
      * Wpisuje wskaznik na rodzica oraz tworzy zarzadce
      * geometrii
@@ -41,7 +41,7 @@ public:
 
     /*!
      * \brief Metoda inicjalizujaca
-     * \param Wskaznik na klase Miasto z informacjami
+     * \param[in] miasto - wskaznik na klase Miasto z informacjami
      *
      * Inicjalizuje pola wskazujace na obiekty, wpisuje
      * obiekty do zarzadcy geometrii oraz odpowiednio
@@ -62,11 +62,15 @@ private:
 
     /*!
      * \brief Tytul okna
+     *
+     * Tutaj wyswietlany jest tekstowy opis aktualnej pogody
      */
     QLabel* _wLabelIkonki = nullptr;
 
     /*!
      * \brief Mapa zasobu z ikona
+     *
+     * Wyswietla ikone odpowiadajaca aktualnej pogodzie
      */
     QPixmap _PlikIkony;
 

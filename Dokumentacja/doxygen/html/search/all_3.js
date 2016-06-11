@@ -25,7 +25,7 @@ var searchData=
   ['cscandlestick',['csCandlestick',['../class_q_c_p_financial.html#a0f800e21ee98d646dfc6f8f89d10ebfbac803cbd39f26e3f206bcc7028679e62f',1,'QCPFinancial']]],
   ['csohlc',['csOhlc',['../class_q_c_p_financial.html#a0f800e21ee98d646dfc6f8f89d10ebfba3a516016c9298d3e95dd82aa203c4390',1,'QCPFinancial']]],
   ['currentlayer',['currentLayer',['../class_q_custom_plot.html#af73057345656cbd1463454982d808b00',1,'QCustomPlot']]],
-  ['czyklikniete',['czyKlikniete',['../class_okno_z_zakladkami.html#a2b72e095e599b744f3dc3125481bcd94',1,'OknoZZakladkami']]],
-  ['czymoznazamknac',['CzyMoznaZamknac',['../class_main_window.html#a5851a60f7f9e3a01c6701ff5b1112246',1,'MainWindow::CzyMoznaZamknac()'],['../class_okno_z_zakladkami.html#aa247f0d989513421779e6ef688d0d2f4',1,'OknoZZakladkami::czyMoznaZamknac()']]],
+  ['czyklikniete',['czyKlikniete',['../class_okno_z_zakladkami.html#acae522d652608ee144cea062c80d0cb5',1,'OknoZZakladkami']]],
+  ['czymoznazamknac',['CzyMoznaZamknac',['../class_main_window.html#a5851a60f7f9e3a01c6701ff5b1112246',1,'MainWindow::CzyMoznaZamknac()'],['../class_okno_z_zakladkami.html#a1209289fbbace34320804197f0365ff3',1,'OknoZZakladkami::czyMoznaZamknac()']]],
   ['czypobranekoordynaty',['czyPobraneKoordynaty',['../class_zakladka_miasta.html#a089258c75d54e7afe3b7e01eb554de42',1,'ZakladkaMiasta']]]
 ];

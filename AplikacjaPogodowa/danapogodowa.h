@@ -9,7 +9,7 @@
 #include <QDebug>
 
 /*!
- * \brief Dana pogodowa
+ * \brief Wyswietla wybrany parametr pogodowy
  *
  * Modeluje jeden kwadratowy element z tytulem
  * oraz liczba reprezentujaca dany parametr pogodowy
@@ -20,7 +20,7 @@ public:
 
     /*!
      * \brief Konstruktor
-     * \param Wskaznik na rodzica
+     * \param[in] parent - wskaznik na rodzica
      *
      * Wpisuje wskaznik na rodzica oraz tworzy zarzadce
      * geometrii
@@ -38,8 +38,8 @@ public:
 
     /*!
      * \brief Metoda inicjalizujaca
-     * \param Tytul okna
-     * \param Numer do wyswietlenia
+     * \param[in] title - tytul okna
+     * \param[in] number - numer do wyswietlenia
      *
      * Inicjalizuje pola wskazujace na obiekty, wpisuje
      * obiekty do zarzadcy geometrii oraz odpowiednio
@@ -49,7 +49,7 @@ public:
 
     /*!
      * \brief Metoda zmieniajaca tytul widzetu
-     * \param Tytul okna
+     * \param[in] title - tytul okna
      */
     void ZmienTytul(QString title);
 
@@ -66,6 +66,8 @@ private:
 
     /*!
      * \brief Tytul okna
+     *
+     * Opis tekstowy wyswietlanego parametru
      */
     QLabel* _wTytul = nullptr;
 

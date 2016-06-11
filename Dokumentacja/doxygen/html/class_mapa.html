@@ -99,15 +99,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
 Diagram dziedziczenia dla Mapa</div>
 <div class="dyncontent">
 <div class="center"><img src="class_mapa__inherit__graph.png" border="0" usemap="#_mapa_inherit__map" alt="Inheritance graph"/></div>
-<map name="_mapa_inherit__map" id="_mapa_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <div class="dynheader">
 Diagram współpracy dla Mapa:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_mapa__coll__graph.png" border="0" usemap="#_mapa_coll__map" alt="Collaboration graph"/></div>
-<map name="_mapa_coll__map" id="_mapa_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -121,9 +117,8 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a64ffb0894afb16c03755ed2a3e9b7999"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mapa.html#a64ffb0894afb16c03755ed2a3e9b7999">resizeEvent</a> (QResizeEvent *event)</td></tr>
 <tr class="memdesc:a64ffb0894afb16c03755ed2a3e9b7999"><td class="mdescLeft">&#160;</td><td class="mdescRight">resizeEvent  <a href="#a64ffb0894afb16c03755ed2a3e9b7999">Więcej...</a><br /></td></tr>
 <tr class="separator:a64ffb0894afb16c03755ed2a3e9b7999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af27fa1c11eeb43d0be3cf274e6c238eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af27fa1c11eeb43d0be3cf274e6c238eb"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mapa.html#af27fa1c11eeb43d0be3cf274e6c238eb">paintEvent</a> (QPaintEvent *event)</td></tr>
-<tr class="memdesc:af27fa1c11eeb43d0be3cf274e6c238eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">paintEvent <br /></td></tr>
+<tr class="memitem:af27fa1c11eeb43d0be3cf274e6c238eb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mapa.html#af27fa1c11eeb43d0be3cf274e6c238eb">paintEvent</a> (QPaintEvent *event)</td></tr>
+<tr class="memdesc:af27fa1c11eeb43d0be3cf274e6c238eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">paintEvent  <a href="#af27fa1c11eeb43d0be3cf274e6c238eb">Więcej...</a><br /></td></tr>
 <tr class="separator:af27fa1c11eeb43d0be3cf274e6c238eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
@@ -182,6 +177,39 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a class="anchor" id="af27fa1c11eeb43d0be3cf274e6c238eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mapa::paintEvent </td>
+          <td>(</td>
+          <td class="paramtype">QPaintEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>paintEvent </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>- zdarzenie odrysowania</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Odrysowuje nazwy miast w razie zdarzenia zmiany rozmiaru okna </p>
+
+</div>
+</div>
 <a class="anchor" id="a64ffb0894afb16c03755ed2a3e9b7999"></a>
 <div class="memitem">
 <div class="memproto">
@@ -207,10 +235,11 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>resizeEvent </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>zmiany rozmiaru okna </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>- zdarzenie zmiany rozmiaru okna</td></tr>
   </table>
   </dd>
 </dl>
+<p>Zapisuje nowe rozmiary okna w zmiennych _x, _y </p>
 
 </div>
 </div>

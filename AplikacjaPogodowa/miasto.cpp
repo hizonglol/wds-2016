@@ -1,7 +1,7 @@
 #include "miasto.h"
 
 
-Miasto::Miasto(QString koordynaty)
+Miasto::Miasto(const QString& koordynaty)
 {
     _wKoordynaty = new QString(koordynaty);
     Q_CHECK_PTR(_wKoordynaty);
@@ -48,7 +48,7 @@ void Miasto::Inicjalizuj()
 }
 
 
-QJsonValue Miasto::TerazDane(QString klucz)
+QJsonValue Miasto::TerazDane(const QString& klucz)
 {
     QJsonObject dane = (*_wJsonObj)["currently"].toObject();
     //qDebug() << dane[klucz] << '\n';
@@ -64,7 +64,7 @@ QJsonValue Miasto::DwaDniPodsum()
 }
 
 
-QJsonValue Miasto::GodzinoweDane(int godzina, QString klucz)
+QJsonValue Miasto::GodzinoweDane(const int& godzina, const QString& klucz)
 {
     if(godzina<0 || godzina>48) {
         qDebug() << "Nieprawidlowa godzina...\n" <<_wOdpowiedz->errorString();
@@ -88,7 +88,7 @@ QJsonValue Miasto::TydzienPodsum()
 }
 
 
-QJsonValue Miasto::TygodnioweDane(int dzien, QString klucz)
+QJsonValue Miasto::TygodnioweDane(const int& dzien, const QString& klucz)
 {
     if(dzien<0 || dzien>7) {
         qDebug() << "Nieprawidlowy dzien...\n" <<_wOdpowiedz->errorString();

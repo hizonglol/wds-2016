@@ -16,7 +16,7 @@
 #include "miasto.h"
 
 /*!
- * \brief Widzet z mapa
+ * \brief Wyswietla mape Japonii
  *
  * Wyswietla na sobie mape Japonii oraz rysuje nazwy wraz z aktualna
  * temperatura najwiekszego miasta wszystkich prefektur
@@ -45,12 +45,17 @@ public:
 
     /*!
      * \brief resizeEvent
-     * \param event zmiany rozmiaru okna
+     * \param[in] event - zdarzenie zmiany rozmiaru okna
+     *
+     * Zapisuje nowe rozmiary okna w zmiennych _x, _y
      */
     virtual void resizeEvent(QResizeEvent* event);
 
     /*!
      * \brief paintEvent
+     * \param[in] event - zdarzenie odrysowania
+     *
+     * Odrysowuje nazwy miast w razie zdarzenia zmiany rozmiaru okna
      */
     virtual void paintEvent(QPaintEvent* event);
 
@@ -76,16 +81,25 @@ private:
 
     /*!
      * \brief Wektor obiektow miast
+     *
+     * Przechowuje obiekty Miasto odpowiadajace
+     * koordynatom
      */
     QVector< Miasto* > _vwMiasta;
 
     /*!
      * \brief Koordynaty miast
+     *
+     * Przechowuje stringi z koordynatami miast
+     * potrzebnymi do wyswietlenia na mapie
      */
     QVector< QString > _vKoordynaty;
 
     /*!
      * \brief Wektor nazw z temperaturami
+     *
+     * Przechowuje stringi z nazwami miast oraz
+     * temperatura odpowiadajaca danemu miastu
      */
     QVector< QString > _vNazwy;
 

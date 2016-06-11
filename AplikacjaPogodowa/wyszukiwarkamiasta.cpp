@@ -1,6 +1,6 @@
 #include "wyszukiwarkamiasta.h"
 
-WyszukiwarkaMiasta::WyszukiwarkaMiasta(QString nazwa)
+WyszukiwarkaMiasta::WyszukiwarkaMiasta(const QString& nazwa)
 {
     QMap<QString,QVariant> params;
     params["here.app_id"] = "j3rgq0ooNvXwenPixMoa";

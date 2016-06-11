@@ -11,7 +11,7 @@
 #include "qcustomplot.h"
 
 /*!
- * \brief Wykres tygodniowy
+ * \brief Wyswietla wykres tygodniowy
  *
  * Wyswietla wykres przedstawiajacy zmiany tempteratury
  * w ciagu tygodnia oraz wyswietla tekstowa prognoze pogody
@@ -21,7 +21,7 @@ class Wykres2 : public QFrame {
 public:
     /*!
      * \brief Konstruktor
-     * \param Wskaznik na rodzica
+     * \param[in] parent - wskaznik na rodzica
      *
      * Tworzy zarzadce geometrii
      */
@@ -37,18 +37,19 @@ public:
 
     /*!
      * \brief Metoda inicjalizujaca
-     * \param Tytul widzetu
-     * \param Wskaznik na miasto
+     * \param[in] tytul - tytul widzetu
+     * \param[in] miasto - wskaznik na miasto
      *
      * Tworzy wykres oraz go inicjalizuje odpowiednimi danymi pogodowymi.
      * Dodaje wykres do zarzadcy geometrii. Inicjalizuje tytul i dodaje
      * go do zarzadcy geometrii
      */
-    void DodajTytulIWykres(QString tytul, Miasto* miasto);
+    void DodajTytulIWykres(const QString& tytul, Miasto* miasto);
 
 protected:
     /*!
      * \brief Event zmian
+     * \param[in] event - zdarzenie zmiany jezyka aplikacji
      *
      * Zmienia tlumaczenia widzetu na wybrane nowe tlumaczenia
      */
@@ -62,16 +63,25 @@ private:
 
     /*!
      * \brief Zarzadca geometrii
+     *
+     * Na nim polozny jest tytul widzetu oraz wykres z danymi
      */
     QVBoxLayout* _wWyglad;
 
     /*!
      * \brief Tytul widzetu
+     *
+     * Tytul widzetu wyswietlany w prawym gornym
+     * rogu widzetu. Przedstawia opis pogody dla danego
+     * okresu czasu.
      */
     QLabel* _wTytul;
 
     /*!
      * \brief Wykres z danymi tygodniowymi
+     *
+     * Przedstawia wykres z zakresem temperatur dla
+     * nastepnych siedmiu dni
      */
     QCustomPlot* _wZachTydz = nullptr;
 };

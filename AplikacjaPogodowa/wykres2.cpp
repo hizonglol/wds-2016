@@ -17,7 +17,7 @@ Wykres2::~Wykres2()
 }
 
 
-void Wykres2::DodajTytulIWykres(QString tytul, Miasto* miasto)
+void Wykres2::DodajTytulIWykres(const QString& tytul, Miasto* miasto)
 {
     _wTytul = new QLabel(this);
     Q_CHECK_PTR(_wTytul);

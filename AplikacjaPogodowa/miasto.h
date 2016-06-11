@@ -14,7 +14,7 @@
 #include <QDebug>
 
 /*!
- * \brief Obiekt Miasto
+ * \brief Zawiera dane o pogodzie w danym miescie
  *
  * Pobiera informacje pogodowe z internetu, przechowuje je
  * oraz udostepnia metody przekazujace te informacje
@@ -25,13 +25,13 @@ class Miasto : public QObject {
 public:
     /*!
      * \brief Konstruktor
-     * \param Koordynaty wyszukiwanego miasta
+     * \param[in] koordynaty - koordynaty wyszukiwanego miasta
      *
      * Wysyla zadanie do strony internetowej i pobiera odpowiedz w postaci
      * informacji pogodowych na temat miejsca o zadanych koordynatach.
      * Domyslnie informacje pobiera dla koordynatow Tokio.
      */
-    Miasto(QString koordynaty = "35.6895, 139.69171");
+    Miasto(const QString& koordynaty = "35.6895, 139.69171");
 
     /*!
      * \brief Destruktor
@@ -52,10 +52,10 @@ public:
 
     /*!
      * \brief Metoda dostepu do danych teraz.
-     * \param Klucz jaki bedzie poszukiwany.
+     * \param[in] klucz - klucz jaki bedzie poszukiwany.
      * \return Obiekt przechowujacy dane i informacje o typie danej.
      */
-    QJsonValue TerazDane(QString klucz);
+    QJsonValue TerazDane(const QString& klucz);
 
     /*!
      * \brief Metoda dostepu do dwudniowego podsumowania.
@@ -65,11 +65,11 @@ public:
 
     /*!
      * \brief Metoda dostepu do dwudniowych danych.
-     * \param Numer godziny dla jakiej bedzie wyszukiwanie.
-     * \param Klucz jaki bedzie poszukiwany.
+     * \param[in] godzina - numer godziny dla jakiej bedzie wyszukiwanie.
+     * \param[in] klucz - klucz jaki bedzie poszukiwany.
      * \return Obiekt przechowujacy dane i informacje o typie danej.
      */
-    QJsonValue GodzinoweDane(int godzina, QString klucz);
+    QJsonValue GodzinoweDane(const int& godzina, const QString& klucz);
 
     /*!
      * \brief Metoda dostepu do tygodniowego podsumowania.
@@ -79,11 +79,11 @@ public:
 
     /*!
      * \brief Metoda dostepu do tygodniowych danych.
-     * \param Numer dnia dla jakiego bedzie wyszukiwanie.
-     * \param Klucz jaki bedzie poszukiwany.
+     * \param[in] dzien - numer dnia dla jakiego bedzie wyszukiwanie.
+     * \param[in] klucz - klucz jaki bedzie poszukiwany.
      * \return Obiekt przechowujacy dane i informacje o typie danej.
      */
-    QJsonValue TygodnioweDane(int dzien, QString klucz);
+    QJsonValue TygodnioweDane(const int& dzien, const QString& klucz);
 
 signals:
 

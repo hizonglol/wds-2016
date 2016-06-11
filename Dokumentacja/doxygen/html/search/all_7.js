@@ -3,7 +3,7 @@ var searchData=
   ['getkeyrange',['getKeyRange',['../class_q_c_p_graph.html#aa75c6f028124032416a5cf7145dfba60',1,'QCPGraph']]],
   ['getpartat',['getPartAt',['../class_q_c_p_axis.html#ab2965a8ab1da948b897f1c006080760b',1,'QCPAxis']]],
   ['getvaluerange',['getValueRange',['../class_q_c_p_graph.html#ab964a21d680af93435d68126d8c5ab29',1,'QCPGraph']]],
-  ['godzinowedane',['GodzinoweDane',['../class_miasto.html#ae3b3d44028db73e1fe18e9d6d9ec926f',1,'Miasto']]],
+  ['godzinowedane',['GodzinoweDane',['../class_miasto.html#a5fc208baffca7bc4d958be192ad66f73',1,'Miasto']]],
   ['gpcandy',['gpCandy',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721',1,'QCPColorGradient']]],
   ['gpcold',['gpCold',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557',1,'QCPColorGradient']]],
   ['gpgeography',['gpGeography',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2',1,'QCPColorGradient']]],

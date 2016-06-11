@@ -12,6 +12,6 @@ var searchData=
   ['wykres2',['Wykres2',['../class_wykres2.html',1,'Wykres2'],['../class_wykres2.html#afa16fa43bf64ced42e84ed61b4482dc1',1,'Wykres2::Wykres2()']]],
   ['wykres2_2eh',['wykres2.h',['../wykres2_8h.html',1,'']]],
   ['wyswietlresztewidzetow',['wyswietlReszteWidzetow',['../class_zakladka_miasta.html#a3d455afaa0c4fb7229183a65591ae712',1,'ZakladkaMiasta']]],
-  ['wyszukiwarkamiasta',['WyszukiwarkaMiasta',['../class_wyszukiwarka_miasta.html',1,'WyszukiwarkaMiasta'],['../class_wyszukiwarka_miasta.html#ac1143bb2faa8b65264ce6386237ff314',1,'WyszukiwarkaMiasta::WyszukiwarkaMiasta()']]],
+  ['wyszukiwarkamiasta',['WyszukiwarkaMiasta',['../class_wyszukiwarka_miasta.html',1,'WyszukiwarkaMiasta'],['../class_wyszukiwarka_miasta.html#a91cabf8353e864a1a9878cbd53ec7977',1,'WyszukiwarkaMiasta::WyszukiwarkaMiasta()']]],
   ['wyszukiwarkamiasta_2eh',['wyszukiwarkamiasta.h',['../wyszukiwarkamiasta_8h.html',1,'']]]
 ];
